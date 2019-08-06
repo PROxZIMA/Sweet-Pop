@@ -1,0 +1,823 @@
+/* Dont Remove This */
+toolbarbutton#alltabs-button{-moz-binding:url("userChrome.xml#js")}
+
+/*Adjust all in oneline urlbar next to tabbar*/
+#nav-bar {
+	margin-bottom: -1px;
+	margin-top:-31px !important;
+	margin-right: 75vw!important;
+}
+#TabsToolbar {
+	margin-left: 25vw !important;
+}
+#TabsToolbar > .toolbar-items{
+	margin-right: 10px!important;
+}
+#urlbar-container {
+	min-width: calc(49ch -48px + 2 * var(--toolbarbutton-inner-padding) )!important;
+}
+#main-window[sizemode="normal"] #nav-bar {
+	margin-top:-31px !important;
+	margin-right: 70vw!important;
+}
+#main-window[sizemode="normal"] #TabsToolbar {
+	margin-left:30vw !important;
+}
+#main-window[sizemode="normal"] #TabsToolbar > .toolbar-items{
+	margin-right: 10px!important;
+}
+#main-window[sizemode="normal"] #urlbar-container {
+	min-width: calc(49ch -48px + 2 * var(--toolbarbutton-inner-padding) )!important;
+}
+#PlacesToolbar {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#page-action-buttons {
+	display: none !important;
+}
+/* Centre Bookmarks */
+.bookmarks-toolbar-items>.scrollbox-innerbox {
+	margin-top: -1px !important;
+}
+.bookmark-item > .toolbarbutton-text {
+	margin-top: -1px !important;
+}
+.tabbrowser-tab[usercontextid] .tab-line{
+	background-color:var(--identity-tab-color)!important;
+}
+/* Title Changed Notification */
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged] {
+	filter:grayscale(100%) !important;
+	background-position: center !important;
+	background-size: 4px !important;
+}
+/* Contextual toolbar buttons, only show on hover */
+:root:not([customizing]) #PanelUI-button,
+:root:not([customizing]) #nav-bar-overflow-button, 
+:root:not([customizing]) #nav-bar-customization-target toolbarbutton {
+	margin-left: -30px !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	transition: all 300ms var(--animation-easing-function) !important;
+}
+:root:not([customizing]) :hover > #PanelUI-button,
+:root:not([customizing]) :hover > #nav-bar-overflow-button,
+:root:not([customizing]) :hover > #nav-bar-customization-target toolbarbutton,
+:root:not([customizing]) #nav-bar-customization-target:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > .titlebar toolbarbutton {
+	margin-left: 0 !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	transition: 300ms !important;
+}
+toolbarspring {
+	min-width: 8px;
+	max-width: 8px;
+}
+window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
+	box-shadow: none !important;
+	border: 0px !important;
+}
+
+ 
+ 
+/* :::::::::::::::::::: TST :::::::::::::::::::: */
+:root, #background {
+	background: #000000;
+}
+/* Show title of unread tabs with italic font */
+.tab.unread .label {
+	font-style: italic !important;
+	font-size: 14px;
+}
+.tab .label {
+	font-size: 14px;
+}
+/* Hide .twisty and adjust margins */
+.tab .twisty {
+	visibility: hidden;
+	margin-left: -12px;
+}
+/* Push tab labels slightly to the right*/
+.tab .label {
+	margin-left: 10px;
+}
+.tab.active {
+	height: 38px !important;
+	background-color: #193B99;
+}
+.tab.active .label {
+	font-weight: bold;
+	font-size: 14px;
+}
+.tab:not(:hover) .closebox {
+	display: none;
+}
+.tab {
+	background-color: #0c0c0d;
+}
+.tab:not(.active):hover,
+.after-tabs button:hover {
+	background: #252526;
+}
+ 
+ 
+/* :::::::::::::::::::: POPUPS :::::::::::::::::::: */
+menupopup, panel[type="autocomplete-richlistbox"] {
+	-moz-appearance: none !important;
+	background: transparent !important;
+	border: 0 !important;
+	color: #ffffff !important;
+	position: relative !important;
+}
+.popup-internal-box, .panel-arrowcontent, .autocomplete-richlistbox, #PopupSearchAutoComplete {
+	background: #0c0c0d !important;
+	border: 0px !important;
+	border-radius: 8px !important;
+	padding: 8px 0 !important;
+	margin: 0 !important;
+}
+.panel-arrowbox {
+	display: none !important;
+}
+.PanelUI-subView {
+	background: #0c0c0d !important;
+}
+menu,
+menuitem,
+.autocomplete-richlistitem,
+.popup-internal-box > .scrollbutton-up,
+.popup-internal-box > .scrollbutton-down {
+	background: 0 !important;
+	-moz-appearance: none !important;
+	color: inherit !important;
+}
+richlistbox,
+.ac-title {
+	color: inherit !important;
+}
+menu,
+menuitem,
+.autocomplete-richlistitem {
+	padding: 0 24px 0 !important;
+	min-height: 28px !important;
+	border: 0 !important;
+}
+/* hover */
+menu:not([disabled=true]):not([open]):hover,
+menuitem:not([disabled=true]):not([_moz-menuactive]):hover,
+.autocomplete-richlistitem:not([disabled=true]):not([selected]):hover {
+	background-color: var(--arrowpanel-dimmed) !important;
+}
+/* selected/open */
+menu[open],
+.autocomplete-richlistitem[selected],
+menuitem[_moz-menuactive] {
+	background-color: var(--autocomplete-popup-highlight-background) !important;
+	color: var(--autocomplete-popup-highlight-color) !important;
+}
+menu[disabled=true],
+menuitem[disabled=true],
+.autocomplete-richlistitem[disabled=true] {
+	opacity: .5 !important;
+}
+menuseparator {
+	-moz-appearance: none !important;
+	background: currentColor !important;
+	opacity: .1 !important;
+	border: 0 !important;
+	padding: 0 !important;
+	height: 1px !important;
+	margin: 5px 0 !important;
+}
+.menu-iconic-icon,
+.menu-right,
+.ac-site-icon,
+.ac-type-icon {
+	fill: currentColor !important;
+	-moz-context-properties: fill, stroke, fill-opacity, stroke-opacity !important;
+}
+.menu-iconic-icon,
+.ac-type-icon,
+.ac-site-icon {
+	margin-inline-start: 0 !important;
+	margin-inline-end: 8px !important;
+}
+#context-navigation {
+	padding: 0 8px 3px !important;
+	background: 0 !important;
+}
+#context-navigation > .menuitem-iconic {
+	padding: 0 !important;
+	border-radius: 99px !important;
+}
+#context-navigation .menu-iconic-icon {
+	margin: 0 !important;
+}
+/* unset fill-opacity for menus nested in buttons */
+.bookmark-item > menupopup {
+	fill-opacity: initial !important;
+}
+.search-panel-tree {
+	background: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: 0 !important;
+	padding: 0 !important;
+}
+.search-panel-current-engine,
+#searchbar-anon-search-settings,
+.addengine-item {
+	padding: 0 24px 0 !important;
+	min-height: 28px !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+	font-size: inherit !important;
+	text-align: start !important;
+}
+.search-panel-current-engine {
+	-moz-box-ordinal-group: 0 !important;
+}
+/* a sneaky separator */
+#PopupSearchAutoComplete::before {
+	-moz-box-ordinal-group: 1 !important;
+}
+.searchbar-engine-image {
+	margin-inline-end: 2px !important;
+}
+.search-panel-one-offs-header {
+	display: none !important;
+}
+.search-panel-one-offs,
+#searchbar-anon-search-settings {
+	border: 0 !important;
+}
+/* Separators */
+#PopupSearchAutoComplete::before,
+.search-panel-one-offs::before,
+.search-panel-one-offs::after {
+	content: "" !important;
+	display: -moz-box !important;
+	height: 1px !important;
+	width: 100% !important;
+	background: currentColor !important;
+	opacity: .1 !important;
+	margin: 4px 0 !important;
+}
+.searchbar-engine-one-off-item {
+	border: 0 !important;
+	background: 0 !important;
+}
+.searchbar-engine-one-off-item .button-box {
+	border-radius: 99px !important;
+	margin: 2px 0 !important;
+}
+.searchbar-engine-one-off-item:first-of-type .button-box,
+.searchbar-engine-one-off-item.last-of-row + .searchbar-engine-one-off-item .button-box {
+	margin-inline-start: 4px !important;
+}
+.searchbar-engine-one-off-item.last-of-row .button-box {
+	margin-inline-end: 4px !important;
+}
+/* unfortunately these don't support focus */
+.searchbar-engine-one-off-item:hover .button-box,
+#searchbar-anon-search-settings:hover,
+.search-panel-current-engine:hover,
+.addengine-item:hover {
+	background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+.searchbar-engine-one-off-item.dummy {
+	display: none !important;
+}
+.search-panel-tree .ac-type-icon[type="null"] {
+	display: none !important;
+}
+.search-add-engines {
+	background: 0 !important;
+}
+/* windows-specific tweaks */
+@media (-moz-windows-compositor)
+{
+	menupopup
+	{
+		padding: 6px 12px 24px !important;
+		margin: -6px -12px -24px !important;
+	}
+	.popup-internal-box
+	{
+		box-shadow:
+			0 0 6px rgba(0, 0, 0, .08),
+			0 12px 12px rgba(0, 0, 0, .125) !important;
+	}
+	panel[type="arrow"]
+	{
+		/* must pad because overflow: visible doesn't work */
+		padding: 3px 3px 7px !important;
+	}
+	.panel-arrowcontent
+	{
+		border: 0 !important;
+		box-shadow:
+			0 0 3px rgba(0, 0, 0, .17),
+			0 4px 3px rgba(0, 0, 0, .1) !important;
+	}
+	.menu-text
+	{
+		margin-inline-start: -1.45em !important;
+	}
+}
+ 
+ 
+/* :::::::::::::::::::: LIBRARY MENU :::::::::::::::::::: */
+/* These change top bar background color */
+#placesToolbar {
+	background-color: #333 !important;
+	color: #ddd !important}
+/* These change the lists background color */
+#placesView, #placesView .scrollbox-innerbox,
+#infoPane, #placesList, #placeContent, 
+/* This one changes the urlbar star bookmarking folder tree backgrund color */
+#editBMPanel_folderTree {
+	-moz-appearance: none !important; 
+	background: #000 !important; 
+	color: #ddd !important}
+/* These change the list header background and text colors */
+#placeContent treecol {
+	-moz-appearance: none !important; 
+	background: #444 !important;
+	padding: 0px !important;
+	color: #ddd !important;
+	border-left: 1px solid #333 !important;
+	border-bottom: 1px solid #333 !important}
+#placeContent treecol:hover {
+	-moz-appearance: none !important; 
+	background: rgba(255,255,255, 0.15) !important;
+	color: #fff !important}
+/* This changes the right border on the left list panel */
+#placesView > splitter {border-inline-end: 0px solid #333 !important}
+/* These change the odd rows of the lists */
+#placeContent tree {background-color: #000000 !important}
+#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
+	background-color: #000000 !important}
+#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
+	background-color: #181818 !important}
+#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
+	background-color: #45a1ff !important}
+#placeContent treechildren::-moz-tree-cell {border-right: 0px dotted rgba(0,0,0,0.4) !important}
+#placeContent > splitter {border: 0px solid red !important}
+/* This changes the forward and back buttons opacity when disabled */
+#placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+	opacity: .25 !important}
+/* This changes the forward and back buttons color */
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {fill: #aaa !important; opacity: 1 !important}
+/* This deletes the leftover border when clicking one of the top buttons */
+#placesMenu > menu {border: none !important}
+/* This changes the text color of the "clear downloads" button */
+#clearDownloadsButton {color: #aaa !important}
+#clearDownloadsButton[disabled] {color: #555 !important}
+/* This themes the search box */
+#searchFilter {
+	transition: all 0.25s ease-in-out !important;
+	-moz-appearance: none !important; 
+	border: 1px solid #666 !important;
+	background-color: #444 !important;
+	color: #aaa !important}
+/* This themes the search box on hover */
+#searchFilter[focused="true"] {
+	box-shadow: var(--input-field-focus-shadow) !important;
+	background-color: #555 !important;
+	color: #fff !important} 
+/* This themes the information box on the lower part of the library menu */
+#detailsDeck {
+	background-color: #181818 !important; 
+	color: #aaa !important;
+	border-top: 2px solid #222 !important}
+/* This changes the text boxes inside the library bottom information box */
+#infoBox textbox, #infoBox listbox, 
+/* This changes the text boxes on the popup when bookmarking a page from the url box */
+#editBMPanel_namePicker, #editBMPanel_tagsField,
+#editBMPanel_tagsSelector {
+	transition: all 0.25s ease-in-out !important;
+	-moz-appearance: none !important; 
+	border: 0px !important;
+	background-color: #1c1c1d !important;
+	color: #ddd !important}
+/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+#bookmarkproperties #editBMPanel_namePicker, 
+#bookmarkproperties #editBMPanel_tagsField,
+#bookmarkproperties #editBMPanel_tagsSelector {
+	background-color: #1c1c1d !important}
+/* This changes the same text boxes on hover */
+#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
+/* This changes the same url bookmarking popup text boxes on hover */
+#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+	box-shadow: var(--Input-field-focus-shadow) !important;
+	background-color: #2c2c2d !important;
+	color: #fff !important}
+/* This changes the buttons inside the bookmarking popup at the url star */
+#editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
+#editBookmarkPanelRemoveButton, #tracking-action-unblock-private, 
+#identity-popup-popup-menulist, #tracking-action-block, #tracking-action-unblock {
+	-moz-appearance: none !important;
+	border-radius: 8px !important;
+	background: #1c1c1d !important;
+	border: 0px !important;
+	color: #ddd !important;
+	padding: 0.3em !important;
+	margin-top: 0.5em !important;
+	margin-bottom: 0.5em !important}
+#editBMPanel_newFolderButton:hover,#editBookmarkPanelDoneButton:hover, 
+#editBookmarkPanelRemoveButton:hover, #tracking-action-unblock-private:hover, 
+#identity-popup-popup-menulist:hover, #tracking-action-block:hover, 
+#tracking-action-unblock:hover { 
+	background: #333 !important;
+	color: #fff !important}
+#editBookmarkPanelBottomButtons {
+	background: transparent !important;}
+/* These change the expander buttons on the library and bookmarking popup */
+#editBMPanel_folderMenuList, #editBMPanel_tagsSelectorExpander,
+#editBMPanel_foldersExpander, #detailsDeck button {
+	-moz-appearance: none !important;
+	border: 3px solid #1c1c1d !important;
+	background: #1c1c1d !important;
+	color: #fff !important}
+#editBMPanel_folderMenuList:hover, #editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
+	background: #2c2c2d !important;
+	color: #fff !important}
+#editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+/* These change the downloads history list background */
+#downloadsRichListBox {background: #000 !important; color: #ddd !important} 
+#statuspanel-label {
+	-moz-appearance: none !important;
+	background: transparent !important;
+	color: #eee !important;
+	border: 0px solid #333 !important;
+}
+panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
+	background-color: #0c0c0d !important;
+}
+/* Identity Icons BG Dark */
+#identity-popup-securityView,
+#identity-popup-security-content,
+.identity-popup-section,
+#identity-popup-securityView-footer,
+#identity-popup-mainView-panel-header,
+#protections-popup-mainView-panel-header,
+#identity-box,
+#protections-popup-siteNotWorkingView-footer,
+#tracking-protection-icon-container,
+panelview {
+	background-color: transparent !important;
+}
+/* Make Protection Popup Dark */
+#protections-popup-mainView, #protections-popup-footer {
+	background-color: #0c0c0d !important;
+}
+/* Make Sidebar Dark */
+#sidebar, #sidebar-header, #bookmarksPanel, #bookmarks-view, #history-panel, #historyTree, #sidebar-switcher-target, #viewButton {
+	background-color: #0c0c0d !important;
+}
+/* Identity Footer Dark */
+.panel-footer > button {
+	background: #0c0c0d !important;
+}
+.panel-footer > button:hover {
+	background: #1c1c1d !important;
+}
+ 
+ 
+ /* :::::::::::::::::::: TABS :::::::::::::::::::: */
+/* Selected Tab Modification */
+.tabbrowser-tab .tab-content[selected] {
+	background: #000000 !important;
+	border-top: 2px solid #0078d7 !important;
+	border-left: 2px solid #0078d7 !important;
+	border-right: 2px solid #0078d7 !important;
+	border-radius: 8px 8px 0 0 !important;
+}
+.tab-loading-burst {
+	background: #000000 !important;
+}
+/* Hovered Tab Modification */
+.tabbrowser-tab:hover:not([selected]) .tab-content:not([selected]) {
+	background: #000000 !important;
+	border-top: 2px solid #38383d !important;
+	border-left: 2px solid #38383d !important;
+	border-right: 2px solid #38383d !important;
+	border-radius: 8px 8px 0 0 !important;
+}
+/*BLUE borders in toolbar*/
+#main-window[sizemode="normal"] #navigator-toolbox:after{
+	content: ""; 
+	top: -8%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	background: linear-gradient(120deg, rgb(0,10,10),rgb(0,60,100),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,60,100),rgb(0,10,10));
+	clip:rect(31px,2600px,33px,0px)!important;
+  display: -moz-box;
+	pointer-events: none;
+	will-change: filter;
+}
+#navigator-toolbox:after {
+	content: ""; 
+	top: 10%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	background: linear-gradient(120deg, rgb(0,10,10),rgb(0,60,100),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,60,100),rgb(0,10,10));
+	clip:rect(31px,2600px,33px,0px) !important;
+	display: -moz-box;
+	pointer-events: none;
+	will-change: filter;
+}
+#navigator-toolbox:after {
+	position: absolute!important;
+	animation: filter-animation2 3.5s infinite !important;
+}
+/* Makes the favicon grayscale */
+tab:not([selected="true"]) .tab-icon, .tab-icon-image:not([selected="true"]) {
+	filter: brightness(0.5) !important;;
+}
+/*make hovered tab icon normal color*/
+.tabbrowser-tab:hover:not([selected]) .tab-icon-image {
+	filter: none !important;
+	opacity: 1 !important;
+}
+/* Not Selected Tab Label Darker */
+.tab-label:not([selected]) {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+/* Make Hovered Tab Normal */
+.tabbrowser-tab:hover:not([selected]) .tab-label {
+	color: rgba(255, 255, 255, 1) !important;
+}
+/* Close Button on Hover */
+.tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
+	visibility: collapse !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+	visibility: visible !important;
+}
+/* Remove Tab Seperator */
+.tabbrowser-tab::before, 
+.tabbrowser-tab::after{
+	display: none !important;
+}
+/* Pending Tab Italic Style */
+.tabbrowser-tab[pending] {
+	font-style: italic !important;
+}
+
+
+/* ::::::::::::::::::: NAVBAR/URLBAR :::::::::::::::::::: */
+/* Make Back, Forward, Stop, Go disappear when not in use */
+#back-button[disabled="true"] { display: none; }
+#forward-button[disabled="true"] { display: none; }
+#stop-button[disabled="true"] { display: none; }
+#go-button-stack, .search-go-button-stack { display: none !important; }
+/* Make hover background of abouve transparent */
+.toolbarbutton-icon, toolbar toolbarbutton > .toolbarbutton-badge-stack, toolbarbutton #PanelUI-menu-button:hover {
+	background: transparent !important;
+}
+/* Navbar and Urlbar BG Dark */
+#widget-overflow-mainView, .widget-overflow-list, #widget-overflow-fixed-list {
+	background: #0c0c0d !important;
+}
+#nav-bar { 
+	background-color: #000000 !important;
+ }
+#navigator-toolbox {
+	border-bottom: 0px !important;
+	background: #000 !important;
+}
+/* URL input Modif */
+#urlbar, .searchbar-textbox {
+    border: 0px !important;
+    height: 20px !important;
+}
+#urlbar .urlbar-input-box {
+    text-align: center !important;
+    margin-bottom: 0px !important;
+}
+/* URL Modif */
+#urlbar{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	border-radius: 100px !important;
+	background-color: #000000 !important;
+	color: inherit !important;
+}
+#urlbar:hover {
+	background: #101010 !important;
+}
+/* urlbar and searchbar autocomplete popup */
+#urlbar-results {
+	background: #000000 !important;
+	margin-top: -3px !important;
+	margin-left: 0px !important;
+	max-width: 906px !important;
+	border-left: 2px solid #0078d7 !important;
+	border-right: 2px solid #0078d7 !important;
+	border-bottom: 2px solid #0078d7 !important;
+	border-radius: 0px 0px 8px 8px !important;
+}
+#urlbar-results .urlbarView-row {
+	padding-left: 0px !important;
+}
+/* Removes 'Search with Google' and 'Visit' from Urlbar */
+.urlbarView-row[selected] > .urlbarView-row-inner > .urlbarView-title-separator::before,
+.urlbarView-row[selected] > .urlbarView-row-inner > .urlbarView-secondary {
+  display: none !important;
+}
+/* Urlbar Text Modification */
+#urlbar-container {
+	color: rgba(255, 255, 255, 0.3) !important;
+}
+#urlbar-container:hover {
+	color: rgba(255, 255, 255, 1) !important;
+}
+/* Remove Urlbar dropdown */
+.urlbar-history-dropmarker {
+	display: none !important;
+}
+/* Remove Bookmark Star Button */
+#pageAction-panel-bookmark, #star-button {
+	display: none !important;
+}
+
+
+/* :::::::::::::::::::: TWEAKS :::::::::::::::::::: */
+/* Remove Extra Spacing at Start & End */
+.titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"] {
+ display: none !important;
+}
+/* Removes scroll button in exess tabs */
+.scrollbutton-up, .scrollbutton-down {
+	display: none !important;
+}
+/* Removes all-tab-butto in exess tabs */
+#alltabs-button {
+	display: none !important;
+}
+/* Change cursor for links that open in new tab/window */
+:link[target="_blank"], :visited[target="_blank"],
+:link[target="_new"], :visited[target="_new"] {
+cursor: crosshair;
+}
+/* Add a keyword when adding a bookmark */
+#keywordRow {
+  display: -moz-grid-line !important;
+}
+/* Removes tab-line */
+#TabsToolbar .tabbrowser-tab .tab-line {
+	display: none !important;
+}
+/*flash of white when loading new pages. */
+#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, browser[type=content-primary], browser[type=content] > html {
+	background: #000000 !important; 
+	background-color: #000000 !important; 
+	color: #000000 !important;
+}
+/* Glowing tab favicon */
+.tab-icon-image[selected="true"] {
+	filter: drop-shadow(0 0 5px #fff)
+}
+/* Hide Scrollbar from Sidebar */
+.hidevscroll-scrollbar {
+	display: none !important;
+}
+/* Identity icon Modif */
+#identity-icon {
+	list-style-image:url("infoico.png")!important;
+}
+#identity-icon-labels {
+	display: none !important;
+}
+/* Tracking protection icon Modif */
+#tracking-protection-icon-container {
+	fill-opacity: 0.65 !important;
+	fill: #0078d7 !important;
+	display: none !important;
+}
+/* Windows control hover transparent */
+.titlebar-max:hover, .titlebar-min:hover, .titlebar-close:hover {
+	background-color: rgba(255, 255, 255, 0) !important;
+}
+/*Toolbars color  */
+#TabsToolbar, #tabbrowser-tabs, #nav-bar, #toolbar-menubar, #browser-panel {
+	background-color:transparent !important;
+}
+/* Remove setting from url dropdown */
+.search-panel-one-offs {
+	display: none !important;
+}
+/* Removes extra line after tracking protection container */
+#tracking-protection-icon-container::after {
+  border: none !important;
+}
+/* Removes Save Page and Send Pange from context menu */
+#context-savepage, #context-sendpagetodevice, #context-sep-sendpagetodevice, #context-sep-navigation {
+	display:none !important;
+}
+/* DevToolbox customization */
+@-moz-document url-prefix("about:devtools-toolbox"){
+	.tooltip-panel{
+		background: #0c0c0d !important;
+		border: none !important; }
+}
+@-moz-document url-prefix("chrome://devtools/content/"){
+  .theme-body {
+		background: #0c0c0d !important; }
+} 
+.devtools-side-splitter {
+    min-width: 0px !important;
+}
+/* Findbar at bottom Modif */
+findbar {
+	background: #0c0c0d !important;
+}
+.findbar-textbox, .findbar-find-next, .findbar-find-previous {
+  border: none !important;
+}
+.findbar-button:hover {
+	background: #1c1c1d !important;
+}
+
+
+Hide Tab Toolbar
+/* :root{ */
+  /* --uc-window-control-width: 138px; /* Space reserved for window controls */ */
+  /* --uc-window-drag-space-width: 4px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */ */
+  /* --uc-toolbar-height: 32px; */
+/* } */
+/* #nav-bar::before, */
+/* #nav-bar::after{ */
+  /* content: ""; */
+  /* display: -moz-box; */
+  /* width: var(--uc-window-drag-space-width); */
+/* } */
+/* toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width) + var(--uc-window-drag-space-width,0px)) } */
+/* :root:not([uidensity="compact"]){--uc-toolbar-height: 38px} */
+/* #TabsToolbar{ visibility: collapse !important } */
+/* :root:not([inFullscreen]) #nav-bar{ */
+  /* margin-top: calc(0px - var(--uc-toolbar-height)); */
+/* } */
+/* #toolbar-menubar{ */
+  /* min-height:unset !important; */
+  /* height:var(--uc-toolbar-height) !important; */
+  /* position: relative; */
+/* } */
+/* #main-menubar{ */
+  /* -moz-box-flex: 1; */
+  /* background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor); */
+  /* background-clip: padding-box; */
+  /* border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) 30px) 20 / 30px */
+/* } */
+/* #toolbar-menubar:not([inactive]){ z-index: 2 } */
+/* #toolbar-menubar[inactive] > #menubar-items { */
+	/* opacity: 0; */
+	/* pointer-events: none; */
+	/* margin-left: var(--uc-window-drag-space-width,0px) */
+/* } */
+Autohide Sidebar
+Sidebar min and max width removal
+/* #sidebar { */
+	/* max-width: none !important; */
+	/* min-width: 0px !important; */
+    /* border-right: 0; */
+/* } */
+Hide splitter, when using Tree Style Tab.
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter { */
+	/* display: none !important; */
+/* } */
+Hide sidebar header, when using Tree Style Tab.
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header { */
+	/* visibility: collapse; */
+/* } */
+Shrink sidebar until hovered, when using Tree Style Tab.
+/* :root { */
+	/* --thin-tab-width: 28px; */
+	/* --wide-tab-width: 200px; */
+/* } */
+/* #sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) { */
+	/* min-width: var(--wide-tab-width) !important; */
+	/* max-width: none !important; */
+/* } */
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] { */
+	/* position: relative !important; */
+	/* transition: all 100ms !important; */
+	/* min-width: var(--thin-tab-width) !important; */
+	/* max-width: var(--thin-tab-width) !important; */
+/* } */
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover { */
+	/* transition: all 100ms !important; */
+	/* min-width: var(--wide-tab-width) !important; */
+	/* max-width: var(--wide-tab-width) !important; */
+	Negative right-margin to keep page from being pushed to the side.
+	/* margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important; */
+/* } */
