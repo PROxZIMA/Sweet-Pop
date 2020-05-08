@@ -1,0 +1,89 @@
+@-moz-document url-prefix(https://discovery.addons.mozilla.org),
+url-prefix(chrome://),
+url-prefix(about:),
+url-prefix(file:),
+url(https://www.mozilla.org/credits/),
+url-prefix(https://addons.mozilla.org),
+url-prefix(http://addons.mozilla.org),
+url-prefix(https://raw.githubusercontent.com),
+url-prefix(moz-extension),
+url-prefix(view-source),
+regexp(".*\\.(p|P)(d|D)(f|F).*") {
+  :root {
+    --grey-10: #f9f9fa;
+    --grey-20: #ededf0;
+    --grey-30: #d7d7db;
+    --grey-40: #b1b1b3;
+    --grey-50: #737373;
+    --grey-60: #4a4a4f;
+    --grey-70: #050505;
+    --grey-80: #2a2a2e;
+    --grey-90: #050505;
+    --tone-1: var(--grey-10);
+    --tone-2: var(--grey-20);
+    --tone-3: var(--grey-30);
+    --tone-4: var(--grey-40);
+    --tone-5: var(--grey-50);
+    --tone-6: var(--grey-60);
+    --tone-7: var(--grey-70);
+    --tone-8: var(--grey-80);
+    --tone-9: var(--grey-90);
+    --accent-1: var(--blue-40);
+    --accent-2: var(--blue-50);
+    --accent-3: var(--blue-60);
+    --in-content-page-color: var(--tone-4)!important;
+    --in-content-page-background: var(--tone-7)!important;
+}
+@-moz-document url-prefix(about:blank) {
+  html > body:empty:not(.vimvixen-console) {
+    background-color: #050505 !important; }
+}
+@-moz-document url-prefix(about:memory) {
+  html {
+    background: #050505 !important;}
+ }
+@-moz-document url-prefix(about:webrtc) {
+  html {
+    background-color: #050505 !important;
+    color: #b1b1b3!important; }
+  #content > div,
+  .peer-connection > h3 {
+    background-color: #050505 !important;
+	border: 0px !important; }
+}
+
+#header-inner {margin: 2px 0px -40px 4px !important}
+#heading {margin: 1px 0px 1px -4px !important}
+#main {margin-top: 5px}
+.addon-name {font-weight: 400 !important}
+.addon.card {margin-bottom: 5px !important; min-width: 1000px !important;}
+.card-contents
+ {flex-direction: row !important
+ display: block !important
+ }
+.list-section-heading {margin-bottom: 9px !important}
+.more-options-button {top: 8px}
+.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, recommended-extensions-section {display:none}
+.sidebar-footer-button {margin-bottom: 36px}
+:root {--addon-icon-size: 26px !important; --card-padding: 14px !important}
+:root{
+	scrollbar-face-color: rgb(29,33,38);
+	scrollbar-track-color: rgb(0,0,0);
+	scrollbar-color: rgb(29,33,38) rgb(0,0,0);
+	scrollbar-width: thin;
+}
+
+@-moz-document url("chrome://devtools/content/styleeditor/index.xhtml"){
+  .splitview-nav .unsaved {
+    background: linear-gradient( to right, #f0a 4px, #f0a4 4px, transparent ) !important;
+  }
+  .splitview-nav .unsaved.splitview-active {
+    background: linear-gradient( to right, #f0a 4px, #f0a4 4px, var(--theme-selection-background) ) var(--theme-selection-background) !important;
+  }
+  /* Auto-Highlight common user style filenames */
+  .splitview-nav label[value="userChrome.css"],
+  .splitview-nav label[value="userContent.css"],
+  .splitview-nav label[value$=".uc.css"] {
+    color: #f0a !important;
+  }
+}
