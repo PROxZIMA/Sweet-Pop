@@ -5,6 +5,7 @@ This helps to customize Firefox User Interface. Place this file in your Firefox 
 
 # userChrome.xml and userChrome.js
 Used for scrollbars. Place these files in your Firefox chrome folder.
+
 Note: In current firefox version 72+ it may not work
 
 # userContent.css 
