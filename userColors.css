@@ -1,0 +1,56 @@
+:root {
+	--dark_color1: #11131c;
+	--dark_color2: #181B28;
+	--dark_color3: #1f2334;
+	--dark_color4: #272c41;
+
+	--word_color1: #e4e4e4;
+	--word_color2: #cacaca;
+	--word_color3: #c2c2c2;
+
+	--light_color1: #e1e0e6;
+	--light_color2: #adabb9;
+	--light_color3: #9795a3;
+    --light_color4: #878492;
+
+	--other_color1: #332e56;
+	--other_color2: #4b4757;
+    --other_color3: #33313c;
+    
+	--blue_color: #0078d7;
+    
+	/* --other_color1: #805195;
+	--other_color2: #5BE6B6;
+	--other_color3: #0078d7; */
+}
+/*================ LIGHT THEME ================*/
+
+:root:not([style]),
+:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
+:root[style*="--lwt-accent-color:white;"] {
+	--base_color1: var(--light_color1);
+	--base_color2: var(--light_color2);
+	--base_color3: var(--light_color3);
+	--base_color4: var(--light_color4);
+
+	--outer_color1: var(--other_color1);
+	--outer_color2: var(--other_color2);
+	--outer_color3: var(--other_color3);
+
+	--orbit_color: var(--blue_color);
+}
+/*================ DARK THEME ================*/
+
+:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
+:root[privatebrowsingmode=temporary] {
+	--base_color1: var(--dark_color1);
+	--base_color2: var(--dark_color2);
+	--base_color3: var(--dark_color3);
+	--base_color4: var(--dark_color4);
+
+	--outer_color1: var(--word_color1);
+	--outer_color2: var(--word_color2);
+	--outer_color3: var(--word_color3);
+
+	--orbit_color: var(--blue_color);
+}
