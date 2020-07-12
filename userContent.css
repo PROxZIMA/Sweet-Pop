@@ -1,5 +1,61 @@
-/*================ IMPORT COLORS ================*/
-@import "userColors.css";
+:root {
+    --dark_color1: #11131c;
+    --dark_color2: #1d202f;
+    --dark_color3: #1f2334;
+    --dark_color4: #272c41;
+
+    --word_color1: #e4e4e4;
+    --word_color2: #cacaca;
+    --word_color3: #c2c2c2;
+
+    --light_color1: #e1e0e6;
+    --light_color2: #adabb9;
+    --light_color3: #9795a3;
+    --light_color4: #878492;
+
+    --other_color1: #332e56;
+    --other_color2: #4b4757;
+    --other_color3: #33313c;
+    
+    --blue_color: #0078d7;
+    
+}
+/*================ LIGHT THEME ================*/
+
+:root:not([style]),
+:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
+:root[style*="--lwt-accent-color:white;"] {
+    --base_color1: var(--light_color1);
+    --base_color2: var(--light_color2);
+    --base_color3: var(--light_color3);
+    --base_color4: var(--light_color4);
+
+    --outer_color1: var(--other_color1);
+    --outer_color2: var(--other_color2);
+    --outer_color3: var(--other_color3);
+
+    --orbit_color: var(--blue_color);
+}
+/*================ DARK THEME ================*/
+
+:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
+:root[privatebrowsingmode=temporary] {
+    --base_color1: var(--dark_color1);
+    --base_color2: var(--dark_color2);
+    --base_color3: var(--dark_color3);
+    --base_color4: var(--dark_color4);
+
+    --outer_color1: var(--word_color1);
+    --outer_color2: var(--word_color2);
+    --outer_color3: var(--word_color3);
+
+    --orbit_color: var(--blue_color);
+}
+
+
+
+
+
 
 @-moz-document url-prefix(https://discovery.addons.mozilla.org),
 url-prefix(chrome://),
@@ -20,45 +76,59 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
 }
 
 
-/* @-moz-document url-prefix("about:"), url-prefix(https://addons.mozilla.org) {
-    html {
-        background-color: #11131c !important;
-    }
-    .sticky-container {
-        background: #11131c !important;
-    }
-} */
-/* @-moz-document url(about:about) {
-    html {
-    background: var(--light_color1) !important;
-    color: var(--other_color1) !important;
-  }
-    html:not([lwt-newtab-brighttext]) {
-    background: var(--dark_color1) !important;
-    color: var(--word_color1) !important;
-  }
+
+
+
+
+
+/* ============= ADDON PAGE ============= */
+
+#header-inner {
+    margin: 2px 0px -40px 4px !important;
 }
-@-moz-document url-prefix(about:webrtc) {
-    html {
-        background-color: var(--base_color1) !important;
-        color: var(--outer_color1) !important;
-    }
-    #content > div,
-    .peer-connection > h3 {
-        background-color: var(--base_color1) !important;
-        border: 0px !important;
-    }
-} */
+#heading {
+    margin: 1px 0px 1px -4px !important;
+}
+#main {
+    margin-top: 5px;
+}
+.addon-name {
+    font-weight: 400 !important;
+}
+.addon.card {
+    margin-bottom: 5px !important; min-width: 1000px !important;
+}
+.card-contents{
+    flex-direction: row !important;
+    display: block !important;
+}
+.list-section-heading {
+    margin-bottom: 9px !important;
+}
+.more-options-button {
+    top: 8px;
+}
+.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, recommended-extensions-section {
+    display:none;
+}
+.sidebar-footer-button {
+    margin-bottom: 36px;
+}
+
+
+
+
 
 
 /*================== READER VIEW ==================*/
+
 @-moz-document url-prefix("about:reader") {
-	html {
-		background: var(--base_color1);
-	}
-	toolbar > reader-toolbar {
-		border-radius: 3px !important;
-	}
+    html {
+        background: var(--base_color1);
+    }
+    toolbar > reader-toolbar {
+        border-radius: 3px !important;
+    }
 
     /*Dark*/
     body.loaded.dark {
@@ -92,46 +162,25 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
 
 }
 
-/* ============= ADDON PAGE ============= */
-#header-inner {
-    margin: 2px 0px -40px 4px !important;
-}
-#heading {
-    margin: 1px 0px 1px -4px !important;
-}
-#main {
-    margin-top: 5px;
-}
-.addon-name {
-    font-weight: 400 !important;
-}
-.addon.card {
-    margin-bottom: 5px !important; min-width: 1000px !important;
-}
-.card-contents{
-    flex-direction: row !important;
-    display: block !important;
-}
-.list-section-heading {
-    margin-bottom: 9px !important;
-}
-.more-options-button {
-    top: 8px;
-}
-.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, recommended-extensions-section {
-    display:none;
-}
-.sidebar-footer-button {
-    margin-bottom: 36px;
-}
+
+
+
+
+
+/* =============== Scrollbar =============== */
 
 :root {
     --addon-icon-size: 26px !important; --card-padding: 14px !important;
-	scrollbar-face-color: rgb(29,33,38);
-	scrollbar-track-color: rgb(0,0,0);
-	scrollbar-color: rgb(29,33,38) rgb(0,0,0);
-	scrollbar-width: thin;
+    scrollbar-color: rgb(29,33,38) rgba(0,0,0,0);
+    scrollbar-width: thin;
 }
+
+
+
+
+
+
+/* =============== Customize Developer Tools =============== */
 
 @-moz-document url("chrome://devtools/content/styleeditor/index.xhtml") {
     .splitview-nav .unsaved {
@@ -143,6 +192,7 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
     /* Auto-Highlight common user style filenames */
     .splitview-nav label[value="userChrome.css"],
     .splitview-nav label[value="userContent.css"],
+    .splitview-nav label[value="userColors.css"],
     .splitview-nav label[value$=".uc.css"] {
         color: #f0a !important;
     }
