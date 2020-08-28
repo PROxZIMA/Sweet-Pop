@@ -192,7 +192,6 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
     /* Auto-Highlight common user style filenames */
     .splitview-nav label[value="userChrome.css"],
     .splitview-nav label[value="userContent.css"],
-    .splitview-nav label[value="userColors.css"],
     .splitview-nav label[value$=".uc.css"] {
         color: #f0a !important;
     }

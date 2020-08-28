@@ -1148,7 +1148,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
 
 #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
-    background-color: var(--orbit_color) !important
+    background-color: var(--dark_color1) !important
 }
 
 #placeContent treechildren::-moz-tree-cell {
@@ -1562,11 +1562,20 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     font-style: italic !important;
 }
 
-
-
+.tab-icon-pending:not([pinned]) {
+    list-style-image: url("./icons/tab-loading.png") !important;
+}
+.tab-throbber:not([pinned]) {
+    list-style-image: url("./icons/tab-loading.png") !important;
+}
 
 
 /* =================== TWEAKS =================== */
+
+/* Disables mic icon at top when mic is turned on */
+#webrtcIndicator {
+  display: none !important;
+}
 
 /* Remove Extra Spacing at Start*/
 .titlebar-spacer[type="pre-tabs"]{
