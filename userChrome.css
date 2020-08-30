@@ -6,7 +6,6 @@
 
 
 
-
 /* ============== RESPONSIVE NAVBAR ============== */
 
 /* Hide buttons **/
@@ -1441,7 +1440,8 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 #pocket-button-box,
 #ar-button,
 .autocomplete-history-dropmarker,
-#identity-icon-label {
+#identity-icon-label,
+#star-button{
     display: none !important;
 }
 
@@ -1514,14 +1514,14 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 }
 
 /* The Blue line in the top bar*/
-#main-window:not([sizemode="maximized"]) #navigator-toolbox:after {
+#main-window:not([sizemode="maximized"]) #navigator-toolbox:before {
     content: "";
     top: 10%;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(24px,2600px,26px,0px);
+    clip:rect(26px,2600px,26px,0px);
     position: absolute !important;
 }
 #navigator-toolbox:after {
@@ -1531,7 +1531,7 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(31px,2600px,33px,0px);
+    clip:rect(24px,2600px,26px,0px);
     position: absolute !important;
 }
 #navigator-toolbox {
@@ -1644,15 +1644,16 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     padding-top: 6px !important;
     background: none !important;
 }
+
 /* Minimize Button */
-.titlebar-min {
+/*.titlebar-min {
     list-style-image: url("./icons/min.svg") !important;
 }
 .titlebar-min:hover {
     list-style-image: url("./icons/min_hover.svg") !important;
-}
+}*/
 /* Maximize Button */
-.titlebar-max, .titlebar-restore {
+/*.titlebar-max, .titlebar-restore {
     list-style-image: url("./icons/max_restore.svg") !important;
 }
 .titlebar-max:hover {
@@ -1660,14 +1661,14 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 }
 .titlebar-restore:hover {
     list-style-image: url("./icons/restore_hover.svg") !important;
-}
+}*/
 /* Close Button */
-.titlebar-close {
+/*.titlebar-close {
     list-style-image: url("./icons/close.svg") !important;
 }
 .titlebar-close:hover {
     list-style-image: url("./icons/close_hover.svg") !important;
-}
+}*/
 
 /* Disable What's New and Exit from Hamburger */
 #appMenu-whatsnew-button,#appMenu-quit-button{
