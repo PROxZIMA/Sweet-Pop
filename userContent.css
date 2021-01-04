@@ -16,9 +16,9 @@
     --other_color1: #332e56;
     --other_color2: #4b4757;
     --other_color3: #33313c;
-    
+
     --blue_color: #0078d7;
-    
+
 }
 /*================ LIGHT THEME ================*/
 
@@ -120,6 +120,31 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
 
 
 
+/* ============= Error Pages ============= */
+
+.netTimeout #errorPageContainer {
+    background-image: url("icons/sonic.gif") !important;
+}
+
+.neterror #errorPageContainer {
+    background-image: url("icons/sonic.gif") !important;
+}
+
+@-moz-document url-prefix("about:restartrequired") {
+    #errorPageContainer {
+		background-position: left top;
+		background-size: 28% !important;
+        background-image: url("icons/fox-transparent.gif") !important;
+	}
+
+}
+
+
+
+
+
+
+
 /*================== READER VIEW ==================*/
 
 @-moz-document url-prefix("about:reader") {
@@ -194,5 +219,16 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
     .splitview-nav label[value="userContent.css"],
     .splitview-nav label[value$=".uc.css"] {
         color: #f0a !important;
+    }
+}
+
+@-moz-document url("https://www.qwiklabs.com/public_profiles/8ce32532-ca12-4a89-aed0-99c9316cae73") {
+    .container img {
+        height: 180px !important;
+        width: 180px !important;
+    }
+    .container .title {
+        width: 250px;
+        text-align: center;
     }
 }

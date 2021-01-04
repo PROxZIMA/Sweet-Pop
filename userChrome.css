@@ -289,7 +289,7 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
 
 panel[type="arrow"] {
     -moz-window-shadow: none !important;
-    margin: 0 -14px -18px !important;    
+    margin: 0 -14px -18px !important;
     padding: 0 14px 18px !important;
 }
 
@@ -452,7 +452,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 
 #tracking-protection-preferences-button > .toolbarbutton-text {
     padding-inline-end: 4px !important;
-    -moz-box-ordinal-group: 0 !important; 
+    -moz-box-ordinal-group: 0 !important;
 }
 
 .identity-popup-section {
@@ -1109,17 +1109,17 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 #placesView .scrollbox-innerbox,
 #infoPane,
 #placesList,
-#placeContent, 
+#placeContent,
 /* This one changes the urlbar star bookmarking folder tree backgrund color */
 #editBMPanel_folderTree {
-    -moz-appearance: none !important; 
-    background: var(--dark_color2) !important; 
+    -moz-appearance: none !important;
+    background: var(--dark_color2) !important;
     color: var(--word_color2) !important
 }
 
 /* These change the list header background and text colors */
 #placeContent treecol {
-    -moz-appearance: none !important; 
+    -moz-appearance: none !important;
     background: var(--dark_color4) !important;
     padding: 0px !important;
     color: var(--word_color2) !important;
@@ -1128,7 +1128,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 #placeContent treecol:hover {
-    -moz-appearance: none !important; 
+    -moz-appearance: none !important;
     background: rgba(255,255,255, 0.15) !important;
     color: var(--word_color1) !important
 }
@@ -1162,7 +1162,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 #placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
     opacity: .25 !important
 }
-    
+
 /* This changes the forward and back buttons color */
 #back-button > .toolbarbutton-icon,
 #forward-button > .toolbarbutton-icon {
@@ -1186,12 +1186,12 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 /* This themes the search box */
 #searchFilter {
     transition: all 0.25s ease-in-out !important;
-    -moz-appearance: none !important; 
+    -moz-appearance: none !important;
     border: 1px solid var(--dark_color4) !important;
     background-color: var(--dark_color4) !important;
     color: var(--word_color3) !important;
 }
-    
+
 /* This themes the search box on hover */
 #searchFilter[focused="true"] {
     box-shadow: var(--input-field-focus-shadow) !important;
@@ -1201,26 +1201,26 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
 /* This themes the information box on the lower part of the library menu */
 #detailsDeck {
-    background-color: var(--dark_color2) !important; 
+    background-color: var(--dark_color2) !important;
     color: var(--word_color3) !important;
     border-top: 2px solid #222 !important;
 }
 
 /* This changes the text boxes inside the library bottom information box */
-#infoBox textbox, #infoBox listbox, 
+#infoBox textbox, #infoBox listbox,
 /* This changes the text boxes on the popup when bookmarking a page from the url box */
 #editBMPanel_namePicker,
 #editBMPanel_tagsField,
 #editBMPanel_tagsSelector {
     transition: all 0.25s ease-in-out !important;
-    -moz-appearance: none !important; 
+    -moz-appearance: none !important;
     border: 0px !important;
     background-color: var(--dark_color3) !important;
     color: var(--word_color2) !important;
 }
 
 /* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
-#bookmarkproperties #editBMPanel_namePicker, 
+#bookmarkproperties #editBMPanel_namePicker,
 #bookmarkproperties #editBMPanel_tagsField,
 #bookmarkproperties #editBMPanel_tagsSelector {
     background-color: var(--dark_color3) !important;
@@ -1240,9 +1240,9 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton,
-#editBookmarkPanelDoneButton, 
+#editBookmarkPanelDoneButton,
 #editBookmarkPanelRemoveButton,
-#tracking-action-unblock-private, 
+#tracking-action-unblock-private,
 #identity-popup-popup-menulist,
 #tracking-action-block,
 #tracking-action-unblock {
@@ -1257,12 +1257,12 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 #editBMPanel_newFolderButton:hover,
-#editBookmarkPanelDoneButton:hover, 
+#editBookmarkPanelDoneButton:hover,
 #editBookmarkPanelRemoveButton:hover,
-#tracking-action-unblock-private:hover, 
+#tracking-action-unblock-private:hover,
 #identity-popup-popup-menulist:hover,
-#tracking-action-block:hover, 
-#tracking-action-unblock:hover { 
+#tracking-action-block:hover,
+#tracking-action-unblock:hover {
     background: var(--dark_color3) !important;
     color: var(--word_color1) !important;
 }
@@ -1283,7 +1283,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 #editBMPanel_folderMenuList:hover,
-#editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_tagsSelectorExpander:hover,
 #editBMPanel_foldersExpander:hover,
 #detailsDeck button:hover {
     background: var(--dark_color3) !important;
@@ -1377,10 +1377,10 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     border: none !important;
 }
 
-/* Move hamburger menu to the left 
+/* Move hamburger menu to the left
 #PanelUI-button,
 #customization-panel-container,
-#customization-panelWrapper .panel-arrow { 
+#customization-panelWrapper .panel-arrow {
   -moz-box-ordinal-group: 0 !important;
 } */
 
@@ -1390,15 +1390,15 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 #stop-button[disabled="true"]
 #go-button-stack,
 .search-go-button-stack {
-    display: none; 
+    display: none;
 }
 
 #back-button {
-    list-style-image: url("chrome://browser/skin/back.svg") !important; 
+    list-style-image: url("chrome://browser/skin/back.svg") !important;
     transform: scale(0.9) !important;
 }
 #forward-button {
-    list-style-image: url("chrome://browser/skin/forward.svg") !important; 
+    list-style-image: url("chrome://browser/skin/forward.svg") !important;
     transform: scale(0.9) !important;
 }
 #reload-button {
@@ -1481,6 +1481,10 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     background: var(--base_color3) !important;
 }
 
+#PersonalToolbar {
+    display: none !important;
+}
+
 
 
 
@@ -1488,7 +1492,7 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 /* ================== TAB BAR ================== */
 
 .tabbrowser-tab {
-  height: 28px !important; 
+  height: 28px !important;
 }
 /* Disables Tab-line*/
 .tabbrowser-tab .tab-line {
@@ -1603,8 +1607,8 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 }
 /*flash of white when loading new pages. */
 #browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, browser[type=content-primary], browser[type=content] > html {
-    background: var(--base_color1) !important; 
-    background-color: var(--base_color1) !important; 
+    background: var(--base_color1) !important;
+    background-color: var(--base_color1) !important;
     color: var(--base_color1) !important;
 }
 /* Hide Scrollbar from Sidebar */
@@ -1672,5 +1676,21 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 
 /* Disable What's New and Exit from Hamburger */
 #appMenu-whatsnew-button,#appMenu-quit-button{
+    display: none !important;
+}
+
+/* Change pop-up display background */
+notification {
+    background: var(--base_color1) !important;
+    color: var(--outer_color1) !important;
+}
+
+/* PiP icon scaled */
+.pip-wrapper {
+    transform: scale(0.5) !important;
+}
+
+/* Disable 'Try searching with...' */
+.search-one-offs {
     display: none !important;
 }
