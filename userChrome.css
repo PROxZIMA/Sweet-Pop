@@ -8,6 +8,42 @@
 
 /* ============== RESPONSIVE NAVBAR ============== */
 
+
+/* Floating Toolbox */
+#navigator-toolbox{
+    position: fixed !important;
+    display: block;
+    background: var(--base_color1) !important;
+    transition: transform 85ms linear, opacity 85ms linear !important;
+    transform-origin: top;
+    transform: rotateX(75deg);
+    opacity: 0;
+    line-height: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Set opacity: 1 and transform: rotateX(0deg); to disable floating toolbox */
+
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within{
+    transition-delay: 33ms !important;
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+#navigator-toolbox > *{
+    line-height: normal;
+    pointer-events: auto;
+}
+
+#navigator-toolbox,
+#navigator-toolbox > *{
+    width: 100vw;
+    -moz-appearance: none !important;
+}
+
+
 /* Hide buttons **/
 :root:not([customizing]) #nav-bar toolbarbutton {
     margin-left: -30px !important;
@@ -28,6 +64,7 @@
 /* Move tabs 35% to right */
 #TabsToolbar {
     margin-left: 32vw !important;
+    width: 68vw !important;
 }
 
 /* Move navigation 65% to left and negative margin to move to top line */
@@ -35,12 +72,18 @@
     max-height: 28px !important;
     margin-right: 68vw !important;
     margin-top: -28px !important;
+    width: 32vw !important;
     background: transparent !important;
     z-index: 1;
 }
 
-#navigator-toolbox {
-    background: var(--base_color1) !important;
+/* Compatibility for 1px left over nav bar */
+#nav-bar::before {
+    position: fixed;
+    width: 32vw;
+    height: 100%;
+    top: -1px;
+    content: '';
 }
 
 
@@ -1319,21 +1362,20 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 
 /* ================ NAVIGATION/URL BAR ================ */
 
-#urlbar[breakout][breakout-extend]:not([open]) {
-    top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+#urlbar[breakout][breakout-extend],
+#urlbar[breakout][breakout-extend][open],
+#urlbar[breakout][breakout-extend][focused] {
+    top: 0 !important;
     left: 0 !important;
     width: 100% !important;
 }
 
-#urlbar[breakout][breakout-extend]:not([open]) > #urlbar-input-container {
-    height: var(--urlbar-height) !important;
+#urlbar[breakout][breakout-extend] > #urlbar-input-container{
+    height: 26px !important;
     padding-block: 0px !important;
     padding-inline: 0px !important;
 }
 
-#urlbar-container {
-    margin-top: -1px !important;
-}
 
 /* More tools... button */
 #nav-bar-overflow-button {
@@ -1344,6 +1386,12 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     position: absolute !important;
     width: 55vw !important;
     background: var(--base_color1) !important;
+    border-radius: 0 0 8px 8px !important;
+    margin: 3px 0 0 -4px!important;
+}
+
+.urlbarView-body-inner {
+    border: none !important;
 }
 
 #urlbar-background,
@@ -1584,6 +1632,9 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 /* Remove Extra Spacing at Start*/
 .titlebar-spacer[type="pre-tabs"]{
     display: none !important;
+}
+.titlebar-spacer[type="post-tabs"]{
+    width: 20px !important;
 }
 /* Removes scroll button in exess tabs */
 .scrollbutton-up, .scrollbutton-down {
