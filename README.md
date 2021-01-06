@@ -37,6 +37,8 @@ NOTE: Firefox team has removed XBL from Firefox starting with version 72, so use
 
 3) Clone the repository (my `Profile Directory` is `/home/proxima/.mozilla/firefox-trunk/uwrdytgn.proxima`)
 
+Note: If you alrady have a `chrome` folder under `Profile Directory`, rename it to `chrome2` or anything else so that after trying this theme you can easily restore your theme.
+
 ```console
 proxima@proxzima:~$ cd {Your profile directory}
 
@@ -64,11 +66,11 @@ Windows
 > move mozilla.cfg "C:\Program Files (x86)\Mozilla Firefox\defaults\pref\"
 ```
 
-5) In Firefox, under hamburger menu or in `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark`
+5) In Firefox, under hamburger menu or in `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light` :/
 
 6) Open `about:support` > `Clear startup cache...` > `Restart`
 
-7) Voilà
+7) **Voilà**
 
 ## Folder structure
 .<br>
