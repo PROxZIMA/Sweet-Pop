@@ -12,18 +12,19 @@
 /* Floating Toolbox */
 #navigator-toolbox{
     position: fixed !important;
-    display: block;
+    line-height: 0;
+    z-index: 1;
+    pointer-events: none;
     background: var(--base_color1) !important;
+
+    /* Comment or remove following lines to diable floating toolbox */
+    display: block;
     transition: transform 85ms linear, opacity 85ms linear !important;
     transform-origin: top;
     transform: rotateX(75deg);
     opacity: 0;
-    line-height: 0;
-    z-index: 1;
-    pointer-events: none;
 }
 
-/* Set opacity: 1 and transform: rotateX(0deg); to disable floating toolbox */
 
 #navigator-toolbox:hover,
 #navigator-toolbox:focus-within{
@@ -53,9 +54,7 @@
 }
 
 /* Show on hover or focus */
-:root:not([customizing]) :hover > #nav-bar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar #TabsToolbar toolbarbutton{
+:root:not([customizing]) :hover > #nav-bar toolbarbutton{
     margin-left: 0 !important;
     opacity: 1 !important;
     pointer-events: auto !important;
@@ -81,7 +80,7 @@
 #nav-bar::before {
     position: fixed;
     width: 32vw;
-    height: 100%;
+    height: 2px;
     top: -1px;
     content: '';
 }
@@ -115,95 +114,11 @@ menupopup {
     margin: -19px -14px 0 !important;
 }
 
-/* needs to align with textbox/bookmark-button but can't overlap it */
-panel[type="autocomplete-richlistbox"],
-.bookmark-item:not(menu) > menupopup[placespopup] {
-    padding: 1px 14px 18px !important;
-    margin: 0 -14px 0 !important;
-}
-
-.panel-arrowcontent {
-    background: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    font: -moz-pull-down-menu !important;
-    border: 0 !important;
-}
-
-.popup-internal-box,
-panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
-#PopupSearchAutoComplete > *,
-.menupopup-arrowscrollbox {
-    background: var(--base_color1) !important;
-}
-
-/* themes a menupopup (or other root level / shadow dom popup) as a panel */
-/* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
-.popup-internal-box,
-panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
-.menupopup-arrowscrollbox {
-    margin: 0 !important;
-    padding: 8px 0 !important;
-    border-radius: 4px !important;
-    color: inherit !important;
-}
-
-.popup-internal-box,
-.menupopup-arrowscrollbox {
-    box-shadow:
-        0 5px 5px -3px rgba(0,0,0,.2),
-        0 8px 10px 1px rgba(0,0,0,.14),
-        0 3px 14px 2px rgba(0,0,0,.12) !important;
-}
-
-#PopupSearchAutoComplete > * {
-    border-radius: 0 !important;
-}
-
-#PopupSearchAutoComplete > :first-child {
-    border-radius: 4px 4px 0 0 !important;
-}
-
-#PopupSearchAutoComplete > :last-child {
-    border-radius: 0 0 4px 4px !important;
-}
-
-/* autocomplete panel can't overlap the textbox, so shadow can't go up
-   more than 1px */
-panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
-    box-shadow:
-        0 0 0 1px rgba(0, 0, 0, .03),
-        0 5px 5px -3px rgba(0, 0, 0, .2),
-        0 8px 10px -0px rgba(0, 0, 0, .14),
-        0 3px 14px -5px rgba(0, 0, 0, .12) !important;
-}
-
-/* search panel gets special treatment; it has multiple children */
-#PopupSearchAutoComplete > .autocomplete-richlistbox {
-    box-shadow: none !important;
-}
-
-#PopupSearchAutoComplete {
-    filter:
-        drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
-        drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
-}
-
-/* reset non-layout props when embedded in a panel
-   (panel handles panel theming in this case) */
-.panel-arrowcontent > .popup-internal-box {
-    background: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-
-/* shotgun approach to undo this selector...
-   #BMB_bookmarksPopup menupopup[placespopup="true"]:-moz-lwtheme::part(innerbox)
-   ...without being able to use ::part() in userChrome.css */
-[part="innerbox"] {
-    /* this could cause side effects elsewhere */
-    box-shadow: none !important;
-    margin: 0 !important;
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+    display: -moz-box !important;
+    padding: 3px !important;
 }
 
 menupopup menuseparator {
@@ -283,21 +198,8 @@ scrollbox[orient=vertical] /* >=71 */ {
     -moz-appearance: none !important;
     -moz-context-properties: fill !important;
     fill: currentColor !important;
-    list-style-image: url(menu-right-2x.svg) !important;
     margin-inline-end: 0 !important;
     margin-inline-start: 16px !important;
-}
-
-menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
-    display: -moz-box !important;
-    padding: 3px !important;
-}
-
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
-    /* checkmark is 18px, not 16px, hence reduced padding */
-    list-style-image: url(checkmark-18dp.svg) !important;
 }
 
 #context-navigation {
@@ -328,6 +230,80 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon {
 
 #context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left {
     background-color: var(--base_color3) !important;
+}
+
+/* needs to align with textbox/bookmark-button but can't overlap it */
+panel[type="autocomplete-richlistbox"],
+.bookmark-item:not(menu) > menupopup[placespopup] {
+    padding: 1px 14px 18px !important;
+    margin: 0 -14px 0 !important;
+}
+
+.popup-internal-box,
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+#PopupSearchAutoComplete > *,
+.menupopup-arrowscrollbox {
+    background: var(--base_color1) !important;
+}
+
+/* themes a menupopup (or other root level / shadow dom popup) as a panel */
+/* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
+.popup-internal-box,
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+.menupopup-arrowscrollbox {
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    border-radius: 4px !important;
+    color: inherit !important;
+}
+
+.popup-internal-box,
+.menupopup-arrowscrollbox {
+    box-shadow:
+        0 5px 5px -3px rgba(0,0,0,.2),
+        0 8px 10px 1px rgba(0,0,0,.14),
+        0 3px 14px 2px rgba(0,0,0,.12) !important;
+}
+
+#PopupSearchAutoComplete > * {
+    border-radius: 0 !important;
+}
+
+#PopupSearchAutoComplete > :first-child {
+    border-radius: 4px 4px 0 0 !important;
+}
+
+#PopupSearchAutoComplete > :last-child {
+    border-radius: 0 0 4px 4px !important;
+}
+
+/* autocomplete panel can't overlap the textbox, so shadow can't go up
+   more than 1px */
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, .03),
+        0 5px 5px -3px rgba(0, 0, 0, .2),
+        0 8px 10px -0px rgba(0, 0, 0, .14),
+        0 3px 14px -5px rgba(0, 0, 0, .12) !important;
+}
+
+/* search panel gets special treatment; it has multiple children */
+#PopupSearchAutoComplete > .autocomplete-richlistbox {
+    box-shadow: none !important;
+}
+
+#PopupSearchAutoComplete {
+    filter:
+        drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
+        drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
+}
+
+/* reset non-layout props when embedded in a panel
+   (panel handles panel theming in this case) */
+.panel-arrowcontent > .popup-internal-box {
+    background: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 panel[type="arrow"] {
@@ -468,7 +444,6 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 
 .PanelUI-subView .subviewbutton-nav::after {
     transform: none !important;
-    content: url(menu-right-1x.svg) !important;
     fill-opacity: 1 !important;
 }
 
@@ -611,7 +586,6 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 
 .identity-popup-content-blocking-category::after {
     transform: translateY(1px) !important;
-    content: url(menu-right-1x.svg) !important;
     margin: 0 !important;
 }
 
@@ -798,6 +772,15 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
     max-width: 32px !important;
 }
 
+/* Customize page */
+
+button .customizationmode-button {
+    background-color: var(--base_color1) !important;
+}
+button .customizationmode-button:hover, button .customizationmode-button:hover:active {
+    background-color: var(--gtk_color) !important;
+}
+
 #confirmation-hint .panel-arrowcontent,
 #UITourTooltip .panel-arrowcontent,
 #customization-lwtheme-menu .panel-arrowcontent,
@@ -862,6 +845,10 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 
 #customization-lwtheme-menu-footer toolbarbutton .toolbarbutton-text {
     text-align: start !important;
+}
+
+#customization-content-container, #customization-footer {
+    background: var(--base_color1) !important;
 }
 
 .panel-footer {
@@ -1006,6 +993,17 @@ richlistitem:-moz-any(
     background: var(--base_color1) !important;
 }
 
+#statuspanel-label {
+    -moz-appearance: none !important;
+    background: transparent !important;
+    color: var(--outer_color3) !important;
+    border: 0px solid var(--base_color3) !important;
+}
+
+panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
+    background-color: var(--base_color1) !important;
+}
+
 .panel-subview-footer,
 [class^="PanelUI-"] {
     color: var(--outer_color2) !important;
@@ -1053,14 +1051,7 @@ toolbarseparator {
 
 }
 
-#appMenu-fullscreen-button {
-    background: transparent !important;
-    color: var(--outer_color3) !important;
-    border: 0px solid var(--orbit_color) !important;
-    border-radius: 0px !important;
-}
-
-#appMenu-zoomEnlarge-button {
+#appMenu-fullscreen-button, #appMenu-zoomEnlarge-button  {
     background: transparent !important;
     color: var(--outer_color3) !important;
     border: 0px solid var(--orbit_color) !important;
@@ -1139,220 +1130,426 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
 
 
-/* ================== LIBRARY MENU ================== */
-
-/* These change top bar background color */
-#placesToolbar {
-    background-color: var(--dark_color3) !important;
-    color: var(--word_color2) !important
-}
-
-/* These change the lists background color */
-#placesView
-#placesView .scrollbox-innerbox,
-#infoPane,
-#placesList,
-#placeContent,
-/* This one changes the urlbar star bookmarking folder tree backgrund color */
-#editBMPanel_folderTree {
-    -moz-appearance: none !important;
-    background: var(--dark_color2) !important;
-    color: var(--word_color2) !important
-}
-
-/* These change the list header background and text colors */
-#placeContent treecol {
-    -moz-appearance: none !important;
-    background: var(--dark_color4) !important;
-    padding: 0px !important;
-    color: var(--word_color2) !important;
-    border-left: 1px solid var(--dark_color3) !important;
-    border-bottom: 1px solid var(--dark_color3) !important
-}
-
-#placeContent treecol:hover {
-    -moz-appearance: none !important;
-    background: rgba(255,255,255, 0.15) !important;
-    color: var(--word_color1) !important
-}
-
-/* This changes the right border on the left list panel */
-#placesView > splitter {
-    border-inline-end: 0px solid var(--dark_color3) !important
-}
-
-/* These change the odd rows of the lists */
-#placeContent tree,
-#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd),
-#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
-    background-color: var(--dark_color2) !important
-}
+/* ================== LIBRARY ================== */
 
 
-#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
-    background-color: var(--dark_color1) !important
-}
+@-moz-document url(chrome://browser/content/places/places.xhtml) {
 
-#placeContent treechildren::-moz-tree-cell {
-    border-right: 0px dotted rgba(0,0,0,0.4) !important
-}
+    /* ============== Popups ============== */
+    menupopup,
+    menupopup menuitem,
+    menupopup menu,
+    menupopup menuseparator {
+        -moz-appearance: none !important;
+    }
 
-#placeContent > splitter {
-    border: 0px solid red !important
-}
+    menupopup,
+    panel[type="autocomplete-richlistbox"] {
+        -moz-window-shadow: none !important;
+        background: 0 !important;
+        border: 0 !important;
+        color: var(--word_color1) !important;
+        box-sizing: content-box !important;
+        max-width: 275px !important;
+    }
 
-/* This changes the forward and back buttons opacity when disabled */
-#placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
-    opacity: .25 !important
-}
+    menupopup {
+        padding: 11px 14px 18px !important;
+        margin: -19px -14px 0 !important;
+    }
 
-/* This changes the forward and back buttons color */
-#back-button > .toolbarbutton-icon,
-#forward-button > .toolbarbutton-icon {
-    fill: var(--word_color3) !important; opacity: 1 !important
-}
+    menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+    menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+    menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+        display: -moz-box !important;
+        padding: 3px !important;
+        background-color: var(--dark_color1)
+    }
 
-/* This deletes the leftover border when clicking one of the top buttons */
-#placesMenu > menu {
-    border: none !important
-}
+    menupopup menuseparator {
+        margin: 8px 0 !important;
+        padding: 0 !important;
+        height: 1px !important;
+        background: currentColor !important;
+        opacity: .12 !important;
+    }
 
-/* This changes the text color of the "clear downloads" button */
-#clearDownloadsButton {
-    color: var(--word_color3) !important
-}
+    menupopup menuitem,
+    menupopup menu,
+    .autocomplete-richlistitem {
+        height: 32px !important;
+        padding: 0 16px !important;
+        border: 0 !important;
+        background: 0 !important;
+        color: inherit !important;
+        fill-opacity: initial !important;
+    }
 
-#clearDownloadsButton[disabled] {
-    color: var(--dark_color4) !important
-}
+    menupopup menuitem:hover:not([disabled=true]),
+    menupopup menu:hover:not([disabled=true]),
+    .autocomplete-richlistitem:hover:not([disabled=true]):not([selected=true]) {
+        background-color: var(--dark_color2) !important;
+    }
 
-/* This themes the search box */
-#searchFilter {
-    transition: all 0.25s ease-in-out !important;
-    -moz-appearance: none !important;
-    border: 1px solid var(--dark_color4) !important;
-    background-color: var(--dark_color4) !important;
-    color: var(--word_color3) !important;
-}
+    menupopup menuitem:hover:active:not([disabled=true]),
+    menupopup menu:hover:active:not([disabled=true]),
+    .autocomplete-richlistitem:hover:active:not([disabled=true]),
+    .autocomplete-richlistitem[selected=true] {
+        background-color: var(--dark_color3) !important;
+    }
 
-/* This themes the search box on hover */
-#searchFilter[focused="true"] {
-    box-shadow: var(--input-field-focus-shadow) !important;
-    background-color: var(--dark_color4) !important;
-    color: var(--word_color1) !important;
-}
+    menupopup menuitem[disabled=true],
+    menupopup menu[disabled=true],
+    .autocomplete-richlistitem[disabled=true] {
+        opacity: .5 !important;
+    }
 
-/* This themes the information box on the lower part of the library menu */
-#detailsDeck {
-    background-color: var(--dark_color2) !important;
-    color: var(--word_color3) !important;
-    border-top: 2px solid #222 !important;
-}
+    /* disable vertical menu scroll buttons and use a good ol' scrollbar */
+    /* this is a shotgun approach, expect side effects */
+    scrollbox[orient=vertical] /* >=71 */ {
+        overflow-y: auto !important;
+    }
 
-/* This changes the text boxes inside the library bottom information box */
-#infoBox textbox, #infoBox listbox,
-/* This changes the text boxes on the popup when bookmarking a page from the url box */
-#editBMPanel_namePicker,
-#editBMPanel_tagsField,
-#editBMPanel_tagsSelector {
-    transition: all 0.25s ease-in-out !important;
-    -moz-appearance: none !important;
-    border: 0px !important;
-    background-color: var(--dark_color3) !important;
-    color: var(--word_color2) !important;
-}
+    /* why still use scroll buttons; is this the middle ages? */
+    .menupopup-scrollbutton {
+        display: none !important;
+    }
 
-/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
-#bookmarkproperties #editBMPanel_namePicker,
-#bookmarkproperties #editBMPanel_tagsField,
-#bookmarkproperties #editBMPanel_tagsSelector {
-    background-color: var(--dark_color3) !important;
-}
+    .menu-iconic-left {
+        -moz-appearance: none !important;
+    }
 
-/* This changes the same text boxes on hover */
-#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
-/* This changes the same url bookmarking popup text boxes on hover */
-#editBMPanel_namePicker[focused="true"],
-#editBMPanel_tagsField[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
-    box-shadow: var(--Input-field-focus-shadow) !important;
-    background-color: var(--dark_color3) !important;
-    color: var(--word_color1) !important;
-}
+    /* hide icon if no image (default on macOS but not Windows) */
+    .subviewbutton:not(:-moz-any([image], [targetURI], .bookmark-item)) > .menu-iconic-left {
+        display: none;
+    }
 
-/* This changes the buttons inside the bookmarking popup at the url star */
-#editBMPanel_newFolderButton,
-#editBookmarkPanelDoneButton,
-#editBookmarkPanelRemoveButton,
-#tracking-action-unblock-private,
-#identity-popup-popup-menulist,
-#tracking-action-block,
-#tracking-action-unblock {
-    -moz-appearance: none !important;
-    border-radius: 8px !important;
-    background: var(--dark_color3) !important;
-    border: 0px !important;
-    color: var(--word_color2) !important;
-    padding: 0.3em !important;
-    margin-top: 0.5em !important;
-    margin-bottom: 0.5em !important;
-}
+    .menu-iconic-icon {
+        fill: currentColor !important;
+        -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+        margin-inline-start: 0 !important;
+        margin-inline-end: 16px !important;
+        width: 24px !important;
+        height: 24px !important;
+        padding: 4px !important;
+    }
 
-#editBMPanel_newFolderButton:hover,
-#editBookmarkPanelDoneButton:hover,
-#editBookmarkPanelRemoveButton:hover,
-#tracking-action-unblock-private:hover,
-#identity-popup-popup-menulist:hover,
-#tracking-action-block:hover,
-#tracking-action-unblock:hover {
-    background: var(--dark_color3) !important;
-    color: var(--word_color1) !important;
-}
+    .menu-text {
+        -moz-appearance: none !important;
+        padding: 0 !important;
+    }
 
-#editBookmarkPanelBottomButtons {
-    background: transparent !important;
-}
+    .menu-right {
+        -moz-appearance: none !important;
+        -moz-context-properties: fill !important;
+        fill: currentColor !important;
+        margin-inline-end: 0 !important;
+        margin-inline-start: 16px !important;
+    }
 
-/* These change the expander buttons on the library and bookmarking popup */
-#editBMPanel_folderMenuList,
-#editBMPanel_tagsSelectorExpander,
-#editBMPanel_foldersExpander,
-#detailsDeck button {
-    -moz-appearance: none !important;
-    border: 3px solid var(--dark_color3) !important;
-    background: var(--dark_color3) !important;
-    color: var(--word_color1) !important;
-}
+    #context-navigation {
+        background: 0 !important;
+    }
 
-#editBMPanel_folderMenuList:hover,
-#editBMPanel_tagsSelectorExpander:hover,
-#editBMPanel_foldersExpander:hover,
-#detailsDeck button:hover {
-    background: var(--dark_color3) !important;
-    color: var(--word_color1) !important;
-}
+    #context-navigation .menuitem-iconic {
+        background: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-#editBMPanel_folderMenuList {
-    padding: 1px !important;
-    color: var(--word_color2) !important;
-}
+    #context-navigation .menu-iconic-left {
+        border-radius: 50% !important;
+        padding: 8px !important;
+    }
 
-/* These change the downloads history list background */
-#downloadsRichListBox {
-    background: var(--dark_color2) !important;
-    color: var(--word_color2) !important;
-}
+    #context-navigation .menu-iconic-icon {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 16px !important;
+        height: 16px !important;
+    }
 
-#statuspanel-label {
-    -moz-appearance: none !important;
-    background: transparent !important;
-    color: var(--word_color3) !important;
-    border: 0px solid var(--dark_color3) !important;
-}
+    #context-navigation .menuitem-iconic:hover:not([disabled]) .menu-iconic-left {
+        background-color: var(--dark_color2) !important;
+    }
 
-panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
-    background-color: var(--dark_color1) !important;
+    #context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left {
+        background-color: var(--dark_color3) !important;
+    }
+
+    /* needs to align with textbox/bookmark-button but can't overlap it */
+    panel[type="autocomplete-richlistbox"],
+    .bookmark-item:not(menu) > menupopup[placespopup] {
+        padding: 1px 14px 18px !important;
+        margin: 0 -14px 0 !important;
+    }
+
+    .popup-internal-box,
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+    #PopupSearchAutoComplete > *,
+    .menupopup-arrowscrollbox {
+        background: var(--dark_color1) !important;
+    }
+
+    /* themes a menupopup (or other root level / shadow dom popup) as a panel */
+    /* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
+    .popup-internal-box,
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+    .menupopup-arrowscrollbox {
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        border-radius: 4px !important;
+        color: inherit !important;
+    }
+
+    .popup-internal-box,
+    .menupopup-arrowscrollbox {
+        box-shadow:
+            0 5px 5px -3px rgba(0,0,0,.2),
+            0 8px 10px 1px rgba(0,0,0,.14),
+            0 3px 14px 2px rgba(0,0,0,.12) !important;
+    }
+
+    #PopupSearchAutoComplete > * {
+        border-radius: 0 !important;
+    }
+
+    #PopupSearchAutoComplete > :first-child {
+        border-radius: 4px 4px 0 0 !important;
+    }
+
+    #PopupSearchAutoComplete > :last-child {
+        border-radius: 0 0 4px 4px !important;
+    }
+
+    /* autocomplete panel can't overlap the textbox, so shadow can't go up
+       more than 1px */
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, .03),
+            0 5px 5px -3px rgba(0, 0, 0, .2),
+            0 8px 10px -0px rgba(0, 0, 0, .14),
+            0 3px 14px -5px rgba(0, 0, 0, .12) !important;
+    }
+
+    /* search panel gets special treatment; it has multiple children */
+    #PopupSearchAutoComplete > .autocomplete-richlistbox {
+        box-shadow: none !important;
+    }
+
+    #PopupSearchAutoComplete {
+        filter:
+            drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
+            drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
+    }
+
+
+
+
+    /* ============== Menus ============== */
+
+    /* These change top bar background color */
+    #placesToolbar {
+        background-color: var(--dark_color3) !important;
+        color: var(--word_color2) !important
+    }
+
+    /* These change the lists background color */
+    #placesView
+    #placesView .scrollbox-innerbox,
+    #infoPane,
+    #placesList,
+    #placeContent,
+    /* This one changes the urlbar star bookmarking folder tree backgrund color */
+    #editBMPanel_folderTree {
+        -moz-appearance: none !important;
+        background: var(--dark_color2) !important;
+        color: var(--word_color2) !important
+    }
+
+    /* These change the list header background and text colors */
+    #placeContent treecol {
+        -moz-appearance: none !important;
+        background: var(--dark_color4) !important;
+        padding: 0px !important;
+        color: var(--word_color2) !important;
+        border-left: 1px solid var(--dark_color3) !important;
+        border-bottom: 1px solid var(--dark_color3) !important
+    }
+
+    #placeContent treecol:hover {
+        -moz-appearance: none !important;
+        background: rgba(255,255,255, 0.15) !important;
+        color: var(--word_color1) !important
+    }
+
+    /* This changes the right border on the left list panel */
+    #placesView > splitter {
+        border-inline-end: 0px solid var(--dark_color3) !important
+    }
+
+    /* These change the odd rows of the lists */
+    #placeContent tree,
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd),
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
+        background-color: var(--dark_color2) !important
+    }
+
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
+        background-color: var(--dark_color1) !important
+    }
+
+    #placeContent treechildren::-moz-tree-cell {
+        border-right: 0px dotted rgba(0,0,0,0.4) !important
+    }
+
+    #placeContent > splitter {
+        border: 0px solid red !important
+    }
+
+    /* This changes the forward and back buttons opacity when disabled */
+    #placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+        opacity: .25 !important
+    }
+
+    /* This changes the forward and back buttons color */
+    #back-button > .toolbarbutton-icon,
+    #forward-button > .toolbarbutton-icon {
+        fill: var(--word_color3) !important; opacity: 1 !important
+    }
+
+    /* This deletes the leftover border when clicking one of the top buttons */
+    #placesMenu > menu {
+        border: none !important
+    }
+
+    /* This changes the text color of the "clear downloads" button */
+    #clearDownloadsButton {
+        color: var(--word_color3) !important
+    }
+
+    #clearDownloadsButton[disabled] {
+        color: var(--dark_color4) !important
+    }
+
+    /* This themes the search box */
+    #searchFilter {
+        transition: all 0.25s ease-in-out !important;
+        -moz-appearance: none !important;
+        border: 1px solid var(--dark_color4) !important;
+        background-color: var(--dark_color4) !important;
+        color: var(--word_color3) !important;
+    }
+
+    /* This themes the search box on hover */
+    #searchFilter[focused="true"] {
+        box-shadow: var(--input-field-focus-shadow) !important;
+        background-color: var(--dark_color4) !important;
+        color: var(--word_color1) !important;
+    }
+
+    /* This themes the information box on the lower part of the library menu */
+    #detailsDeck {
+        background-color: var(--dark_color2) !important;
+        color: var(--word_color3) !important;
+        border-top: 2px solid #222 !important;
+    }
+
+    /* This changes the text boxes inside the library bottom information box */
+    #infoBox textbox, #infoBox listbox,
+    /* This changes the text boxes on the popup when bookmarking a page from the url box */
+    #editBMPanel_namePicker,
+    #editBMPanel_tagsField,
+    #editBMPanel_tagsSelector {
+        transition: all 0.25s ease-in-out !important;
+        -moz-appearance: none !important;
+        border: 0px !important;
+        background-color: var(--dark_color3) !important;
+        color: var(--word_color2) !important;
+    }
+
+    /* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+    #bookmarkproperties #editBMPanel_namePicker,
+    #bookmarkproperties #editBMPanel_tagsField,
+    #bookmarkproperties #editBMPanel_tagsSelector {
+        background-color: var(--dark_color3) !important;
+    }
+
+    /* This changes the same text boxes on hover */
+    #infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
+    /* This changes the same url bookmarking popup text boxes on hover */
+    #editBMPanel_namePicker[focused="true"],
+    #editBMPanel_tagsField[focused="true"],
+    #infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+    #infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+        box-shadow: var(--Input-field-focus-shadow) !important;
+        background-color: var(--dark_color3) !important;
+        color: var(--word_color1) !important;
+    }
+
+    /* This changes the buttons inside the bookmarking popup at the url star */
+    #editBMPanel_newFolderButton,
+    #editBookmarkPanelDoneButton,
+    #editBookmarkPanelRemoveButton,
+    #tracking-action-unblock-private,
+    #identity-popup-popup-menulist,
+    #tracking-action-block,
+    #tracking-action-unblock {
+        -moz-appearance: none !important;
+        border-radius: 8px !important;
+        background: var(--dark_color3) !important;
+        border: 0px !important;
+        color: var(--word_color2) !important;
+        padding: 0.3em !important;
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+    }
+
+    #editBMPanel_newFolderButton:hover,
+    #editBookmarkPanelDoneButton:hover,
+    #editBookmarkPanelRemoveButton:hover,
+    #tracking-action-unblock-private:hover,
+    #identity-popup-popup-menulist:hover,
+    #tracking-action-block:hover,
+    #tracking-action-unblock:hover {
+        background: var(--dark_color3) !important;
+        color: var(--word_color1) !important;
+    }
+
+    #editBookmarkPanelBottomButtons {
+        background: transparent !important;
+    }
+
+    /* These change the expander buttons on the library and bookmarking popup */
+    #editBMPanel_folderMenuList,
+    #editBMPanel_tagsSelectorExpander,
+    #editBMPanel_foldersExpander,
+    #detailsDeck button {
+        -moz-appearance: none !important;
+        border: 3px solid var(--dark_color3) !important;
+        background: var(--dark_color3) !important;
+        color: var(--word_color1) !important;
+    }
+
+    #editBMPanel_folderMenuList:hover,
+    #editBMPanel_tagsSelectorExpander:hover,
+    #editBMPanel_foldersExpander:hover,
+    #detailsDeck button:hover {
+        background: var(--dark_color3) !important;
+        color: var(--word_color1) !important;
+    }
+
+    #editBMPanel_folderMenuList {
+        padding: 1px !important;
+        color: var(--word_color2) !important;
+    }
+
+    /* These change the downloads history list background */
+    #downloadsRichListBox {
+        background: var(--dark_color2) !important;
+        color: var(--word_color2) !important;
+    }
+
 }
 
 
@@ -1414,7 +1611,6 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     min-width: 50px !important;
 }
 
-
 #searchbar {
     background: var(--base_color1) !important;
     color: var(--outer_color1) !important;
@@ -1423,6 +1619,11 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 #urlbar-background,
 #urlbar {
     border: none !important;
+}
+
+/* Removes 'Search with google or enter address' from url bar */
+#urlbar-input::placeholder {
+    color: transparent !important;
 }
 
 /* Move hamburger menu to the left

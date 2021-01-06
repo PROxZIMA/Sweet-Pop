@@ -8,16 +8,18 @@
     --word_color2: #cacaca;
     --word_color3: #c2c2c2;
 
-    --light_color1: #e1e0e6;
-    --light_color2: #adabb9;
-    --light_color3: #9795a3;
-    --light_color4: #878492;
+    --light_color1: #f0f0f0;
+    --light_color2: #c7c7c7;
+    --light_color3: #9d9d9d;
+    --light_color4: #8c8c8c;
 
     --other_color1: #332e56;
     --other_color2: #4b4757;
     --other_color3: #33313c;
 
     --blue_color: #0078d7;
+
+    --gtk_color: #d700d2;
 
 }
 /*================ LIGHT THEME ================*/
