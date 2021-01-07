@@ -1,6 +1,25 @@
-/* ================ IMPORT COLORS ================ */
+/* ================ IMPORTS ================ */
 
 @import "userContent.css";
+
+@media (-moz-os-version: windows-win10){
+
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
+    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
+
+    @media screen and (min-resolution: 1.25dppx){
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    }
+    @media screen and (min-resolution: 1.5dppx){
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    }
+    @media screen and (min-resolution: 2dppx){
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
+    }
+}
+
+:root[sizemode="fullscreen"]{ margin-top: 0px !important; }
+
 
 
 
@@ -623,12 +642,14 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
     display: none !important;
 }
 
-/* #identity-popup-content-blocking-report-breakage, {
+/*
+#identity-popup-content-blocking-report-breakage, {
     padding-inline-start: 48px !important;
     line-height: 32px !important;
     text-decoration: none !important;
     cursor: auto !important;
-} */
+}
+*/
 
 .tracking-protection-button:hover:not([disabled=true]),
 #identity-popup-content-blocking-report-breakage:hover,
@@ -1761,7 +1782,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     background: var(--base_color2) !important;
 }
 .tabbrowser-tab[visuallyselected] {
-    border: 2px solid #0078d7 !important;
+    border: 2px solid var(--orbit_color) !important;
     border-radius: 4px 4px 0 0 !important;
     border-bottom: 2px solid var(--base_color1) !important;
 }
@@ -1890,44 +1911,52 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 .findbar-button:hover {
     background: var(--base_color3) !important;
 }
-/* Windows control modifs */
-.titlebar-button>.toolbarbutton-icon {
+
+
+/* Titlebar button / Window control modifs */
+.titlebar-button, #window-controls > toolbarbutton  {
+    padding: 0px 5px 0px 5px !important;
+    background: none !important;
+}
+.titlebar-button > .toolbarbutton-icon, #window-controls > toolbarbutton > .toolbarbutton-icon {
     height: 14px !important;
     width: 14px !important;
 }
-.titlebar-button {
-    padding-left: 0px !important;
-    padding-top: 6px !important;
-    background: none !important;
-}
 
 /* Minimize Button */
-/*.titlebar-min {
+.titlebar-min, #minimize-button {
     list-style-image: url("./icons/min.svg") !important;
+    -moz-default-appearance: none !important;
 }
-.titlebar-min:hover {
+.titlebar-min:hover, #minimize-button:hover {
     list-style-image: url("./icons/min_hover.svg") !important;
-}*/
+    -moz-default-appearance: none !important;
+}
 /* Maximize Button */
-/*.titlebar-max, .titlebar-restore {
+.titlebar-max, .titlebar-restore, #max-button, #restore-button {
     list-style-image: url("./icons/max_restore.svg") !important;
+    -moz-default-appearance: none !important;
 }
-.titlebar-max:hover {
+.titlebar-max:hover, #max-button:hover {
     list-style-image: url("./icons/max_hover.svg") !important;
+    -moz-default-appearance: none !important;
 }
-.titlebar-restore:hover {
+.titlebar-restore:hover, #restore-button:hover {
     list-style-image: url("./icons/restore_hover.svg") !important;
-}*/
-/* Close Button */
-/*.titlebar-close {
-    list-style-image: url("./icons/close.svg") !important;
+    -moz-default-appearance: none !important;
 }
-.titlebar-close:hover {
+/* Close Button */
+.titlebar-close, #close-button {
+    list-style-image: url("./icons/close.svg") !important;
+    -moz-default-appearance: none !important;
+}
+.titlebar-close:hover, #close-button:hover {
     list-style-image: url("./icons/close_hover.svg") !important;
-}*/
+    -moz-default-appearance: none !important;
+}
 
 /* Disable What's New and Exit from Hamburger */
-#appMenu-whatsnew-button,#appMenu-quit-button{
+#appMenu-whatsnew-button, #appMenu-quit-button{
     display: none !important;
 }
 
