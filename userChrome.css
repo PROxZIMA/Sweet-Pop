@@ -125,7 +125,7 @@ panel[type="autocomplete-richlistbox"] {
     border: 0 !important;
     color: var(--outer_color1) !important;
     box-sizing: content-box !important;
-    max-width: 275px !important;
+    width: 220px !important;
 }
 
 menupopup {
@@ -141,7 +141,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 }
 
 menupopup menuseparator {
-    margin: 8px 0 !important;
+    margin: 5px 0 !important;
     padding: 0 !important;
     height: 1px !important;
     background: currentColor !important;
@@ -151,8 +151,8 @@ menupopup menuseparator {
 menupopup menuitem,
 menupopup menu,
 .autocomplete-richlistitem {
-    height: 32px !important;
-    padding: 0 16px !important;
+    height: 27px !important;
+    padding: 0 8px !important;
     border: 0 !important;
     background: 0 !important;
     color: inherit !important;
@@ -223,12 +223,16 @@ scrollbox[orient=vertical] /* >=71 */ {
 
 #context-navigation {
     background: 0 !important;
+    -moz-box-flex: 1;
+    -moz-box-pack: center;
 }
 
-#context-navigation .menuitem-iconic {
+#context-navigation > .menuitem-iconic {
     background: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    max-width: 44px !important;
+    transform: scale(1.3) !important;
 }
 
 #context-navigation .menu-iconic-left {
@@ -270,7 +274,7 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .popup-internal-box,
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .menupopup-arrowscrollbox {
-    margin: 0 !important;
+    margin: 8px 0 !important;
     padding: 8px 0 !important;
     border-radius: 4px !important;
     color: inherit !important;
@@ -1171,7 +1175,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
         border: 0 !important;
         color: var(--word_color1) !important;
         box-sizing: content-box !important;
-        max-width: 275px !important;
+        width: 220px !important;
     }
 
     menupopup {
@@ -1188,7 +1192,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     }
 
     menupopup menuseparator {
-        margin: 8px 0 !important;
+        margin: 5px 0 !important;
         padding: 0 !important;
         height: 1px !important;
         background: currentColor !important;
@@ -1198,8 +1202,8 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     menupopup menuitem,
     menupopup menu,
     .autocomplete-richlistitem {
-        height: 32px !important;
-        padding: 0 16px !important;
+        height: 27px !important;
+        padding: 0 8px !important;
         border: 0 !important;
         background: 0 !important;
         color: inherit !important;
@@ -1270,12 +1274,16 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
     #context-navigation {
         background: 0 !important;
+        -moz-box-flex: 1;
+        -moz-box-pack: center;
     }
 
-    #context-navigation .menuitem-iconic {
+    #context-navigation > .menuitem-iconic {
         background: 0 !important;
         padding: 0 !important;
         margin: 0 !important;
+        max-width: 44px !important;
+        transform: scale(1.3) !important;
     }
 
     #context-navigation .menu-iconic-left {
@@ -1317,7 +1325,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     .popup-internal-box,
     panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
     .menupopup-arrowscrollbox {
-        margin: 0 !important;
+        margin: 8px 0 !important;
         padding: 8px 0 !important;
         border-radius: 4px !important;
         color: inherit !important;

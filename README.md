@@ -66,7 +66,7 @@ Windows
 > move mozilla.cfg "C:\Program Files (x86)\Mozilla Firefox\defaults\pref\"
 ```
 
-5) In Firefox, under hamburger menu or in `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light` :/
+5) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light` :/
 
 6) Open `about:support` > `Clear startup cache...` > `Restart`
 
@@ -100,20 +100,20 @@ Windows
 ├── userChrome.css<br>
 ├── userContent.css<br>
 └── utils<br>
-  ├── boot.jsm<br>
-  ├── BootstrapLoader.jsm<br>
-  ├── chrome.manifest<br>
-  ├── userChrome.jsm<br>
-  ├── userPrefs.jsm<br>
-  └── xPref.jsm<br>
+   ├── boot.jsm<br>
+   ├── BootstrapLoader.jsm<br>
+   ├── chrome.manifest<br>
+   ├── userChrome.jsm<br>
+   ├── userPrefs.jsm<br>
+   └── xPref.jsm<br>
 
 ## Tips
-1) To disable floating toolbox, Comment or remove lines 21-25 in `userChrome.css`
+1) To disable floating toolbox, Comment or remove lines 40-44 in `userChrome.css`
 2) To disable Auto-hide scrollbars you can simply rename `hide scrollbar.uc.js`'s extension to anything other than `uc.js`. You can also edit it to adjust the scrollbars according to your taste
 3) You can change theme to `Light` from the customize page
 
 ## Credits
-- This guy helped me a lot on [r/FirefoxCSS](https://www.reddit.com/r/FirefoxCSS/) : [u/It_Was_The_Other_Guy](https://www.reddit.com/user/It_Was_The_Other_Guy)
+- The_Other_Guy helped me a lot on [r/FirefoxCSS](https://www.reddit.com/r/FirefoxCSS/) : [u/It_Was_The_Other_Guy](https://www.reddit.com/user/It_Was_The_Other_Guy)
 
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
 
