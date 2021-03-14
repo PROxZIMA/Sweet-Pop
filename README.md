@@ -55,15 +55,15 @@ NOTE: If you are planning to set a local page as home page then in `mozilla.cfg`
 
 Linux / OS X
 ```console
-proxima@proxzima:~/.mozilla/firefox-trunk/uwrdytgn.proxima/chrome$ mv local-settings.js /usr/lib/firefox-trunk/
+proxima@proxzima:~/.mozilla/firefox-trunk/uwrdytgn.proxima/chrome$ mv mozilla.cfg /usr/lib/firefox-trunk/
 
-proxima@proxzima:~/.mozilla/firefox-trunk/uwrdytgn.proxima/chrome$ mv mozilla.cfg /usr/lib/firefox-trunk/defaults/pref/
+proxima@proxzima:~/.mozilla/firefox-trunk/uwrdytgn.proxima/chrome$ mv local-settings.js /usr/lib/firefox-trunk/defaults/pref/
 ```
 Windows
 ```console
-> move local-settings.js "C:\Program Files (x86)\Mozilla Firefox\"
+> move mozilla.cfg "C:\Program Files (x86)\Mozilla Firefox\"
 
-> move mozilla.cfg "C:\Program Files (x86)\Mozilla Firefox\defaults\pref\"
+> move local-settings.js "C:\Program Files (x86)\Mozilla Firefox\defaults\pref\"
 ```
 
 5) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light` :/
@@ -73,20 +73,8 @@ Windows
 7) **Voilà**
 
 ## Folder structure
+
 .<br>
-├── icons<br>
-│  ├── close_hover.svg<br>
-│  ├── close.svg<br>
-│  ├── fox-transparent.gif<br>
-│  ├── infoico.png<br>
-│  ├── max_hover.svg<br>
-│  ├── max_restore.svg<br>
-│  ├── min_hover.svg<br>
-│  ├── min.svg<br>
-│  ├── restore_hover.svg<br>
-│  ├── sonic.gif<br>
-│  ├── tab-loading.png<br>
-│  └── welcome-back.svg<br>
 ├── assets<br>
 │  ├── context.png<br>
 │  ├── float.gif<br>
@@ -94,6 +82,19 @@ Windows
 │  ├── preview.png<br>
 │  └── scrollbar.gif<br>
 ├── hide scrollbar.uc.js<br>
+├── icons<br>
+│  ├── close.svg<br>
+│  ├── close_hover.svg<br>
+│  ├── fox-transparent.gif<br>
+│  ├── infoico.png<br>
+│  ├── max_hover.svg<br>
+│  ├── max_restore.svg<br>
+│  ├── min.svg<br>
+│  ├── min_hover.svg<br>
+│  ├── restore_hover.svg<br>
+│  ├── sonic.gif<br>
+│  ├── tab-loading.png<br>
+│  └── welcome-back.svg<br>
 ├── local-settings.js<br>
 ├── mozilla.cfg<br>
 ├── README.md<br>

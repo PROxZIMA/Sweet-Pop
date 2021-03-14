@@ -68,12 +68,10 @@ url-prefix(https://addons.mozilla.org),
 url-prefix(http://addons.mozilla.org),
 url-prefix(https://raw.githubusercontent.com),
 url-prefix(moz-extension),
-url-prefix(view-source),
-regexp(".*\\.(p|P)(d|D)(f|F).*") {
+url-prefix(view-source) {
     :root {
-        --accent-1: #11131c;
-        --accent-2: #b1b1b1;
-        --in-content-page-background: var(--accent-1) !important;
+        --in-content-page-background: var(--dark_color1) !important;
+        --button-hover-color: var(--dark_color1) !important;
     }
 }
 
@@ -234,3 +232,56 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
         text-align: center;
     }
 }
+
+
+
+
+
+
+/* =============== Hide text in built-in print screen =============== */
+@-moz-document url-prefix("moz-extension://08b76965-6643-443a-9219-b05054b0b4c7/blank.html"){
+    .preview-instructions, .face-container, .cancel-shot {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+/* =============== Login page changes =============== */
+@-moz-document url-prefix("about:logins") {
+    .login-list-item {
+        background-color: var(--dark_color1) !important;
+    }
+}
+
+
+
+
+
+/* =============== PDF theming =============== */
+
+@-moz-document regexp(".*\\.(p|P)(d|D)(f|F).*") {
+    :root {
+        --toolbar-bg-color: var(--dark_color1) !important;
+        --body-bg-color: var(--dark_color1) !important;
+        --sidebar-bg-color: var(--dark_color1) !important;
+        --button-hover-color: var(--dark_color1) !important;
+        --field-bg-color: var(--dark_color1) !important;
+    }
+    
+    .canvasWrapper > canvas {
+        filter: invert(1) !important;
+    }
+
+    .dropdownToolbarButton > select {
+        background-color: var(--dark_color2) !important;
+    }
+    
+    .dropdownToolbarButton > select:hover {
+        background-color: var(--dark_color1) !important;
+    }
+}
+
