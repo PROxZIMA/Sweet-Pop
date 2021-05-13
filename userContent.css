@@ -26,6 +26,7 @@
 
 :root:not([style]),
 :root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
+:root[style*="--lwt-accent-color:rgb(240, 240, 244);"],
 :root[style*="--lwt-accent-color:white;"] {
     --base_color1: var(--light_color1);
     --base_color2: var(--light_color2);
@@ -40,6 +41,7 @@
 }
 /*================ DARK THEME ================*/
 
+:root[style*="--lwt-accent-color:rgb(28, 27, 34);"],
 :root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
 :root[privatebrowsingmode=temporary] {
     --base_color1: var(--dark_color1);
@@ -271,7 +273,7 @@ url-prefix(view-source) {
         --button-hover-color: var(--dark_color1) !important;
         --field-bg-color: var(--dark_color1) !important;
     }
-    
+
     .canvasWrapper > canvas {
         filter: invert(1) !important;
     }
@@ -279,7 +281,7 @@ url-prefix(view-source) {
     .dropdownToolbarButton > select {
         background-color: var(--dark_color2) !important;
     }
-    
+
     .dropdownToolbarButton > select:hover {
         background-color: var(--dark_color1) !important;
     }

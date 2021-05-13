@@ -372,6 +372,10 @@ panelview .toolbarbutton-1,
     padding: 0 16px !important;
 }
 
+#widget-overflow-mainView {
+    background: var(--base_color1) !important;
+}
+
 .subviewbutton .toolbarbutton-icon,
 .panel-banner-item .toolbarbutton-icon {
     margin-inline-end: 16px !important;
@@ -1083,6 +1087,28 @@ toolbarseparator {
     border-radius: 0px !important;
 }
 
+/* Overflow Menu extension width */
+
+#PanelUI-webext-ublock0_raymondhill_net-browser-action-view {
+    min-width: 252px !important;
+    max-width: 252px !important;
+}
+
+#PanelUI-webext-addon_darkreader_org-browser-action-view {
+    min-width: 276px !important;
+    max-width: 276px !important;
+}
+
+#PanelUI-webext-_2d4c0962-e9ff-4cad-8039-9a8b80d9b8b6_-browser-action-view {
+    min-width: 597px !important;
+    max-width: 597px !important;
+}
+
+#PanelUI-webext-browsec_browsec_com-browser-action-view {
+    min-width: 402px !important;
+    max-width: 402px !important;
+}
+
 
 
 
@@ -1091,15 +1117,34 @@ toolbarseparator {
 
 /* ===================== FINDBAR ===================== */
 
+findbar {
+    border: none !important;
+    padding: 0px !important;
+    background: transparent !important;
+}
 .findbar-container {
     background: var(--base_color1) !important;
+    padding: 2px !important;
+    margin: 2px !important;
 }
+.findbar {
+    background: var(--base_color1) !important;
+}
+.findbar-textbox, .findbar-find-next, .findbar-find-previous {
+    border: none !important;
+}
+.findbar-button:hover {
+    background: var(--base_color3) !important;
+}
+
 .findbar-textbox {
     background-color: transparent !important;
+	background-image: url(icons/search.svg) !important;
+    transform: scale(0.9) !important;
     background-repeat: no-repeat !important;
     background-position: 5px center !important;
     fill-opacity: 1 !important;
-    border: 0 !important;
+    outline: none !important;
     box-shadow: none !important;
     margin-inline-start: 2px !important;
     padding-inline-start: 28px !important;
@@ -1111,6 +1156,7 @@ hbox[anonid="findbar-textbox-wrapper"] {
     position: relative !important;
     display: flex !important;
     padding: 2px !important;
+	height: 28px !important;
     transition: background-color .1s var(--ease-basic) !important;
 }
 
@@ -1120,9 +1166,10 @@ hbox[anonid="findbar-textbox-wrapper"]:hover {
 
 hbox[anonid="findbar-textbox-wrapper"]:focus-within {
     background-color: var(--base_color1) !important;
-    border: 2px solid var(--base_color3) !important;
+    border: 2px solid -moz-accent-color !important;
     margin: -1px !important;
     padding: 1px !important;
+	height: 30px !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton {
@@ -1136,6 +1183,10 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton {
     transition: background-color .2s var(--ease-basic) !important;
     margin: 0 !important;
     box-shadow: none !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"] toolbarbutton[disabled] {
+	display: none !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton .toolbarbutton-text {
@@ -1637,7 +1688,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 /* Fix padding around URL bar */
 #urlbar-container, #search-container {
     padding: 0 !important;
-    min-width: 50px !important;
+    min-width: 20px !important;
 }
 
 #searchbar {
@@ -1663,30 +1714,29 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 } */
 
 /* Make Back, Forward, Stop, Go disappear when not in use */
-#back-button[disabled="true"],
-#forward-button[disabled="true"],
-#stop-button[disabled="true"]
-#go-button-stack,
-.search-go-button-stack {
+#back-button[disabled="true"], #forward-button[disabled="true"], #stop-button[disabled="true"],
+#go-button-stack, .search-go-button-stack {
     display: none;
 }
-
-#back-button {
-    list-style-image: url("chrome://browser/skin/back.svg") !important;
+#back-button, #forward-button, #reload-button, #stop-button, #home-button {
     transform: scale(0.9) !important;
+    margin-top: -2px !important;
+}
+#back-button {
+    list-style-image: url(./icons/back.svg) !important;
 }
 #forward-button {
-    list-style-image: url("chrome://browser/skin/forward.svg") !important;
-    transform: scale(0.9) !important;
+    list-style-image: url(./icons/back.svg) !important;
+    transform: scaleX(-1) !important;
 }
 #reload-button {
-    list-style-image: url("chrome://browser/skin/panel-icon-retry.svg") !important;
+    list-style-image: url(./icons/reload.svg) !important;
 }
 #stop-button {
-    list-style-image: url("chrome://browser/skin/panel-icon-cancel.svg") !important;
+    list-style-image: url(./icons/close.svg) !important;
 }
 #home-button {
-    transform: scale(0.9) !important;
+    list-style-image: url(./icons/home.svg) !important;
 }
 
 /* Make hover background of above transparent */
@@ -1909,16 +1959,6 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 #context-savepage, #context-sendpagetodevice, #context-sep-sendpagetodevice, #context-sep-navigation {
     display:none !important;
 }
-/* Findbar at bottom Modif */
-.findbar {
-    background: var(--base_color1) !important;
-}
-.findbar-textbox, .findbar-find-next, .findbar-find-previous {
-    border: none !important;
-}
-.findbar-button:hover {
-    background: var(--base_color3) !important;
-}
 
 
 /* Titlebar button / Window control modifs */
@@ -1955,7 +1995,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 /* Close Button */
 .titlebar-close, #close-button {
-    list-style-image: url("./icons/close.svg") !important;
+    list-style-image: url("./icons/closew.svg") !important;
     -moz-default-appearance: none !important;
 }
 .titlebar-close:hover, #close-button:hover {
