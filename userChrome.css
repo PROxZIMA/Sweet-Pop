@@ -32,6 +32,7 @@
 #navigator-toolbox{
     position: fixed !important;
     line-height: 0;
+    max-height: 29px !important;
     z-index: 1;
     pointer-events: none;
     background: var(--base_color1) !important;
@@ -1639,6 +1640,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 
 /* ================ NAVIGATION/URL BAR ================ */
 
+#urlbar[breakout],
 #urlbar[breakout][breakout-extend],
 #urlbar[breakout][breakout-extend][open],
 #urlbar[breakout][breakout-extend][focused] {
@@ -1810,7 +1812,15 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 #PersonalToolbar {
-    display: none !important;
+    background-color: var(--base_color1) !important;
+    color: var(--outer_color1) !important;
+    padding: 2px !important;
+    min-height: 0px !important;
+}
+
+#PersonalToolbar .toolbarbutton-1:hover, toolbarbutton.bookmark-item:hover {
+    background-color: var(--dark_color3) !important;
+    color: inherit !important;
 }
 
 
@@ -1848,22 +1858,22 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 /* The Blue line in the top bar*/
 #main-window:not([sizemode="maximized"]) #navigator-toolbox:before {
     content: "";
-    top: 10%;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(26px,2600px,26px,0px);
+    clip:rect(27px,2600px,27px,0px);
     position: absolute !important;
 }
 #navigator-toolbox:after {
     content: "";
-    top: 10%;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(24px,2600px,26px,0px);
+    clip:rect(27px,2600px,29px,0px);
     position: absolute !important;
 }
 #navigator-toolbox {
