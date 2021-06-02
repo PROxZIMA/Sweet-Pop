@@ -82,11 +82,11 @@ Contains required user preferences.
 
 ## **But how does it work?**
 Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is loaded using [`local-settings.js`](./programs/local-settings.js). This startup-script adds "loader" scripts from `utils` folder that loads arbitrary javascript files from the `script` folder into Firefox<br>
-`mozilla.cfg` also helps in setting local webpage as your homepage. Details in [Install](#Install).
+`mozilla.cfg` also helps in setting local webpage as your homepage. Details in [Installation](#Installation).
 
 NOTE: Firefox team has removed XBL from Firefox starting with version 72, so userChrome.js would not work :/
 
-## Install
+## Installation
 1) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
 
 2) Open this directory in terminal and clone the repository
@@ -141,12 +141,13 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 6) **Voilà**
 
-## Tips
+## Configuration
 1) To disable floating toolbox, comment line 6 (`@import "script/floatingToolbox.css";`) in `userChrome.css`
-2) To disable any of the `script/*.uc.js`, simply rename `script.uc.js` to `script`.
-3) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste.
-4) You can change theme to `Light` from the customize page
-5) If something breaks on your system then do `git pull origin master` in your chrome folder.
+2) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation.
+3) To disable any of the `script/*.uc.js`, simply rename `script.uc.js` to `script`.
+4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste.
+5) You can change theme to `Light` from the customize page
+6) If something breaks on your system then do `git pull origin master` in your chrome folder.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
