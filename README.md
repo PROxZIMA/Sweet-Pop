@@ -86,6 +86,7 @@ NOTE: Firefox team has removed XBL from Firefox starting with version 72, so use
 | toolkit.legacyUserProfileCustomizations.stylesheets 	| Boolean 	| `true` 	|
 | svg.context-properties.content.enabled 	| Boolean 	| `true` 	|
 | browser.compactmode.show 	| Boolean 	| `true` 	|
+| browser.proton.enabled 	| Boolean 	| `false` 	|
 
 2) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
 
