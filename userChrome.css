@@ -2,23 +2,26 @@
 
 @import "userContent.css";
 
-@media (-moz-os-version: windows-win10){
+/* Comment following line to diable floating toolbox */
+@import "script/floatingToolbox.css";
 
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 9px !important; }
-    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox{ margin-top: -1px }
+@media (-moz-os-version: windows-win10) {
 
-    @media screen and (min-resolution: 1.25dppx){
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 9px !important; }
+    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox { margin-top: -1px }
+
+    @media screen and (min-resolution: 1.25dppx) {
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
     }
-    @media screen and (min-resolution: 1.5dppx){
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 8px !important; }
+    @media screen and (min-resolution: 1.5dppx) {
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
     }
-    @media screen and (min-resolution: 2dppx){
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box{ margin-top: 7px !important; }
+    @media screen and (min-resolution: 2dppx) {
+        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 7px !important; }
     }
 }
 
-:root[sizemode="fullscreen"]{ margin-top: 0px !important; }
+:root[sizemode="fullscreen"] { margin-top: 0px !important; }
 
 
 
@@ -29,37 +32,30 @@
 
 
 /* Floating Toolbox */
-#navigator-toolbox{
+#navigator-toolbox {
     position: fixed !important;
     line-height: 0;
     max-height: 29px !important;
     z-index: 1;
     pointer-events: none;
     background: var(--base_color1) !important;
-
-    /* Comment or remove following lines to diable floating toolbox */
-    display: block;
-    transition: transform 85ms linear, opacity 85ms linear !important;
-    transform-origin: top;
-    transform: rotateX(75deg);
-    opacity: 0;
 }
 
 
 #navigator-toolbox:hover,
-#navigator-toolbox:focus-within{
+#navigator-toolbox:focus-within {
     transition-delay: 33ms !important;
     transform: rotateX(0);
     opacity: 1;
 }
 
-#navigator-toolbox > *{
+#navigator-toolbox > * {
     line-height: normal;
     pointer-events: auto;
 }
 
 #navigator-toolbox,
-#navigator-toolbox > *{
+#navigator-toolbox > * {
     width: 100vw;
     -moz-appearance: none !important;
 }
@@ -74,7 +70,7 @@
 }
 
 /* Show on hover or focus */
-:root:not([customizing]) :hover > #nav-bar toolbarbutton{
+:root:not([customizing]) :hover > #nav-bar toolbarbutton {
     margin-left: 0 !important;
     opacity: 1 !important;
     pointer-events: auto !important;
@@ -1649,7 +1645,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     width: 100% !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-input-container{
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
     height: 26px !important;
     padding-block: 0px !important;
     padding-inline: 0px !important;
@@ -1683,7 +1679,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
     max-height: 28px !important;
 }
 
-#urlbar-input-container, .megabar{
+#urlbar-input-container, .megabar {
     background: var(--base_color1) !important;
 }
 
@@ -1771,7 +1767,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 #ar-button,
 .autocomplete-history-dropmarker,
 #identity-icon-label,
-#star-button{
+#star-button {
     display: none !important;
 }
 
@@ -1803,7 +1799,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 /* Make Sidebar Dark */
-#protections-popup-mainView, #protections-popup-footer, #sidebar, #sidebar-header, #bookmarksPanel, #bookmarks-view, #history-panel, #historyTree, #sidebar-switcher-target, #viewButton, .panel-footer > button{
+#protections-popup-mainView, #protections-popup-footer, #sidebar, #sidebar-header, #bookmarksPanel, #bookmarks-view, #history-panel, #historyTree, #sidebar-switcher-target, #viewButton, .panel-footer > button {
     background-color: var(--base_color1) !important;
 }
 
@@ -1896,7 +1892,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 /* Remove Tab Seperatorb */
-.tabbrowser-tab::before, .tabbrowser-tab::after{
+.tabbrowser-tab::before, .tabbrowser-tab::after {
     display: none !important;
 }
 /* Pending Tab Italic Style */
@@ -1920,10 +1916,10 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 /* Remove Extra Spacing at Start*/
-.titlebar-spacer[type="pre-tabs"]{
+.titlebar-spacer[type="pre-tabs"] {
     display: none !important;
 }
-.titlebar-spacer[type="post-tabs"]{
+.titlebar-spacer[type="post-tabs"] {
     width: 20px !important;
 }
 /* Removes scroll button in exess tabs */
@@ -2014,7 +2010,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:activ
 }
 
 /* Disable What's New and Exit from Hamburger */
-#appMenu-whatsnew-button, #appMenu-quit-button{
+#appMenu-whatsnew-button, #appMenu-quit-button {
     display: none !important;
 }
 
