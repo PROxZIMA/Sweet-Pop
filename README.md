@@ -17,50 +17,55 @@
 ## Folder structure
 
  .<br>
-├──  assets<br>
-│  ├──  context.png<br>
-│  ├──  library.png<br>
-│  ├──  navbar.gif<br>
-│  ├──  preview.png<br>
-│  └──  scrollbar.gif<br>
-├──  icons<br>
-│  ├──  back.svg<br>
-│  ├──  close.svg<br>
-│  ├──  close_hover.svg<br>
-│  ├──  closew.svg<br>
-│  ├──  fox-transparent.gif<br>
-│  ├──  home.svg<br>
-│  ├──  infoico.png<br>
-│  ├──  max_hover.svg<br>
-│  ├──  max_restore.svg<br>
-│  ├──  min.svg<br>
-│  ├──  min_hover.svg<br>
-│  ├──  reload.svg<br>
-│  ├──  restore_hover.svg<br>
-│  ├──  search.svg<br>
-│  ├──  sonic.gif<br>
-│  ├──  tab-loading.png<br>
-│  └──  welcome-back.svg<br>
-├──  LICENSE<br>
-├──  programs<br>
-│  ├──  local-settings.js<br>
-│  └──  mozilla.cfg<br>
-├──  README.md<br>
-├──  script<br>
-│  ├──  appMenuAboutConfigButton.uc.js<br>
-│  ├──  hideScrollbar.uc.js<br>
-│  └──  navbarToolbarButtonSlider.uc.js<br>
-├──  userChrome.css<br>
-├──  userContent.css<br>
-└──  utils<br>
-   ├──  boot.jsm<br>
-   └──  chrome.manifest<br>
+├─  assets<br>
+│ ├─  context.png<br>
+│ ├─  library.png<br>
+│ ├─  navbar.gif<br>
+│ ├─  preview.png<br>
+│ └─  scrollbar.gif<br>
+├─  icons<br>
+│ ├─  back.svg<br>
+│ ├─  close.svg<br>
+│ ├─  close_hover.svg<br>
+│ ├─  closew.svg<br>
+│ ├─  fox-transparent.gif<br>
+│ ├─  home.svg<br>
+│ ├─  infoico.png<br>
+│ ├─  max_hover.svg<br>
+│ ├─  max_restore.svg<br>
+│ ├─  min.svg<br>
+│ ├─  min_hover.svg<br>
+│ ├─  reload.svg<br>
+│ ├─  restore_hover.svg<br>
+│ ├─  search.svg<br>
+│ ├─  sonic.gif<br>
+│ ├─  tab-loading.png<br>
+│ └─  welcome-back.svg<br>
+├─  LICENSE<br>
+├─  programs<br>
+│ ├─  local-settings.js<br>
+│ ├─  mozilla.cfg<br>
+│ └─  user.js<br>
+├─  README.md<br>
+├─  script<br>
+│ ├─  appMenuAboutConfigButton.uc.js<br>
+│ ├─  floatingToolbox.css<br>
+│ ├─  hideScrollbar.uc.js<br>
+│ └─  navbarToolbarButtonSlider.uc.js<br>
+├─  userChrome.css<br>
+├─  userContent.css<br>
+└─  utils<br>
+  ├─  boot.jsm<br>
+  └─  chrome.manifest<br>
 
 ### [`userChrome.css`](./userChrome.css)
 This helps to customize Firefox User Interface.
 
 ### [`userContent.css`](./userContent.css)
 This helps to customize web content like a specific site.
+
+### [`floatingToolbox.css`](./script/floatingToolbox.css)
+Makes the toolbox float. Can be accessed via hovering over top of browser.
 
 ### [`hideScrollbar.uc.js`](./script/hideScrollbar.uc.js)
 It's now possible to autohide scrollbars.
@@ -72,6 +77,9 @@ Adds `about:config` as `Advanced Preferences` button in the App menu settings.
 As this is a one-liner theme, one must drop some buttons to add sufficient space for urlbar and tabbar. That's why I mentioned in [issue 2](https://github.com/PROxZIMA/Firefox-Theme/issues/2) to move the add-ons to overflow menu. But this messed up with their widths. Take a look [here](https://www.reddit.com/r/FirefoxCSS/comments/n9asta/addons_width_changes_to_a_fixed_value_when_placed/). I did some temporary fix(which was not that good). But [u/MotherStylus](https://www.reddit.com/user/MotherStylus) came up with an awesome `uc.js` script.<br>
 So basically this adds a button slider to navbar toolbar. [This](https://raw.githubusercontent.com/PROxZIMA/Firefox-Theme/master/assets/navbar.gif) is how it looks. Read the file description to configure it properly.
 
+### [`user.js`](./programs/user.js)
+Contains required user preferences.
+
 ## **But how does it work?**
 Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is loaded using [`local-settings.js`](./programs/local-settings.js). This startup-script adds "loader" scripts from `utils` folder that loads arbitrary javascript files from the `script` folder into Firefox<br>
 `mozilla.cfg` also helps in setting local webpage as your homepage. Details in [Install](#Install).
@@ -79,18 +87,9 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 NOTE: Firefox team has removed XBL from Firefox starting with version 72, so userChrome.js would not work :/
 
 ## Install
-1) In `about:config` make sure that following `Perf name` has respective `Value`
+1) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
 
-| Pref name 	| Type 	| Value 	|
-|-	|-	|-	|
-| toolkit.legacyUserProfileCustomizations.stylesheets 	| Boolean 	| `true` 	|
-| svg.context-properties.content.enabled 	| Boolean 	| `true` 	|
-| browser.compactmode.show 	| Boolean 	| `true` 	|
-| browser.proton.enabled 	| Boolean 	| `false` 	|
-
-2) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
-
-3) Open this directory in terminal and clone the repository
+2) Open this directory in terminal and clone the repository
 
 Note: If you already have a `chrome` folder under `Profile Directory`, rename it to `chrome2` or anything else so that after trying this theme you can easily restore your theme.
 
@@ -104,15 +103,17 @@ $ cd chrome
 
 NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](./programs/mozilla.cfg) at line 13 change `newTabURL_` to the local page location
 
-4) Move `mozilla.cfg` and `local-settings.js` to their destination.
+3) Move `user.js`, `mozilla.cfg` and `local-settings.js` to their destination.
 
 <details><summary>Linux / OS X</summary>
 <br>
 
 On `about:support` > `Application Binary` > `{Installation folder}firefox-bin`<br>
-My `Installation folder` is `/opt/firefox-nightly/`. Generally it is `/usr/lib/firefox/`
+My `Installation folder` is `/usr/lib/firefox/`
 
 ```console
+$ cp ./programs/user.js ../
+
 $ cp ./programs/mozilla.cfg /usr/lib/firefox/
 
 $ cp ./programs/local-settings.js /usr/lib/firefox/defaults/pref/
@@ -126,20 +127,22 @@ On `about:support` > `Application Binary` > `{Installation folder}firefox.exe`<b
 Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 ```powershell
-> move .\programs\mozilla.cfg "C:\Program Files\Mozilla Firefox\"
+> copy .\programs\user.js ..\
 
-> move .\programs\local-settings.js "C:\Program Files\Mozilla Firefox\defaults\pref\"
+> copy .\programs\mozilla.cfg "C:\Program Files\Mozilla Firefox\"
+
+> copy .\programs\local-settings.js "C:\Program Files\Mozilla Firefox\defaults\pref\"
 ```
 </details>
 
-5) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light`
+4) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light`
 
-6) Open `about:support` > `Clear startup cache...` > `Restart`<br>`Restart` again
+5) Open `about:support` > `Clear startup cache...` > `Restart`<br>`Restart` again
 
-7) **Voilà**
+6) **Voilà**
 
 ## Tips
-1) To disable floating toolbox, comment lines 40-44 in `userChrome.css`
+1) To disable floating toolbox, comment line 6 (`@import "script/floatingToolbox.css";`) in `userChrome.css`
 2) To disable any of the `script/*.uc.js`, simply rename `script.uc.js` to `script`.
 3) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste.
 4) You can change theme to `Light` from the customize page
