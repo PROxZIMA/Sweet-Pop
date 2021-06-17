@@ -111,7 +111,7 @@ $ git clone https://github.com/PROxZIMA/Firefox-Theme.git chrome
 $ cd chrome
 ```
 
-NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](./programs/mozilla.cfg) at line 13 change `newTabURL_` to the local page location
+NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Firefox-Theme/blob/da7531c7089380c5c6e4faf2f9f365eb1fd3e49d/programs/mozilla.cfg#L14) at line 13 change `newTabURL_` to the local page location
 
 3) Move `user.js`, `mozilla.cfg` and `local-settings.js` to their destination.
 
