@@ -16,13 +16,23 @@
 
 ## Folder structure
 
- .<br>
+ .<br>
 ├─  assets<br>
 │ ├─  context.png<br>
 │ ├─  library.png<br>
 │ ├─  navbar.gif<br>
 │ ├─  preview.png<br>
-│ └─  scrollbar.gif<br>
+│ ╰─  scrollbar.gif<br>
+├─  css<br>
+│ ├─  findbar.css<br>
+│ ├─  floatingToolbox.css<br>
+│ ├─  library.css<br>
+│ ├─  overflowMenu.css<br>
+│ ├─  popups.css<br>
+│ ├─  responsiveNavbar.css<br>
+│ ├─  tabbar.css<br>
+│ ├─  tweaks.css<br>
+│ ╰─  urlbar.css<br>
 ├─  icons<br>
 │ ├─  back.svg<br>
 │ ├─  close.svg<br>
@@ -40,23 +50,22 @@
 │ ├─  search.svg<br>
 │ ├─  sonic.gif<br>
 │ ├─  tab-loading.png<br>
-│ └─  welcome-back.svg<br>
+│ ╰─  welcome-back.svg<br>
 ├─  LICENSE<br>
 ├─  programs<br>
 │ ├─  local-settings.js<br>
 │ ├─  mozilla.cfg<br>
-│ └─  user.js<br>
+│ ╰─  user.js<br>
 ├─  README.md<br>
 ├─  script<br>
 │ ├─  appMenuAboutConfigButton.uc.js<br>
-│ ├─  floatingToolbox.css<br>
 │ ├─  hideScrollbar.uc.js<br>
-│ └─  navbarToolbarButtonSlider.uc.js<br>
+│ ╰─  navbarToolbarButtonSlider.uc.js<br>
 ├─  userChrome.css<br>
 ├─  userContent.css<br>
-└─  utils<br>
+╰─  utils<br>
   ├─  boot.jsm<br>
-  └─  chrome.manifest<br>
+  ╰─  chrome.manifest<br>
 
 ### [`userChrome.css`](./userChrome.css)
 This helps to customize Firefox User Interface.
@@ -64,8 +73,9 @@ This helps to customize Firefox User Interface.
 ### [`userContent.css`](./userContent.css)
 This helps to customize web content like a specific site.
 
-### [`floatingToolbox.css`](./script/floatingToolbox.css)
-Makes the toolbox float. Can be accessed via hovering over top of browser.
+### [`floatingToolbox.css`](./css/floatingToolbox.css)
+Makes the toolbox float. Can be accessed via hovering over top of browser.<br>
+All imports are present in `css` folder as well.
 
 ### [`hideScrollbar.uc.js`](./script/hideScrollbar.uc.js)
 It's now possible to autohide scrollbars.
@@ -137,17 +147,17 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 4) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light`
 
-5) Open `about:support` > `Clear startup cache...` > `Restart`<br>`Restart` again
+5) Open `about:support` > `Clear startup cache...` > `Restart` ***twice***
 
 6) **Voilà**
 
 ## Configuration
-1) To disable floating toolbox, comment line 6 (`@import "script/floatingToolbox.css";`) in `userChrome.css`
-2) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation.
-3) To disable any of the `script/*.uc.js`, simply rename `script.uc.js` to `script`.
-4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste.
-5) You can change theme to `Light` from the customize page
-6) If something breaks on your system then do `git pull origin master` in your chrome folder.
+1) To disable floating toolbox, comment line 6 (`@import "css/floatingToolbox.css";`) in `userChrome.css`
+2) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
+3) To disable any of the `script/*.uc.js`, simply rename `anyScript.uc.js` to `anyScript`
+4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+5) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
+6) If something breaks on your system then please raise a issue
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)

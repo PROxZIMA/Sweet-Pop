@@ -1,59 +1,57 @@
 :root {
-    --dark_color1: #11131c;
-    --dark_color2: #1d202f;
-    --dark_color3: #1f2334;
-    --dark_color4: #272c41;
+    --dark-color1: #11131c;
+    --dark-color2: #1d202f;
+    --dark-color3: #1f2334;
+    --dark-color4: #272c41;
 
-    --word_color1: #e4e4e4;
-    --word_color2: #cacaca;
-    --word_color3: #c2c2c2;
+    --dark-color5: #24222D;
+    --dark-color6: #33313c;
+    --dark-color7: #42404b;
 
-    --light_color1: #f0f0f0;
-    --light_color2: #c7c7c7;
-    --light_color3: #9d9d9d;
-    --light_color4: #8c8c8c;
+    --light-color1: #f0f0f0;
+    --light-color2: #c7c7c7;
+    --light-color3: #9d9d9d;
+    --light-color4: #8c8c8c;
 
-    --other_color1: #332e56;
-    --other_color2: #4b4757;
-    --other_color3: #33313c;
+    --light-color5: #e4e4e4;
+    --light-color6: #cacaca;
+    --light-color7: #c2c2c2;
 
-    --blue_color: #0078d7;
+    --blue-color: #0078d7;
 
-    --gtk_color: #d700d2;
+    --gtk-color: #d700d2;
 
 }
 /*================ LIGHT THEME ================*/
 
-:root:not([style]),
 :root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
 :root[style*="--lwt-accent-color:rgb(240, 240, 244);"],
+:root[style*="--newtab-background-color:rgba(249, 249, 251, 1);"],
 :root[style*="--lwt-accent-color:white;"] {
-    --base_color1: var(--light_color1);
-    --base_color2: var(--light_color2);
-    --base_color3: var(--light_color3);
-    --base_color4: var(--light_color4);
+    --back-color1: var(--light-color1);
+    --back-color2: var(--light-color2);
+    --back-color3: var(--light-color3);
+    --back-color4: var(--light-color4);
 
-    --outer_color1: var(--other_color1);
-    --outer_color2: var(--other_color2);
-    --outer_color3: var(--other_color3);
-
-    --orbit_color: var(--blue_color);
+    --text-color1: var(--dark-color5);
+    --text-color2: var(--dark-color6);
+    --text-color3: var(--dark-color7);
 }
 /*================ DARK THEME ================*/
 
+:root:not([style]),
 :root[style*="--lwt-accent-color:rgb(28, 27, 34);"],
 :root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
+:root[style*="--newtab-background-color:rgba(42, 42, 46, 1);"],
 :root[privatebrowsingmode=temporary] {
-    --base_color1: var(--dark_color1);
-    --base_color2: var(--dark_color2);
-    --base_color3: var(--dark_color3);
-    --base_color4: var(--dark_color4);
+    --back-color1: var(--dark-color1);
+    --back-color2: var(--dark-color2);
+    --back-color3: var(--dark-color3);
+    --back-color4: var(--dark-color4);
 
-    --outer_color1: var(--word_color1);
-    --outer_color2: var(--word_color2);
-    --outer_color3: var(--word_color3);
-
-    --orbit_color: var(--blue_color);
+    --text-color1: var(--light-color5);
+    --text-color2: var(--light-color6);
+    --text-color3: var(--light-color7);
 }
 
 
@@ -64,7 +62,7 @@
 @-moz-document url-prefix(https://discovery.addons.mozilla.org),
 url-prefix(chrome://),
 url-prefix(about:),
-url-prefix(file:),
+url-prefix(file://),
 url(https://www.mozilla.org/credits/),
 url-prefix(https://addons.mozilla.org),
 url-prefix(http://addons.mozilla.org),
@@ -72,8 +70,9 @@ url-prefix(https://raw.githubusercontent.com),
 url-prefix(moz-extension),
 url-prefix(view-source) {
     :root {
-        --in-content-page-background: var(--dark_color1) !important;
-        --button-hover-color: var(--dark_color1) !important;
+        --in-content-page-background: var(--back-color1) !important;
+        --in-content-page-color: var(--text-color1) !important;
+        --button-hover-color: var(--back-color1) !important;
     }
 }
 
@@ -100,6 +99,13 @@ url-prefix(view-source) {
 .addon.card {
     margin-bottom: 5px !important; min-width: 1000px !important;
 }
+addon-card:not([expanded]) > .addon.card:hover {
+    box-shadow: var(--back-color3) !important;
+}
+.card {
+    background: var(--back-color2) !important;
+    display: block !important;
+}
 .card-contents{
     flex-direction: row !important;
     display: block !important;
@@ -110,7 +116,7 @@ url-prefix(view-source) {
 .more-options-button {
     top: 8px;
 }
-.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, recommended-extensions-section {
+.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
     display:none;
 }
 .sidebar-footer-button {
@@ -124,19 +130,23 @@ url-prefix(view-source) {
 
 /* ============= Error Pages ============= */
 
+.clockSkewError #errorPageContainer,
+.connectionFailure #errorPageContainer,
+.dnsNotFound #errorPageContainer,
+.malformedURI #errorPageContainer,
+.neterror #errorPageContainer,
+.netInterrupt #errorPageContainer,
+.netOffline #errorPageContainer,
+.netReset #errorPageContainer,
 .netTimeout #errorPageContainer {
-    background-image: url("icons/sonic.gif") !important;
-}
-
-.neterror #errorPageContainer {
-    background-image: url("icons/sonic.gif") !important;
+    background-image: url("./icons/sonic.gif") !important;
 }
 
 @-moz-document url-prefix("about:restartrequired") {
     #errorPageContainer {
 		background-position: left top;
 		background-size: 28% !important;
-        background-image: url("icons/fox-transparent.gif") !important;
+        background-image: url("./icons/fox-transparent.gif") !important;
 	}
 
 }
@@ -151,7 +161,7 @@ url-prefix(view-source) {
 
 @-moz-document url-prefix("about:reader") {
     html {
-        background: var(--base_color1);
+        background: var(--back-color1);
     }
     toolbar > reader-toolbar {
         border-radius: 3px !important;
@@ -159,32 +169,32 @@ url-prefix(view-source) {
 
     /*Dark*/
     body.loaded.dark {
-        --toolbar-bgcolor: var(--dark_color2) !important;
-        --toolbar-border: var(--dark_color1) !important;
-        --toolbar-hover: var(--dark_color3) !important;
-        --popup-bgcolor: var(--dark_color2) !important;
-        --popup-border: var(--dark_color3) !important;
-        --font-color: var(--word_color3) !important;
-        --icon-fill: var(--word_color3) !important;
-        background: var(--dark_color1) !important;
-        --blue-40:var(--word_color1) !important;
+        --toolbar-bgcolor: var(--back-color2) !important;
+        --toolbar-border: var(--back-color1) !important;
+        --toolbar-hover: var(--back-color3) !important;
+        --popup-bgcolor: var(--back-color2) !important;
+        --popup-border: var(--back-color3) !important;
+        --font-color: var(--text-color3) !important;
+        --icon-fill: var(--text-color3) !important;
+        background: var(--back-color1) !important;
+        --blue-40:var(--text-color1) !important;
         --blue-40-a30:rgba(144,89,255,0.3) !important;
-        --active-color:var(--word_color1) !important;
+        --active-color:var(--text-color1) !important;
     }
 
     /*Light*/
     body.loaded.light {
-        --toolbar-bgcolor: var(--light_color2) !important;
-        --toolbar-border: var(--light_color1) !important;
-        --toolbar-hover: var(--light_color3) !important;
-        --popup-bgcolor: var(--light_color2) !important;
-        --popup-border: var(--light_color3) !important;
-        --font-color: var(--other_color3) !important;
-        --icon-fill: var(--other_color3) !important;
-        background: var(--light_color1) !important;
-        --blue-40:var(--other_color1) !important;
+        --toolbar-bgcolor: var(--light-color2) !important;
+        --toolbar-border: var(--light-color1) !important;
+        --toolbar-hover: var(--light-color3) !important;
+        --popup-bgcolor: var(--light-color2) !important;
+        --popup-border: var(--light-color3) !important;
+        --font-color: var(--dark-color7) !important;
+        --icon-fill: var(--dark-color7) !important;
+        background: var(--light-color1) !important;
+        --blue-40:var(--dark-color5) !important;
         --blue-40-a30:rgba(51,46,86,0.3) !important;
-        --active-color:var(--other_color1) !important;
+        --active-color:var(--dark-color5) !important;
     }
 
 }
@@ -255,7 +265,7 @@ url-prefix(view-source) {
 /* =============== Login page changes =============== */
 @-moz-document url-prefix("about:logins") {
     .login-list-item {
-        background-color: var(--dark_color1) !important;
+        background-color: var(--back-color1) !important;
     }
 }
 
@@ -267,11 +277,11 @@ url-prefix(view-source) {
 
 @-moz-document regexp(".*\\.(p|P)(d|D)(f|F).*") {
     :root {
-        --toolbar-bg-color: var(--dark_color1) !important;
-        --body-bg-color: var(--dark_color1) !important;
-        --sidebar-bg-color: var(--dark_color1) !important;
-        --button-hover-color: var(--dark_color1) !important;
-        --field-bg-color: var(--dark_color1) !important;
+        --toolbar-bg-color: var(--back-color1) !important;
+        --body-bg-color: var(--back-color1) !important;
+        --sidebar-bg-color: var(--back-color1) !important;
+        --button-hover-color: var(--back-color1) !important;
+        --field-bg-color: var(--back-color1) !important;
     }
 
     .canvasWrapper > canvas {
@@ -279,11 +289,11 @@ url-prefix(view-source) {
     }
 
     .dropdownToolbarButton > select {
-        background-color: var(--dark_color2) !important;
+        background-color: var(--back-color2) !important;
     }
 
     .dropdownToolbarButton > select:hover {
-        background-color: var(--dark_color1) !important;
+        background-color: var(--back-color1) !important;
     }
 }
 

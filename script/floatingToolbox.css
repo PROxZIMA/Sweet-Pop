@@ -1,7 +1,0 @@
-#navigator-toolbox {
-    display: block;
-    transition: transform 85ms linear, opacity 85ms linear !important;
-    transform-origin: top;
-    transform: rotateX(75deg);
-    opacity: 0;
-}
