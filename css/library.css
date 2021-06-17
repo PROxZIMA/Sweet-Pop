@@ -1,0 +1,425 @@
+@-moz-document url(chrome://browser/content/places/places.xhtml) {
+
+    /* ============== Popups ============== */
+    menupopup,
+    menupopup menuitem,
+    menupopup menu,
+    menupopup menuseparator {
+        -moz-appearance: none !important;
+    }
+
+    menupopup,
+    panel[type="autocomplete-richlistbox"] {
+        -moz-window-shadow: none !important;
+        background: 0 !important;
+        border: 0 !important;
+        color: var(--text-color1) !important;
+        box-sizing: content-box !important;
+        width: 220px !important;
+    }
+
+    menupopup {
+        padding: 11px 14px 18px !important;
+        margin: -19px -14px 0 !important;
+    }
+
+    menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+    menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+    menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+        display: -moz-box !important;
+        padding: 3px !important;
+        background-color: var(--back-color1)
+    }
+
+    menupopup menuseparator {
+        margin: 5px 0 !important;
+        padding: 0 !important;
+        height: 1px !important;
+        background: currentColor !important;
+        opacity: .12 !important;
+    }
+
+    menupopup menuitem,
+    menupopup menu,
+    .autocomplete-richlistitem {
+        height: 27px !important;
+        padding: 0 8px !important;
+        border: 0 !important;
+        background: 0 !important;
+        color: inherit !important;
+        fill-opacity: initial !important;
+    }
+
+    menupopup menuitem:hover:not([disabled=true]),
+    menupopup menu:hover:not([disabled=true]),
+    .autocomplete-richlistitem:hover:not([disabled=true]):not([selected=true]) {
+        background-color: var(--back-color2) !important;
+    }
+
+    menupopup menuitem:hover:active:not([disabled=true]),
+    menupopup menu:hover:active:not([disabled=true]),
+    .autocomplete-richlistitem:hover:active:not([disabled=true]),
+    .autocomplete-richlistitem[selected=true] {
+        background-color: var(--back-color3) !important;
+    }
+
+    menupopup menuitem[disabled=true],
+    menupopup menu[disabled=true],
+    .autocomplete-richlistitem[disabled=true] {
+        opacity: .5 !important;
+    }
+
+    /* disable vertical menu scroll buttons and use a good ol' scrollbar */
+    /* this is a shotgun approach, expect side effects */
+    scrollbox[orient=vertical] /* >=71 */ {
+        overflow-y: auto !important;
+    }
+
+    /* why still use scroll buttons; is this the middle ages? */
+    .menupopup-scrollbutton {
+        display: none !important;
+    }
+
+    .menu-iconic-left {
+        -moz-appearance: none !important;
+    }
+
+    /* hide icon if no image (default on macOS but not Windows) */
+    .subviewbutton:not(:-moz-any([image], [targetURI], .bookmark-item)) > .menu-iconic-left {
+        display: none;
+    }
+
+    .menu-iconic-icon {
+        fill: currentColor !important;
+        -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+        margin-inline-start: 0 !important;
+        margin-inline-end: 16px !important;
+        width: 24px !important;
+        height: 24px !important;
+        padding: 4px !important;
+    }
+
+    .menu-text {
+        -moz-appearance: none !important;
+        padding: 0 !important;
+    }
+
+    .menu-right {
+        -moz-appearance: none !important;
+        -moz-context-properties: fill !important;
+        fill: currentColor !important;
+        margin-inline-end: 0 !important;
+        margin-inline-start: 16px !important;
+    }
+
+    #context-navigation {
+        background: 0 !important;
+        -moz-box-flex: 1;
+        -moz-box-pack: center;
+    }
+
+    #context-navigation > .menuitem-iconic {
+        background: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 44px !important;
+        transform: scale(1.3) !important;
+    }
+
+    #context-navigation .menu-iconic-left {
+        border-radius: 50% !important;
+        padding: 8px !important;
+    }
+
+    #context-navigation .menu-iconic-icon {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    #context-navigation .menuitem-iconic:hover:not([disabled]) .menu-iconic-left {
+        background-color: var(--back-color2) !important;
+    }
+
+    #context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left {
+        background-color: var(--back-color3) !important;
+    }
+
+    /* needs to align with textbox/bookmark-button but can't overlap it */
+    panel[type="autocomplete-richlistbox"],
+    .bookmark-item:not(menu) > menupopup[placespopup] {
+        padding: 1px 14px 18px !important;
+        margin: 0 -14px 0 !important;
+    }
+
+    .popup-internal-box,
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+    #PopupSearchAutoComplete > *,
+    .menupopup-arrowscrollbox {
+        background: var(--back-color1) !important;
+    }
+
+    /* themes a menupopup (or other root level / shadow dom popup) as a panel */
+    /* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
+    .popup-internal-box,
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+    .menupopup-arrowscrollbox {
+        margin: 8px 0 !important;
+        padding: 8px 0 !important;
+        border-radius: 4px !important;
+        color: inherit !important;
+    }
+
+    .popup-internal-box,
+    .menupopup-arrowscrollbox {
+        box-shadow:
+            0 5px 5px -3px rgba(0,0,0,.2),
+            0 8px 10px 1px rgba(0,0,0,.14),
+            0 3px 14px 2px rgba(0,0,0,.12) !important;
+    }
+
+    #PopupSearchAutoComplete > * {
+        border-radius: 0 !important;
+    }
+
+    #PopupSearchAutoComplete > :first-child {
+        border-radius: 4px 4px 0 0 !important;
+    }
+
+    #PopupSearchAutoComplete > :last-child {
+        border-radius: 0 0 4px 4px !important;
+    }
+
+    /* autocomplete panel can't overlap the textbox, so shadow can't go up
+       more than 1px */
+    panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, .03),
+            0 5px 5px -3px rgba(0, 0, 0, .2),
+            0 8px 10px -0px rgba(0, 0, 0, .14),
+            0 3px 14px -5px rgba(0, 0, 0, .12) !important;
+    }
+
+    /* search panel gets special treatment; it has multiple children */
+    #PopupSearchAutoComplete > .autocomplete-richlistbox {
+        box-shadow: none !important;
+    }
+
+    #PopupSearchAutoComplete {
+        filter:
+            drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
+            drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
+    }
+
+
+    /* ============== Menus ============== */
+
+
+    /* These change top bar background color */
+    #placesToolbar {
+        background-color: var(--back-color3) !important;
+        color: var(--text-color2) !important
+    }
+
+    /* These change the lists background color */
+    #placesView
+    #placesView .scrollbox-innerbox,
+    #infoPane,
+    #placesList,
+    #placeContent,
+    /* This one changes the urlbar star bookmarking folder tree backgrund color */
+    #editBMPanel_folderTree {
+        -moz-appearance: none !important;
+        background: var(--back-color2) !important;
+        color: var(--text-color2) !important
+    }
+
+    /* These change the list header background and text colors */
+    #placeContent treecol {
+        -moz-appearance: none !important;
+        background: var(--back-color4) !important;
+        padding: 0px !important;
+        color: var(--text-color2) !important;
+        border-left: 1px solid var(--back-color3) !important;
+        border-bottom: 1px solid var(--back-color3) !important
+    }
+
+    #placeContent treecol:hover {
+        -moz-appearance: none !important;
+        background: rgba(255,255,255, 0.15) !important;
+        color: var(--text-color1) !important
+    }
+
+    /* This changes the right border on the left list panel */
+    #placesView > splitter {
+        border-inline-end: 0px solid var(--back-color3) !important
+    }
+
+    /* These change the odd rows of the lists */
+    #placeContent tree,
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd),
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
+        background-color: var(--back-color2) !important
+    }
+
+    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
+        background-color: var(--back-color1) !important
+    }
+
+    #placeContent treechildren::-moz-tree-cell {
+        border-right: 0px dotted rgba(0,0,0,0.4) !important
+    }
+
+    #placeContent > splitter {
+        border: 0px solid red !important
+    }
+
+    /* This changes the forward and back buttons opacity when disabled */
+    #placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+        opacity: .25 !important
+    }
+
+    /* This changes the forward and back buttons color */
+    #back-button > .toolbarbutton-icon,
+    #forward-button > .toolbarbutton-icon {
+        fill: var(--text-color3) !important; opacity: 1 !important
+    }
+
+    /* This deletes the leftover border when clicking one of the top buttons */
+    #placesMenu > menu {
+        border: none !important
+    }
+
+    /* This changes the text color of the "clear downloads" button */
+    #clearDownloadsButton {
+        color: var(--text-color3) !important
+    }
+
+    #clearDownloadsButton[disabled] {
+        color: var(--back-color4) !important
+    }
+
+    /* This themes the search box */
+    #searchFilter {
+        transition: all 0.25s ease-in-out !important;
+        -moz-appearance: none !important;
+        border: 1px solid var(--back-color4) !important;
+        background-color: var(--back-color4) !important;
+        color: var(--text-color3) !important;
+    }
+
+    /* This themes the search box on hover */
+    #searchFilter[focused="true"] {
+        box-shadow: var(--input-field-focus-shadow) !important;
+        background-color: var(--back-color4) !important;
+        color: var(--text-color1) !important;
+    }
+
+    /* This themes the information box on the lower part of the library menu */
+    #detailsDeck {
+        background-color: var(--back-color2) !important;
+        color: var(--text-color3) !important;
+        border-top: 2px solid #222 !important;
+    }
+
+    /* This changes the text boxes inside the library bottom information box */
+    #infoBox textbox, #infoBox listbox,
+    /* This changes the text boxes on the popup when bookmarking a page from the url box */
+    #editBMPanel_namePicker,
+    #editBMPanel_tagsField,
+    #editBMPanel_tagsSelector {
+        transition: all 0.25s ease-in-out !important;
+        -moz-appearance: none !important;
+        border: 0px !important;
+        background-color: var(--back-color3) !important;
+        color: var(--text-color2) !important;
+    }
+
+    /* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+    #bookmarkproperties #editBMPanel_namePicker,
+    #bookmarkproperties #editBMPanel_tagsField,
+    #bookmarkproperties #editBMPanel_tagsSelector {
+        background-color: var(--back-color3) !important;
+    }
+
+    /* This changes the same text boxes on hover */
+    #infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
+    /* This changes the same url bookmarking popup text boxes on hover */
+    #editBMPanel_namePicker[focused="true"],
+    #editBMPanel_tagsField[focused="true"],
+    #infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+    #infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+        box-shadow: var(--Input-field-focus-shadow) !important;
+        background-color: var(--back-color3) !important;
+        color: var(--text-color1) !important;
+    }
+
+    /* This changes the buttons inside the bookmarking popup at the url star */
+    #editBMPanel_newFolderButton,
+    #editBookmarkPanelDoneButton,
+    #editBookmarkPanelRemoveButton,
+    #tracking-action-unblock-private,
+    #identity-popup-popup-menulist,
+    #tracking-action-block,
+    #tracking-action-unblock {
+        -moz-appearance: none !important;
+        border-radius: 8px !important;
+        background: var(--back-color3) !important;
+        border: 0px !important;
+        color: var(--text-color2) !important;
+        padding: 0.3em !important;
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+    }
+
+    #editBMPanel_newFolderButton:hover,
+    #editBookmarkPanelDoneButton:hover,
+    #editBookmarkPanelRemoveButton:hover,
+    #tracking-action-unblock-private:hover,
+    #identity-popup-popup-menulist:hover,
+    #tracking-action-block:hover,
+    #tracking-action-unblock:hover {
+        background: var(--back-color3) !important;
+        color: var(--text-color1) !important;
+    }
+
+    #editBookmarkPanelBottomButtons {
+        background: transparent !important;
+    }
+
+    /* These change the expander buttons on the library and bookmarking popup */
+    #editBMPanel_folderMenuList,
+    #editBMPanel_tagsSelectorExpander,
+    #editBMPanel_foldersExpander,
+    #detailsDeck button {
+        -moz-appearance: none !important;
+        border: 3px solid var(--back-color3) !important;
+        background: var(--back-color3) !important;
+        color: var(--text-color1) !important;
+    }
+
+    #BMB_bookmarksPopup {
+        margin-top: -9px !important;
+    }
+
+    #editBMPanel_folderMenuList:hover,
+    #editBMPanel_tagsSelectorExpander:hover,
+    #editBMPanel_foldersExpander:hover,
+    #detailsDeck button:hover {
+        background: var(--back-color3) !important;
+        color: var(--text-color1) !important;
+    }
+
+    #editBMPanel_folderMenuList {
+        padding: 1px !important;
+        color: var(--text-color2) !important;
+    }
+
+    /* These change the downloads history list background */
+    #downloadsRichListBox {
+        background: var(--back-color2) !important;
+        color: var(--text-color2) !important;
+    }
+
+}

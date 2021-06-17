@@ -1,0 +1,93 @@
+.tabbrowser-tab {
+    height: var(--tab-min-height) !important;
+}
+
+/* Disables Tab-line and label*/
+.tabbrowser-tab .tab-line, .tab-secondary-label {
+    display: none !important;
+}
+
+/* No highlighting tabs on hover*/
+.tab-content:hover {
+    background: var(--back-color1) !important;
+}
+
+/* Transparent background on selected tab */
+.tabbrowser-tab[visuallyselected] .tab-background {
+    background: transparent !important;
+}
+
+/* different background on multiselectrd tabs */
+.tabbrowser-tab[multiselected]:not([selected]) .tab-content {
+    background: var(--back-color2) !important;
+}
+
+.tabbrowser-tab[visuallyselected] {
+    border: 2px solid var(--blue-color) !important;
+    border-radius: 4px 4px 0 0 !important;
+    border-bottom: 2px solid var(--back-color1) !important;
+}
+
+/* The Blue line in the top bar*/
+#main-window:not([sizemode="maximized"]) #navigator-toolbox:before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
+    clip:rect(27px,2600px,27px,0px);
+    position: absolute !important;
+}
+
+#navigator-toolbox:after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
+    clip:rect(27px,2600px,29px,0px);
+    position: absolute !important;
+}
+
+#navigator-toolbox {
+    border-bottom: 0px !important;
+}
+
+/* Glowing tab favicon */
+.tab-icon-image[selected="true"] {
+    filter: drop-shadow(0 0 5px var(--text-color1))
+}
+
+/* Make hovered tab icon, tab label normal */
+.tabbrowser-tab:not(:hover):not([selected]) .tab-icon-image, .tabbrowser-tab:not(:hover):not([selected]) .tab-label {
+    filter: brightness(0.5) !important;
+}
+
+/* Close Button, Mute/Sound Button show on Hover */
+.tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button, .tabbrowser-tab:not([pinned]):not(:hover) .tab-icon-sound {
+    visibility: collapse !important;
+}
+
+/* Remove Tab Seperatorb */
+.tabbrowser-tab::before, .tabbrowser-tab::after {
+    display: none !important;
+}
+
+/* Pending Tab Italic Style */
+.tabbrowser-tab[pending] {
+    font-style: italic !important;
+}
+
+.tab-icon-pending:not([pinned]) {
+    list-style-image: url("../icons/tab-loading.png") !important;
+}
+
+.tab-throbber:not([pinned]) {
+    list-style-image: url("../icons/tab-loading.png") !important;
+}
+
+#TabsToolbar #BMB_bookmarksPopup {
+    margin-top: -7px !important;
+}

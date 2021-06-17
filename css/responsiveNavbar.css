@@ -1,0 +1,69 @@
+/* Floating Toolbox */
+#navigator-toolbox {
+    position: fixed !important;
+    line-height: 0;
+    max-height: var(--tab-min-height) !important;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--back-color1) !important;
+}
+
+
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within {
+    transition-delay: 33ms !important;
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+#navigator-toolbox > * {
+    line-height: normal;
+    pointer-events: auto;
+}
+
+#navigator-toolbox,
+#navigator-toolbox > * {
+    width: 100vw;
+    -moz-appearance: none !important;
+}
+
+
+/* Hide buttons **/
+:root:not([customizing]) #nav-bar toolbarbutton {
+    margin-left: -30px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: all 200ms !important;
+}
+
+/* Show on hover or focus */
+:root:not([customizing]) :hover > #nav-bar toolbarbutton {
+    margin-left: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Move tabs 32% to right */
+#TabsToolbar {
+    margin-left: var(--navbar-percent) !important;
+    width: var(--toolbar-percent) !important;
+}
+
+/* Move navigation 68% to left and negative margin to move to top line */
+#nav-bar {
+    max-height: var(--tab-min-height) !important;
+    margin-right: var(--toolbar-percent) !important;
+    margin-top: var(--navbar-margin-top) !important;
+    width: var(--navbar-percent) !important;
+    background: transparent !important;
+    z-index: 1;
+}
+
+/* Compatibility for 1px left over nav bar while hovering */
+#nav-bar::before {
+    position: fixed;
+    width: 32vw;
+    height: 2px;
+    top: -1px;
+    content: '';
+}
