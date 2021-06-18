@@ -154,7 +154,7 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 ## Configuration
 1) To disable floating toolbox, comment line 6 (`@import "css/floatingToolbox.css";`) in `userChrome.css`
 2) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
-3) To disable any of the `script/*.uc.js`, simply rename `anyScript.uc.js` to `anyScript`
+3) To disable any of the `script/*.uc.js`, simply rename `anyScript.uc.js` to `anyScript`. Floating scrollbars has its own user preference `userChromeJS.floatingScrollbar.enabled`. Restart every time you change the boolean value.
 4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 5) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
 6) If something breaks on your system then please raise a issue
