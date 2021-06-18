@@ -132,43 +132,11 @@
         display: none;
     }
     `;
-    /*sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService),
-    uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-
-    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);*/
     
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 
-    var p = document.getElementById('devToolsSeparator');
-    var m = document.createElement('menuitem');
-    m.setAttribute('label', "Schwebende Scrollbar");
-    m.setAttribute('type', 'checkbox');
-    m.setAttribute('autocheck', 'false');
-    m.setAttribute('checked', enabled);
-    p.parentNode.insertBefore(m, p);
-    m.addEventListener('command', command, false);
-
     if (enabled) {
         sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     }
-
-    function command() {
-        if (sss.sheetRegistered(uri, sss.AGENT_SHEET)) {
-            prefs.setBoolPref('userChromeJS.floatingScrollbar.enabled', false);
-            sss.unregisterSheet(uri, sss.AGENT_SHEET);
-            m.setAttribute('checked', false);
-        } else {
-            prefs.setBoolPref('userChromeJS.floatingScrollbar.enabled', true);
-            sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
-            m.setAttribute('checked', true);
-        }
-
-        let root = document.documentElement;
-        let display = root.style.display;
-        root.style.display = 'none';
-        window.getComputedStyle(root).display; // Flush
-        root.style.display = display;
-    }
-
 })();
