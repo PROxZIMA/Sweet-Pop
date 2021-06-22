@@ -165,18 +165,23 @@
     background-color: var(--back-color1) !important;
 }
 
-.identity-box-button:hover,
-#tracking-protection-icon-container:hover,
+.identity-box-button:hover:not([open=true]),
 .identity-box-button:hover:active,
-.identity-box-button[open="true"],
+.identity-box-button[open=true],
+#tracking-protection-icon-container:hover:not([open=true]),
 #tracking-protection-icon-container:hover:active,
-#tracking-protection-icon-container[open="true"] {
+#tracking-protection-icon-container[open=true] {
+    fill-opacity: .8 !important;
     background: transparent !important;
 }
 
 /* Tracking protection icon Modif */
-#tracking-protection-icon-container {
-    fill: var(--blue-color) !important;
+#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
+    list-style-image: url("../icons/tracking-enabled.svg")!important;
+}
+
+#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box[hasException] > #tracking-protection-icon {
+    list-style-image: url("../icons/tracking-disabled.svg")!important;
 }
 
 /* Identity icon Modif */
