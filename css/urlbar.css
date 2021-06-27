@@ -212,10 +212,6 @@ search-textbox#search-box {
     border-radius: 4px !important;
 }
 
-#sidebar-splitter {
-    display: none !important;
-}
-
 .panel-footer > button:hover {
     background: var(--back-color3) !important;
 }
