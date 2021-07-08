@@ -19,7 +19,7 @@
     }
 
     var css = `
-	link[href$="global.css"] ~ scrollbox {
+    link[href$="global.css"] ~ scrollbox {
         overflow-y: auto !important;
     }
     link[href$="global.css"] ~ .menupopup-scrollbutton {
