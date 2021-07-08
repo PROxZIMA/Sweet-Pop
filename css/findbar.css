@@ -20,7 +20,7 @@ findbar {
 
 .findbar-textbox {
     background-color: transparent !important;
-	background-image: url(../icons/search.svg) !important;
+    background-image: url(../icons/search.svg) !important;
     transform: scale(0.9) !important;
     background-repeat: no-repeat !important;
     background-position: 5px center !important;
@@ -37,7 +37,7 @@ hbox[anonid="findbar-textbox-wrapper"] {
     position: relative !important;
     display: flex !important;
     padding: 2px !important;
-	height: 28px !important;
+    height: 28px !important;
     transition: background-color .1s var(--ease-basic) !important;
 }
 
@@ -50,7 +50,7 @@ hbox[anonid="findbar-textbox-wrapper"]:focus-within {
     border: 2px solid -moz-accent-color !important;
     margin: -1px !important;
     padding: 1px !important;
-	height: 30px !important;
+    height: 30px !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton {
@@ -67,7 +67,7 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton {
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton[disabled] {
-	display: none !important;
+    display: none !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton .toolbarbutton-text {
