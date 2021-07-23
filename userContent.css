@@ -59,16 +59,24 @@
 
 
 
-@-moz-document url-prefix(https://discovery.addons.mozilla.org),
-url-prefix(chrome://),
-url-prefix(about:),
-url-prefix(file://),
+
+@-moz-document url-prefix(chrome://),
 url(https://www.mozilla.org/credits/),
 url-prefix(https://addons.mozilla.org),
-url-prefix(http://addons.mozilla.org),
 url-prefix(https://raw.githubusercontent.com),
-url-prefix(moz-extension),
-url-prefix(view-source) {
+url-prefix(view-source:) {
+    :root {
+        --in-content-page-background: var(--back-color1) !important;
+        --in-content-page-color: var(--text-color1) !important;
+        --button-hover-color: var(--back-color1) !important;
+    }
+    html, body {
+        background-color: var(--in-content-page-background) !important;
+        color: var(--in-content-page-color) !important;
+    }
+}
+
+@-moz-document url-prefix(about:) {
     :root {
         --in-content-page-background: var(--back-color1) !important;
         --in-content-page-color: var(--text-color1) !important;
@@ -79,50 +87,48 @@ url-prefix(view-source) {
 
 
 
-
-
-
 /* ============= ADDON PAGE ============= */
 
-#header-inner {
-    margin: 2px 0px -40px 4px !important;
+@-moz-document url-prefix("about:addons") {
+    #header-inner {
+        margin: 2px 0px -40px 4px !important;
+    }
+    #heading {
+        margin: 1px 0px 1px -4px !important;
+    }
+    #main {
+        margin-top: 5px;
+    }
+    .addon-name {
+        font-weight: 400 !important;
+    }
+    .addon.card {
+        margin-bottom: 5px !important; min-width: 1000px !important;
+    }
+    addon-card:not([expanded]) > .addon.card:hover {
+        box-shadow: var(--back-color3) !important;
+    }
+    .card {
+        background: var(--back-color2) !important;
+        display: block !important;
+    }
+    .card-contents{
+        flex-direction: row !important;
+        display: block !important;
+    }
+    .list-section-heading {
+        margin-bottom: 9px !important;
+    }
+    .more-options-button {
+        top: 8px;
+    }
+    .prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
+        display:none;
+    }
+    .sidebar-footer-button {
+        margin-bottom: 36px;
+    }
 }
-#heading {
-    margin: 1px 0px 1px -4px !important;
-}
-#main {
-    margin-top: 5px;
-}
-.addon-name {
-    font-weight: 400 !important;
-}
-.addon.card {
-    margin-bottom: 5px !important; min-width: 1000px !important;
-}
-addon-card:not([expanded]) > .addon.card:hover {
-    box-shadow: var(--back-color3) !important;
-}
-.card {
-    background: var(--back-color2) !important;
-    display: block !important;
-}
-.card-contents{
-    flex-direction: row !important;
-    display: block !important;
-}
-.list-section-heading {
-    margin-bottom: 9px !important;
-}
-.more-options-button {
-    top: 8px;
-}
-.prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
-    display:none;
-}
-.sidebar-footer-button {
-    margin-bottom: 36px;
-}
-
 
 
 
@@ -165,7 +171,6 @@ addon-card:not([expanded]) > .addon.card:hover {
     }
 
 }
-
 
 
 
@@ -249,17 +254,6 @@ addon-card:not([expanded]) > .addon.card:hover {
     }
 }
 
-@-moz-document url("https://www.qwiklabs.com/public_profiles/8ce32532-ca12-4a89-aed0-99c9316cae73") {
-    .container img {
-        height: 180px !important;
-        width: 180px !important;
-    }
-    .container .title {
-        width: 250px;
-        text-align: center;
-    }
-}
-
 
 
 
@@ -288,7 +282,8 @@ addon-card:not([expanded]) > .addon.card:hover {
 
 
 
-/* =============== PDF theming =============== */
+
+
 
 @-moz-document regexp(".*\\.(p|P)(d|D)(f|F).*") {
     :root {
@@ -312,3 +307,35 @@ addon-card:not([expanded]) > .addon.card:hover {
     }
 }
 
+
+
+
+
+
+/* =============== Site Specific Customisations =============== */
+
+@-moz-document url("https://www.qwiklabs.com/public_profiles/8ce32532-ca12-4a89-aed0-99c9316cae73") {
+    .container img {
+        height: 180px !important;
+        width: 180px !important;
+    }
+    .container .title {
+        width: 250px;
+        text-align: center;
+    }
+}
+
+@-moz-document url-prefix("https://jsfiddle.net/") {
+    #sidebar {
+        width: 125px;
+    }
+    #content {
+        margin-left: -84px !important;
+    }
+    #sidebar * {
+        overflow: hidden;
+    }
+    #s-bottom {
+        display: none !important;
+    }
+}

@@ -36,7 +36,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(27px,2600px,27px,0px);
+    clip:rect(27px,2600px,29px,0px);
     position: absolute !important;
 }
 
