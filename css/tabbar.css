@@ -12,9 +12,17 @@
     background: var(--back-color1) !important;
 }
 
+/* Fix for hover on selected tab */
+.tabbrowser-tab[visuallyselected] .tab-content:hover {
+  background: transparent !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+
 /* Transparent background on selected tab */
 .tabbrowser-tab[visuallyselected] .tab-background {
     background: transparent !important;
+    position: relative !important;
+    visibility: visible !important;
 }
 
 /* different background on multiselectrd tabs */
@@ -24,8 +32,47 @@
 
 .tabbrowser-tab[visuallyselected] {
     border: 2px solid var(--blue-color) !important;
-    border-radius: 4px 4px 0 0 !important;
+    /* Border top radius*/
+    border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
     border-bottom: 2px solid var(--back-color1) !important;
+}
+
+/* Border bottom radius */
+.tabbrowser-tab[visuallyselected] .tab-background::before,
+.tabbrowser-tab[visuallyselected] .tab-background::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    width: var(--tab-radius) !important;
+    height: var(--tab-radius) !important;
+    bottom: -2px !important;
+    pointer-events: none !important;
+    border-bottom: 2px solid var(--blue-color) !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background::before {
+    border-bottom-right-radius: var(--tab-radius) !important;
+    left: 0 !important;
+    transform: translateX(calc(-2px - var(--tab-radius))) !important;
+    border-right: 2px solid var(--blue-color) !important;
+    box-shadow: 4px 4px 0 4px var(--back-color1) !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background::after {
+    border-bottom-left-radius: var(--tab-radius) !important;
+    right: 0 !important;
+    transform: translateX(calc(2px + var(--tab-radius))) !important;
+    border-left: 2px solid var(--blue-color) !important;
+    box-shadow: -4px 4px 0 4px var(--back-color1) !important;
+}
+
+/* Moving First and last tab in */
+.tabbrowser-tab[first-visible-tab] {
+  margin-left: var(--tab-radius) !important;
+}
+
+.tabbrowser-tab[last-visible-tab] {
+  margin-right: var(--tab-radius) !important;
 }
 
 /* The Blue line in the top bar*/
@@ -90,4 +137,14 @@
 
 #TabsToolbar #BMB_bookmarksPopup {
     margin-top: -7px !important;
+}
+
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
+    padding: 0 !important;
+}
+
+#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button > .toolbarbutton-icon {
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0px !important;
 }
