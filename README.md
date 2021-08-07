@@ -158,6 +158,7 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 5) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
 6) If something breaks on your system then please raise a issue
+7) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
