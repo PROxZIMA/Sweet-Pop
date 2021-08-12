@@ -89,6 +89,10 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
     border-radius: 0px !important;
 }
 
+.customization-lwtheme-menu-theme, .customization-uidensity-menuitem {
+    margin: 0 -6px !important;
+}
+
 /* Overflow Menu extension width */
 #PanelUI-webext-ublock0_raymondhill_net-browser-action-view {
     min-width: 252px !important;
