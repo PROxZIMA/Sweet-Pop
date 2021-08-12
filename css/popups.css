@@ -65,6 +65,14 @@ menupopup menu[disabled=true],
     opacity: .5 !important;
 }
 
+:is(panel, menupopup)::part(content),
+.panel-arrowcontainer slot{
+    border: 0 !important;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),
+                0 8px 10px 1px rgba(0,0,0,.14),
+                0 3px 14px 2px rgba(0,0,0,.12) !important;
+}
+
 /* disable vertical menu scroll buttons and use a good ol' scrollbar */
 /* this is a shotgun approach, expect side effects */
 scrollbox[orient=vertical] /* >=71 */ {
@@ -158,8 +166,9 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .menupopup-arrowscrollbox {
     margin: 8px 0 !important;
     padding: 8px 0 !important;
-    border-radius: 4px !important;
+    border-radius: 8px !important;
     color: inherit !important;
+    border: 0 !important;
 }
 
 .popup-internal-box,
@@ -325,6 +334,10 @@ toolbar:not(#PersonalToolbar) .toolbarbutton-1:-moz-focusring>.toolbarbutton-bad
     display: none !important;
 }
 
+#appMenu-popup panelview, #PanelUI-fxa {
+    width: 19em !important;
+}
+
 :root[fxastatus="signedin"] #appMenu-fxa-label {
     list-style-image: var(--avatar-image-url) !important;
     margin: 0 !important;
@@ -370,6 +383,14 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 .subviewbutton[shortcut]::after,
 .PanelUI-subView .subviewbutton-nav::after {
     margin-inline-start: 14px !important;
+}
+
+.subviewbutton .toolbarbutton-text {
+    margin-inline: 0px !important
+}
+
+.subviewbutton .toolbarbutton-icon {
+    display: none !important;
 }
 
 .PanelUI-subView .subviewbutton-nav::after {
