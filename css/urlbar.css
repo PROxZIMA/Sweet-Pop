@@ -19,13 +19,24 @@
 }
 
 .urlbarView {
-    position: absolute !important;
+    position: relative !important;
     width: 55vw !important;
+    overflow: visible !important;
     background: var(--back-color1) !important;
     border-radius: 0 0 8px 8px !important;
-    margin: 3px 0 0 -4px!important;
+    margin: 2px 0 0 0 !important;
     filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
             drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
+}
+
+/* Fix for glitch when hovering suggestions */
+.urlbarView::before {
+    content: '';
+    position: absolute;
+    top: 1%;
+    left: -95px;
+    width: 100px;
+    height: 101%;
 }
 
 .urlbarView-row {
@@ -59,6 +70,7 @@
 #urlbar-container, #search-container {
     padding: 0 !important;
     min-width: 20px !important;
+    margin-inline: 0px !important;
 }
 
 #searchbar {
@@ -167,9 +179,11 @@
     background-color: var(--back-color1) !important;
 }
 
+.identity-box-button,
 .identity-box-button:hover:not([open=true]),
 .identity-box-button:hover:active,
 .identity-box-button[open=true],
+#tracking-protection-icon-container,
 #tracking-protection-icon-container:hover:not([open=true]),
 #tracking-protection-icon-container:hover:active,
 #tracking-protection-icon-container[open=true] {
@@ -234,4 +248,8 @@ search-textbox#search-box {
 #PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
     margin-inline: 1px !important;
+}
+
+toolbar .toolbarbutton-1 {
+    padding-inline: 0 !important;
 }
