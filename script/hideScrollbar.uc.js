@@ -71,7 +71,7 @@
         -webkit-backface-visibility: hidden!important;
     }
     .hidevscroll-scrollbar thumb:active {
-        background-color: rgb(136, 137, 141, 1)!important;
+        background-color: #d700d2! important;
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out!important;
         -webkit-transform-style: preserve-3d!important;
@@ -122,7 +122,7 @@
         -webkit-backface-visibility: hidden;
     }
     :not(select):not(hbox) > scrollbar thumb:active {
-        background-color: rgb(136, 137, 141, 1)!important;
+        background-color: #d700d2 !important;
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out;
         -webkit-transform-style: preserve-3d;
