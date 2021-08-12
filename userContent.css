@@ -24,10 +24,10 @@
 }
 /*================ LIGHT THEME ================*/
 
-:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
-:root[style*="--lwt-accent-color:rgb(240, 240, 244);"],
-:root[style*="--newtab-background-color:rgba(249, 249, 251, 1);"],
-:root[style*="--lwt-accent-color:white;"] {
+:root[style*="--lwt-accent-color: rgb(227, 228, 230);"],
+:root[style*="--lwt-accent-color: rgb(240, 240, 244);"],
+:root[style*="--newtab-background-color: rgba(249, 249, 251, 1);"],
+:root[style*="--lwt-accent-color: white;"] {
     --back-color1: var(--light-color1);
     --back-color2: var(--light-color2);
     --back-color3: var(--light-color3);
@@ -40,9 +40,9 @@
 /*================ DARK THEME ================*/
 
 :root:not([style]),
-:root[style*="--lwt-accent-color:rgb(28, 27, 34);"],
-:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
-:root[style*="--newtab-background-color:rgba(42, 42, 46, 1);"],
+:root[style*="--lwt-accent-color: rgb(28, 27, 34);"],
+:root[style*="--lwt-accent-color: rgb(12, 12, 13);"],
+:root[style*="--newtab-background-color: rgba(42, 42, 46, 1);"],
 :root[privatebrowsingmode=temporary] {
     --back-color1: var(--dark-color1);
     --back-color2: var(--dark-color2);
@@ -64,6 +64,7 @@
 url(https://www.mozilla.org/credits/),
 url-prefix(https://addons.mozilla.org),
 url-prefix(https://raw.githubusercontent.com),
+url-prefix(https://www.keybr.com),
 url-prefix(view-source:) {
     :root {
         --in-content-page-background: var(--back-color1) !important;

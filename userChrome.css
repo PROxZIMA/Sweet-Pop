@@ -3,7 +3,7 @@
 @import "userContent.css";
 
 /* Comment following line to diable floating toolbox */
-/* @import "css/floatingToolbox.css"; */
+@import "css/floatingToolbox.css";
 
 @import "css/responsiveNavbar.css";
 @import "css/popups.css";
@@ -34,16 +34,16 @@
 :root[sizemode="fullscreen"] { margin-top: 0px !important; }
 
 :root {
-    --bookmark-block-padding: 1px;
+    --bookmark-block-padding: 1px !important;
+    --menupopup-height: 29px;
     --navbar-margin-top: -28px;
     --navbar-percent: 32vw;
-    --menupopup-height: 29px;
     --subview-height: 29px;
-    --tab-min-height: 29px;
-    --toolbar-percent: 68vw;
-    --toolbarbutton-outer-padding: 3px;   /* 1px */
-    --toolbarbutton-inner-padding: 6px;
-    --urlbar-icon-padding: 3px;
-    --urlbar-min-height: 26px;
+    --tab-min-height: 29px !important;
     --tab-radius: 6px;
+    --toolbar-percent: 68vw;
+    --toolbarbutton-inner-padding: 6px !important;
+    --toolbarbutton-outer-padding: 3px !important;   /* 1px */
+    --urlbar-icon-padding: 3px !important;
+    --urlbar-min-height: 26px !important;
 }
