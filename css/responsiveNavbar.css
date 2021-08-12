@@ -30,7 +30,7 @@
 
 /* Hide buttons **/
 :root:not([customizing]) #nav-bar toolbarbutton {
-    margin-left: -30px !important;
+    margin-left: -28px !important;
     opacity: 0 !important;
     pointer-events: none !important;
     transition: all 200ms !important;
