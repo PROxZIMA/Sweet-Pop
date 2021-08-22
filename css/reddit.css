@@ -1,0 +1,652 @@
+/* https://github.com/Jorengarenar/RedditOldRedesignedDark */
+
+/*
+Copyright 2012-2018 Globex Designs, Inc. <https://userstyles.org/users/6943>
+Copyright 2020-2021 Jorengarenar         <dev@joren.ga>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+*/
+
+@-moz-document domain("reddit.com") {
+  :root {
+    --gray-0: #11131c;
+    --gray-1: #1B1D26;
+    --gray-2: #252730;
+    --gray-3: #2F313A;
+    --gray-a0: #151720;
+    --blue-0: #4ac;
+    --blue-1: #369;
+    --blue-2: #2c89f5;
+    --red: #d3391a;
+    --dark-red: #440202;
+    --text-normal: rgba(255,255,255,0.8);
+    --text-normal-hover: #fff;
+    --text-med: #999;
+    --text-dark: #737373;
+    --text-dark-hover: var(--text-normal);
+    --url: rgba(133,160,173,0.8);
+  }
+  body {
+    background-color: var(--gray-0) !important;
+  }
+  body,
+  .md {
+    color: var(--text-normal) !important;
+  }
+  a,
+  a[class],
+  a[class]:visited {
+    color: var(--url) !important;
+  }
+  a:hover {
+    color: var(--text-normal-hover) !important;
+  }
+  blockquote {
+    color: var(--text-med) !important;
+  }
+  pre,
+  code {
+    background: var(--gray-a0) !important;
+    border: none !important;
+  }
+  textarea {
+    background: var(--gray-0) !important;
+    border: 1px solid var(--gray-1) !important;
+/*    color: var(--text-normal) !important;*/
+  }
+  button {
+    background: var(--gray-0) !important;
+    border-radius: 5px !important;
+    border: 1px solid !important;
+    color: var(--text-med) !important;
+  }
+  button:hover {
+    background: var(--gray-1) !important;
+  }
+  input[type="text"], #search input[type="text"] {
+    background-color: var(--gray-3) !important;
+    border: 1px solid var(--gray-a0) !important;
+    border-radius: 2px !important;
+    color: var(--text-med) !important;
+    width: 100% !important;
+  }
+  #header {
+    background: transparent !important;
+    border-bottom: 0 !important;
+    top: 0 !important;
+  }
+  #header #sr-header-area {
+    display: flex !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+  #header #sr-header-area a,
+  #header #sr-header-area .dropdown.srdrop .selected {
+    color: var(--text-med) !important;
+    text-decoration: none !important;
+  }
+  #header #sr-header-area a:hover,
+  #header #sr-header-area .dropdown.srdrop .selected:hover {
+    color: var(--text-dark-hover) !important;
+  }
+  #header #sr-header-area .sr-list .flat-list.sr-bar:nth-of-type(2) {
+    text-transform: none !important;
+  }
+  #header #sr-header-area .sr-bar .separator {
+    color: var(--red) !important;
+  }
+  #header #sr-header-area .drop-choices {
+    background: var(--gray-0) !important;
+    border: 1px solid var(--gray-2) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6), 0 6px 6px rgba(0,0,0,0.9) !important;
+  }
+  #header #sr-header-area .drop-choices a:hover {
+    background: var(--gray-2) !important;
+  }
+  #header #sr-header-area #redesign-beta-optin-btn {
+    display: none !important;
+  }
+  #header #sr-header-area #sr-more-link {
+    display: none !important;
+  }
+  #header #header-bottom-left {
+    display: flex !important;
+    align-items: center !important;
+    background-color: var(--gray-1) !important;
+  }
+  #header #header-bottom-left #header-img.default-header {
+    background-image: url("https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 24px !important;
+    margin: 4px 16px !important;
+    width: 24px !important;
+  }
+  #header #header-bottom-left #header-img:hover {
+    opacity: 0.8 !important;
+  }
+  #header #header-bottom-left .pagename {
+    font-variant: normal !important;
+    margin: 0 10px !important;
+    position: initial !important;
+  }
+  #header #header-bottom-left .pagename.redditname a {
+    color: var(--text-normal) !important;
+  }
+  #header #header-bottom-left .tabmenu {
+    margin: 0 !important;
+  }
+  #header #header-bottom-left .tabmenu li a {
+    background: none !important;
+    color: var(--text-normal) !important;
+    font-weight: initial !important;
+    text-transform: uppercase !important;
+  }
+  #header #header-bottom-left .tabmenu li a:hover {
+    color: var(--text-normal-hover) !important;
+  }
+  #header #header-bottom-left .tabmenu li.selected a {
+    border: none !important;
+    color: var(--red) !important;
+  }
+  #header #header-bottom-right {
+    background: none !important;
+    position: absolute !important;
+    right: 0px !important;
+    line-height: 32px !important;
+    border-top-left-radius: 7px !important;
+    bottom: 0px !important;
+    padding: 0 8px !important;
+  }
+  #header #header-bottom-right .beta-hint a {
+    position: relative !important;
+  }
+  #header #header-bottom-right a {
+    color: var(--text-normal) !important;
+  }
+  #header #header-bottom-right a:hover {
+    color: var(--text-normal-hover) !important;
+  }
+  .side .titlebox, .sidecontentbox, .sidebox.create {
+    background: transparent !important;
+  }
+  .side {
+    background: var(--gray-a0) !important;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5) !important;
+    padding: 0 8px !important;
+  }
+  .subscribers .number,
+  .users-online .number {
+    color: var(--text-normal) !important;
+  }
+  body.listing-page .side .spacer {
+    background: var(--gray-a0) !important;
+    padding: 5px 3px !important;
+    margin: 7px !important;
+  }
+  .side .titlebox h1 a {
+    color: var(--text-normal) !important;
+  }
+  .side .titlebox form.toggle,
+  .side .leavemoderator {
+    background: none !important;
+    color: var(--text-normal) !important;
+  }
+  .side .sidecontentbox .message-button a.c-btn-primary {
+    background-color: var(--gray-2) !important;
+    border-bottom: none !important;
+  }
+  .side .sidecontentbox.collapsible a {
+    background: none !important;
+    color: var(--text-med) !important;
+  }
+  .side .sidecontentbox .collapse-button {
+    background: var(--gray-3) !important;
+    color: var(--text-normal) !important;
+  }
+  .side .linkinfo {
+    background: var(--gray-1) !important;
+    border-color: var(--gray-2) !important;
+  }
+  .side .linkinfo #shortlink-text {
+    color: var(--text-normal) !important;
+    background: var(--gray-2) !important;
+  }
+  .side #searchexpando label {
+    color: var(--text-normal) !important;
+  }
+  .side .morelink {
+    background: var(--gray-2) !important;
+    border: 0 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+  }
+  .side .morelink a {
+    color: var(--text-normal) !important;
+  }
+  .side .morelink:hover a {
+    background: var(--gray-3) !important;
+  }
+  .side .morelink .nub {
+    display: none !important;
+  }
+  .side .sidebox.create .spacer {
+    display: none;
+  }
+  .side .read-next-container .read-next {
+    background: var(--gray-2) !important;
+    border-color: var(--gray-3) !important;
+  }
+  .side .read-next-container .read-next .read-next-header {
+    background-color: var(--gray-1) !important;
+    color: var(--text-normal) !important;
+    border-color: var(--gray-3) !important;
+  }
+  .side .read-next-container .read-next .read-next-meta {
+    color: var(--text-normal) !important;
+  }
+  .side .trophy-area .content {
+    background-color: transparent !important;
+  }
+  .side .trophy-area .trophy-name {
+    color: var(--text-normal) !important;
+  }
+  .side .server-seconds,
+  .side .server-seconds em {
+    background-color: transparent !important;
+    color: var(--text-normal) !important;
+  }
+  .side .subscribe-button a.add.active {
+    color: var(--text-normal) !important;
+  }
+  .listing-chooser {
+    background-color: var(--gray-2) !important;
+    top: 52px !important;
+  }
+  .listing-chooser.initialized,
+  .listing-chooser * {
+    transition: none !important;
+  }
+  .listing-chooser li {
+    background-color: var(--gray-1) !important;
+    border-color: var(--gray-3) !important;
+  }
+  .listing-chooser li:hover {
+    background-color: var(--gray-2) !important;
+  }
+  .listing-chooser li > a {
+    color: var(--text-normal) !important;
+  }
+  .listing-chooser li.selected {
+    border-color: var(--gray-3) !important;
+    box-shadow: none !important;
+  }
+  .listing-chooser .grippy {
+    background: var(--gray-1) !important;
+  }
+  .listing-chooser .grippy:hover {
+    background: var(--gray-3) !important;
+  }
+  .listing-chooser .grippy::after,
+  .listing-chooser .grippy::before {
+    filter: grayscale(1) brightness(3) !important;
+    position: initial !important;
+  }
+  .listing-chooser .intro {
+    display: none !important;
+  }
+  .dropdown-title.lightdrop,
+  .dropdown-title.lightdrop ~ div > .selected {
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+  .dropdown-title.lightdrop ~ .inuse a {
+    background-color: var(--gray-3) !important;
+    color: var(--text-normal) !important;
+    text-transform: uppercase !important;
+  }
+  .dropdown-title.lightdrop ~ .inuse a:hover {
+    background-color: var(--gray-2) !important;
+  }
+  .content .formtabs-content {
+    border-top: 5px solid var(--gray-3) !important;
+  }
+  .content .roundfield,
+  .content .linefield {
+    background-color: var(--gray-1) !important;
+  }
+  .content .linefield span.title {
+    color: var(--text-normal) !important;
+  }
+  .content .linefield.mobile {
+    background: var(--gray-1) !important;
+    border: none !important;
+  }
+  .content .info-notice {
+    background-color: var(--gray-0) !important;
+    border: 1px solid var(--red) !important;
+  }
+  .content #newlink-with-image-upload .image-upload-drop-target {
+    background-color: initial !important;
+  }
+  .content #new-link-preview {
+    background-color: transparent !important;
+    border: 1px solid !important;
+  }
+  .content .clear-input-button {
+    filter: invert(1) brightness(2) !important;
+  }
+  .content .tabmenu.formtab a {
+    background: var(--gray-3) !important;
+    border: none !important;
+    color: var(--text-normal) !important;
+  }
+  .content .tabmenu.formtab .selected a {
+    background: var(--gray-1) !important;
+  }
+  .content ul.image-preview-list .description pre.img-url {
+    color: var(--text-normal) !important;
+  }
+  .nav-buttons .nextprev {
+    color: transparent !important;
+  }
+  .nav-buttons .nextprev > .separator {
+    border-left: 0 !important;
+  }
+  .nav-buttons .nextprev a {
+    background-color: var(--gray-2) !important;
+    border: 1px solid var(--gray-3) !important;
+    color: var(--text-med) !important;
+    text-transform: uppercase !important;
+  }
+  .nav-buttons .nextprev a:hover {
+    background-color: var(--gray-3) !important;
+  }
+  .panestack-title,
+  .menuarea,
+  .commentarea .usertext {
+    background: var(--gray-0) !important;
+  }
+  .usertext .md a {
+    color: var(--text-normal) !important;
+  }
+  .panestack-title .title {
+    color: var(--text-normal) !important;
+  }
+  .midcol .arrow:hover {
+    opacity: 0.8 !important;
+  }
+  .midcol .arrow.upmod {
+    filter: brightness(0.6) contrast(350%) !important;
+  }
+  .midcol .arrow.downmod {
+    filter: brightness(0.7) contrast(200%) hue-rotate(-35deg) !important;
+  }
+  .midcol .score.likes {
+    filter: brightness(0.7) contrast(200%) !important;
+  }
+  .pinnable-content.pinned {
+    background-color: var(--gray-a0) !important;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.5) !important;
+  }
+  .pinnable-content.pinned .dismiss-pinnable {
+    filter: invert(1) !important;
+  }
+  .thing.link {
+    background-color: var(--gray-0) !important;
+    border: none !important;
+  }
+  .thing.link.last-clicked {
+    border: none !important;
+  }
+  .thing.link .rank {
+    display: none !important;
+  }
+  .thing.link .domain a {
+    color: var(--text-dark) !important;
+  }
+  .thing.link .thumbnail {
+    background-color: var(--gray-2) !important;
+  }
+  .thing.link .thumbnail img {
+    height: auto !important;
+    width: inherit !important;
+  }
+  .thing.link .title {
+    color: var(--text-normal) !important;
+  }
+  .thing.link .title:hover {
+    color: var(--text-normal-hover) !important;
+  }
+  .thing.link .title:visited {
+    color: var(--text-dark) !important;
+    opacity: 0.8 !important;
+  }
+  .thing.link[data-rank=""] .top-matter a.title:visited {
+/* don't dim visited links if on their post page */
+    color: var(--text-normal) !important;
+  }
+  .thing.link .tagline {
+    color: var(--text-dark) !important;
+  }
+  .thing.link .tagline time,
+  .thing.link .tagline .author,
+  .thing.link .tagline .subreddit {
+    white-space: nowrap !important;
+  }
+  .thing.link .tagline a.author,
+  .thing.link .tagline a.subreddit {
+    color: var(--text-normal) !important;
+  }
+  .thing.link .tagline .subreddit-subscribe {
+    display: none !important;
+  }
+  .thing.link .expando-button {
+    filter: grayscale(100%) invert(90%) !important;
+  }
+  .thing.link .expando-button:hover {
+    filter: grayscale(100%) !important;
+  }
+  .thing.link.promoted {
+    display: none !important;
+  }
+  .thing.link .md-container h1,
+  .thing.link .md-container h1 strong {
+    color: var(--text-normal) !important;
+    font-weight: 300 !important;
+  }
+  .thing.link .usertext .md {
+    background: none !important;
+    border: 1px dotted var(--gray-a0) !important;
+  }
+  .thing.link .crosspost-preview {
+    background: var(--gray-1) !important;
+    border: none !important;
+  }
+  .thing.link .crosspost-preview.video .crosspost-preview-content {
+    background-color: var(--gray-0) !important;
+    border: 4px solid var(--gray-1) !important;
+  }
+  .thing.comment {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0px !important;
+    border-left: 1px solid var(--gray-3) !important;
+  }
+  .nestedlisting > .thing.comment {
+    border: none !important;
+  }
+  .thing.comment .usertext.grayed .usertext-body,
+  .thing.comment .usertext.grayed .usertext .md {
+    background-color: transparent !important;
+    color: var(--text-dark) !important;
+  }
+  .thing.comment .usertext.border .usertext-body {
+    background-color: transparent !important;
+    border: 1px dashed var(--gray-3) !important;
+  }
+  .thing.comment.new-comment .usertext-body {
+    background-color: var(--gray-1) !important;
+    border: 2px dotted var(--gray-3) !important;
+  }
+  .thing.comment .score {
+    font-weight: bold !important;
+  }
+  .thing.comment .userattrs .submitter {
+    color: var(--blue-0) !important;
+    visibility: hidden !important;
+  }
+  .thing.comment .userattrs .submitter::after {
+    content: "OP" !important;
+    margin-left: -7px !important;
+    visibility: visible !important;
+  }
+  .thing.message > .entry .tagline {
+    color: var(--text-dark) !important;
+  }
+  .thing.message.new > .entry {
+    background-color: #191919 !important;
+    border: 1px solid #333 !important;
+  }
+  .thing .entry .flat-list.buttons li a {
+    color: var(--text-dark) !important;
+  }
+  .thing .entry .flat-list.buttons li a:hover {
+    color: var(--text-dark-hover) !important;
+    text-decoration: none !important;
+  }
+  .thing .entry .flat-list.buttons .big-mod-buttons .pretty-button {
+    color: var(--gray-1) !important;
+  }
+  .thing.spam {
+    background: var(--dark-red) !important;
+  }
+  .res.res-commentBoxes .comment, .commentarea .comment {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .commentarea .comment > .child {
+    border: none !important;
+  }
+  .commentarea .comment a.expand {
+    text-decoration: none !important;
+  }
+  .wikiaction-current {
+    background-color: var(--gray-2) !important;
+    color: var(--text-normal) !important;
+  }
+  .wikiaction:hover {
+    background-color: var(--gray-3) !important;
+  }
+  .wikirevisionlisting .revision {
+    color: var(--text-normal) !important;
+  }
+  .flair:not(.flairrichtext),
+  .linkflairlabel:not(.flairrichtext) {
+    background: var(--gray-1) !important;
+    border-color: var(--gray-3) !important;
+    color: var(--text-med) !important;
+  }
+  .flairselector {
+    background-color: var(--gray-2) !important;
+    box-shadow: 2px 2px 2px var(--gray-0) !important;
+  }
+  .flairselector a.title {
+    display: none !important;
+  }
+  .flairselector .flairoptionpane li {
+    border: none !important;
+    display: block !important;
+  }
+  .flairselector > h2,
+  .flairselector #newlink-flair-dropdown > h2 {
+    background: none !important;
+    color: var(--text-normal) !important;
+  }
+  .searchpane {
+    background-color: var(--gray-2) !important;
+  }
+  .search-result :link > mark {
+    color: var(--blue-2) !important;
+  }
+  .search-expando.collapsed::before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--gray-1) 100%) !important;
+  }
+  .locked-infobar ~ .commentarea .reply-button {
+/* hide "reply" on locked posts */
+    display: none !important;
+  }
+  .archived-infobar ~ div .midcol .arrow {
+/* hide voting on archived posts */
+    visibility: hidden !important;
+  }
+  .modactionlisting a {
+/* moderation log */
+    color: var(--blue-1) !important;
+  }
+  .interstitial-subreddit-description {
+    background-color: var(--gray-a0) !important;
+  }
+  .subreddit .usertext .md {
+    background-color: transparent !important;
+  }
+  #pref-form label[for="show_stylesheets"]::after {
+    color: var(--red) !important;
+    content: "\00a0\00a0 \00a0\00a0 UNCHECK THIS WHEN USING USERSTYLES!" !important;
+  }
+  .fancy-toggle-button a {
+    color: var(--gray-2) !important;
+  }
+  .hover-bubble,
+  .hover-bubble.multi-selector label:hover,
+  .hover-bubble.multi-selector .create-multi input[type="text"] {
+    background: var(--gray-2) !important;
+    color: var(--text-normal) !important;
+  }
+  .infobar,
+  .reddit-infobar {
+    background: var(--gray-1) !important;
+    border: 1px solid var(--gray-3) !important;
+  }
+  .modal-content {
+    background-color: var(--gray-a0) !important;
+  }
+  .author-tooltip__head {
+    background-color: var(--gray-1) !important;
+    color: var(--text-normal) !important;
+  }
+  .tutorial_post,
+  .premium-banner-outer {
+    display: none !important;
+  }
+  .footer-parent {
+    display: none !important;
+  }
+}
+@-moz-document url-prefix("https://www.reddit.com/framedModal/report") {
+  #SHORTCUT_FOCUSABLE_DIV > div[class=""] > div[class][aria-hidden="false"] > div[class] {
+    overflow: initial !important;
+  }
+  #SHORTCUT_FOCUSABLE_DIV > div[class=""] > div[class][aria-hidden="false"] > div[class] > div[class] > div[class] {
+    background: var(--gray-0) !important;
+  }
+}
