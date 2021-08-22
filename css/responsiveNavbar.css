@@ -19,6 +19,7 @@
 #navigator-toolbox > * {
     line-height: normal;
     pointer-events: auto;
+    max-height: var(--tab-min-height) !important;
 }
 
 #navigator-toolbox,
