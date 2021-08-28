@@ -3,7 +3,7 @@
 @import "userContent.css";
 
 /* Comment following line to diable floating toolbox */
-/*@import "css/floatingToolbox.css";*/
+@import "css/floatingToolbox.css";
 
 @import "css/responsiveNavbar.css";
 @import "css/popups.css";
