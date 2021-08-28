@@ -44,7 +44,7 @@
 :root:not([style]),
 :root[style*="--lwt-accent-color: rgb(28, 27, 34);"],
 :root[style*="--lwt-accent-color: rgb(12, 12, 13);"],
-:root[style*="--newtab-background-color: rgba(42, 42, 46, 1);"],
+:root[style*="--newtab-background-color: rgba(43, 42, 51, 1);"],
 :root[privatebrowsingmode=temporary] {
     --back-color1: var(--dark-color1);
     --back-color2: var(--dark-color2);
