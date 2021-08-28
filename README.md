@@ -172,9 +172,9 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 - [u/It_Was_The_Other_Guy](https://www.reddit.com/user/It_Was_The_Other_Guy) helped me a lot on [r/FirefoxCSS](https://www.reddit.com/r/FirefoxCSS/)<br>
 Also this theme uses his [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) to load the javascripts files.
 
-- [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js) script by [u/MotherStylus](https://www.reddit.com/user/MotherStylus) adds button slider to navbar toolbar. More details [here](https://www.reddit.com/r/FirefoxCSS/comments/n9asta/addons_width_changes_to_a_fixed_value_when_placed/)
+- [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js#navbar-toolbar-button-slider) script by [u/MotherStylus](https://www.reddit.com/user/MotherStylus) adds button slider to navbar toolbar. More details [here](https://www.reddit.com/r/FirefoxCSS/comments/n9asta/addons_width_changes_to_a_fixed_value_when_placed/)
 
-- [`appMenuAboutConfigButton.uc.js`](https://github.com/aminomancer/uc.css.js) script by [u/MotherStylus](https://www.reddit.com/user/MotherStylus).
+- [`appMenuAboutConfigButton.uc.js`](https://github.com/aminomancer/uc.css.js#app-menu-aboutconfig-button) script by [u/MotherStylus](https://www.reddit.com/user/MotherStylus).
 
 - [Setting local page as homepage](https://www.reddit.com/r/firefox/comments/ge86z4/newtab_page_to_local_file_firefox_76_redux/)
 
