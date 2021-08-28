@@ -1,4 +1,3 @@
-/* Floating Toolbox */
 #navigator-toolbox {
     position: fixed !important;
     line-height: 0;
@@ -29,23 +28,25 @@
 }
 
 
-/* Hide buttons **/
-:root:not([customizing]) #nav-bar toolbarbutton {
-    margin-left: -28px !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+/* Hide buttons */
+:root:not([customizing]) #nav-bar .customization-target > :not(#urlbar-container) {
+    width: 0px !important;
+    min-width: 0px !important;
     transition: all 200ms !important;
 }
 
 /* Show on hover or focus */
-:root:not([customizing]) :hover > #nav-bar toolbarbutton {
-    margin-left: 0 !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
+:root:not([customizing]) #nav-bar:hover .customization-target > :not(#urlbar-container) {
+    min-width: 28px !important;
+    transition: all 200ms !important;
+}
+:root:not([customizing]) #nav-bar:hover .customization-target > #nav-bar-toolbarbutton-slider-container {
+    width: auto !important;
 }
 
 /* Move tabs 32% to right */
 #TabsToolbar {
+    min-height: var(--tab-min-height) !important;
     margin-left: var(--navbar-percent) !important;
     width: var(--toolbar-percent) !important;
 }
