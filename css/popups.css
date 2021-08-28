@@ -70,6 +70,7 @@ menupopup menu[disabled=true],
 
 :is(panel, menupopup)::part(content),
 .panel-arrowcontainer slot{
+    background: none !important;
     border: 0 !important;
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),
                 0 8px 10px 1px rgba(0,0,0,.14),
@@ -205,11 +206,11 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 
 /* autocomplete panel can't overlap the textbox, so shadow can't go up more than 1px */
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
+    margin: 0 -8px !important;
     box-shadow:
-        0 0 0 1px rgba(0, 0, 0, .03),
-        0 5px 5px -3px rgba(0, 0, 0, .2),
-        0 8px 10px -0px rgba(0, 0, 0, .14),
-        0 3px 14px -5px rgba(0, 0, 0, .12) !important;
+        0 5px 5px -3px rgba(0,0,0,.2),
+        0 8px 10px 1px rgba(0,0,0,.14),
+        0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
 /* search panel gets special treatment; it has multiple children */
@@ -908,3 +909,4 @@ richlistitem:-moz-any(
 #confirmation-hint-checkmark-animation-container {
     margin-inline-end: 0 !important;
 }
+

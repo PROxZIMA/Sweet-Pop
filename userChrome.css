@@ -46,4 +46,6 @@
     --toolbarbutton-outer-padding: 3px !important;   /* 1px */
     --urlbar-icon-padding: 3px !important;
     --urlbar-min-height: 26px !important;
+    --panel-background: rgba(0, 0, 0, 0) !important;
+    --panel-border-color: rgba(0, 0, 0, 0) !important;
 }
