@@ -12,11 +12,11 @@ panel[type="autocomplete-richlistbox"] {
     border: 0 !important;
     color: var(--text-color1) !important;
     box-sizing: content-box !important;
-    width: 75% !important;
+    max-width: 250px !important;
 }
 
 menupopup {
-    padding: 11px 14px 18px !important;
+    padding: 11px 14px 0 !important;
     margin: -19px -14px 0 !important;
 }
 
@@ -28,7 +28,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 }
 
 menupopup menuseparator {
-    margin: 5px 0 !important;
+    margin: 6px 6px !important;
     padding: 0 !important;
     height: 1px !important;
     background: currentColor !important;
@@ -39,11 +39,14 @@ menupopup menuitem,
 menupopup menu,
 .autocomplete-richlistitem {
     height: var(--menupopup-height) !important;
-    padding: 0 8px !important;
+    padding: 0 4px !important;
+    margin: 0 6px !important;
     border: 0 !important;
     background: 0 !important;
     color: inherit !important;
     fill-opacity: initial !important;
+    border-radius: 6px !important;
+    transition: all 100ms !important;
 }
 
 menupopup menuitem:hover:not([disabled=true]),
@@ -73,19 +76,25 @@ menupopup menu[disabled=true],
                 0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
-/* disable vertical menu scroll buttons and use a good ol' scrollbar */
-/* this is a shotgun approach, expect side effects */
-scrollbox[orient=vertical] /* >=71 */ {
+scrollbox[orient=vertical] {
     overflow-y: auto !important;
 }
 
-/* why still use scroll buttons; is this the middle ages? */
 .menupopup-scrollbutton {
     display: none !important;
 }
 
 .menu-iconic-left {
     -moz-appearance: none !important;
+}
+
+menuitem[type="checkbox"][checked="true"] .menu-iconic-text {
+    font-weight: bold !important;
+    font-style: italic !important;
+}
+
+menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-text {
+    font-style: italic !important;
 }
 
 /* hide icon if no image (default on macOS but not Windows) */
@@ -98,13 +107,16 @@ scrollbox[orient=vertical] /* >=71 */ {
     -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 }
 
+
 .menu-text {
     -moz-appearance: none !important;
     padding: 0 !important;
 }
 
 .menu-right {
-    -moz-appearance: none !important;
+/*    -moz-appearance: none !important;*/
+    width: 0.6em !important;
+    height: 0.6em !important;
     -moz-context-properties: fill !important;
     fill: currentColor !important;
 }
