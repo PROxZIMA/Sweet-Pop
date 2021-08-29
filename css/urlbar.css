@@ -245,9 +245,12 @@ search-textbox#search-box {
 #PersonalToolbar {
     background-color: var(--back-color1) !important;
     color: var(--text-color1) !important;
-    padding: 2px !important;
     padding-inline: 2px !important;
     min-height: 0px !important;
+}
+
+#PersonalToolbar[collapsed="true"] {
+    padding: 0px !important;
 }
 
 #PersonalToolbar .toolbarbutton-1:hover, toolbarbutton.bookmark-item:hover {

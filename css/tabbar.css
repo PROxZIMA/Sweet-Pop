@@ -90,24 +90,30 @@
 /* The Blue line in the top bar*/
 #main-window:not([sizemode="maximized"]) #navigator-toolbox:before {
     content: "";
+    position: absolute !important;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(27px,2600px,29px,0px);
-    position: absolute !important;
+    background-size: 100% 2px !important;
+    background-repeat: no-repeat !important;
+    background-position: left bottom !important;
+/*    clip:rect(27px,2600px,29px,0px);*/
 }
 
 #navigator-toolbox:after {
     content: "";
+    position: absolute !important;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    clip:rect(27px,2600px,29px,0px);
-    position: absolute !important;
+    background-size: 100% 2px !important;
+    background-repeat: no-repeat !important;
+    background-position: left bottom !important;
+/*    clip:rect(27px,2600px,29px,0px);*/
 }
 
 #navigator-toolbox {

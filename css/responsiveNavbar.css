@@ -1,7 +1,7 @@
 #navigator-toolbox {
     position: fixed !important;
     line-height: 0;
-    max-height: var(--tab-min-height) !important;
+/*    max-height: var(--tab-min-height) !important;*/
     z-index: 1;
     pointer-events: none;
     background: var(--back-color1) !important;
