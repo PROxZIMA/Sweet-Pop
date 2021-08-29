@@ -39,8 +39,18 @@
     height: 101%;
 }
 
+.urlbarView-results {
+    padding: 4px !important;
+}
+
 .urlbarView-row {
     padding-block: 2px !important;
+}
+
+.urlbarView-row-inner {
+    border-radius: 6px !important;
+    padding-inline: 4px !important;
+    transition: all 100ms ease !important;
 }
 
 .urlbarView-row:is([type=switchtab], [type=remotetab])>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-action {
