@@ -50,7 +50,7 @@
 }
 
 /* Removes Save Page and Send Pange from context menu */
-#context-savepage, #context-sep-sendpagetodevice, #context-sep-navigation {
+#context-savepage, #context-sep-sendpagetodevice {
     display:none !important;
 }
 
