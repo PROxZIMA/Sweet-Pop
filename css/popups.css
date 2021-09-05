@@ -177,7 +177,7 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .popup-internal-box,
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .menupopup-arrowscrollbox {
-    margin: 8px 0 !important;
+/*    margin: 8px 0 !important;*/
     padding: 8px 0 !important;
     border-radius: 8px !important;
     color: inherit !important;
@@ -206,11 +206,12 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 
 /* autocomplete panel can't overlap the textbox, so shadow can't go up more than 1px */
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
-    margin: 0 -8px !important;
+    margin: -1px -8px !important;
     box-shadow:
         0 5px 5px -3px rgba(0,0,0,.2),
         0 8px 10px 1px rgba(0,0,0,.14),
         0 3px 14px 2px rgba(0,0,0,.12) !important;
+    min-height: 161px !important;
 }
 
 /* search panel gets special treatment; it has multiple children */
