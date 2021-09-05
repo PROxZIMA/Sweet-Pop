@@ -94,22 +94,23 @@ panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
 }
 
 /* Overflow Menu extension width */
-#PanelUI-webext-ublock0_raymondhill_net-browser-action-view {
+#widget-overflow #PanelUI-webext-ublock0_raymondhill_net-browser-action-view {
     min-width: 252px !important;
     max-width: 252px !important;
 }
 
-#PanelUI-webext-addon_darkreader_org-browser-action-view {
+#widget-overflow #PanelUI-webext-addon_darkreader_org-browser-action-view {
     min-width: 276px !important;
     max-width: 276px !important;
 }
 
-#PanelUI-webext-_2d4c0962-e9ff-4cad-8039-9a8b80d9b8b6_-browser-action-view {
-    min-width: 597px !important;
-    max-width: 597px !important;
-}
-
-#PanelUI-webext-browsec_browsec_com-browser-action-view {
+#widget-overflow #PanelUI-webext-browsec_browsec_com-browser-action-view {
     min-width: 402px !important;
     max-width: 402px !important;
 }
+
+#widget-overflow #PanelUI-webext-user-agent-switcher_ninetailed_ninja-browser-action-view {
+    min-width: 279px !important;
+    max-width: 279px !important;
+}
+
