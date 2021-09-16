@@ -47,6 +47,15 @@
     padding-block: 2px !important;
 }
 
+/* Disable Firefox Suggest */
+.urlbarView-row[label]::before {
+    display: none !important;
+}
+
+.urlbarView-row[label] {
+    margin-block-start: 0px !important;
+}
+
 .urlbarView-row-inner {
     border-radius: 6px !important;
     padding-inline: 4px !important;
