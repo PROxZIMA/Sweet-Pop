@@ -12,6 +12,9 @@ panel[type="autocomplete-richlistbox"] {
     border: 0 !important;
     color: var(--text-color1) !important;
     box-sizing: content-box !important;
+}
+
+menupopup #contentAreaContextMenu {
     max-width: 250px !important;
 }
 
