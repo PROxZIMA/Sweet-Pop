@@ -92,18 +92,24 @@ scrollbox[orient=vertical] {
     -moz-appearance: none !important;
 }
 
-menuitem[type="checkbox"][checked="true"] .menu-iconic-text {
-    font-weight: bold !important;
-    font-style: italic !important;
+menuitem[type="checkbox"][checked="true"] .menu-iconic-left::before {
+    content: '☑';
+    margin: auto;
+    display: inline-block;
 }
-
-menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-text {
-    font-style: italic !important;
+menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-left::before {
+    content: '☒';
+    margin: auto;
+    display: inline-block;
 }
 
 /* hide icon if no image (default on macOS but not Windows) */
 .subviewbutton:not(:-moz-any([image], [targetURI], .bookmark-item)) > .menu-iconic-left {
     display: none;
+}
+
+menuitem[type="checkbox"] .menu-iconic-icon {
+    max-width: 0px !important;
 }
 
 .menu-iconic-icon {
