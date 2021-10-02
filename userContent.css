@@ -140,26 +140,19 @@ url-prefix(view-source:) {
 
 
 /* ============= Error Pages ============= */
+@-moz-document url-prefix("about:neterror") {
+    #errorPageContainer {
+        background: url("./icons/sonic.gif") no-repeat left center !important;
+        background-size: 38% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        max-width: calc(100vw / 2) !important;
+        max-height: calc(100vh / 2) !important;
+    }
 
-.clockSkewError #errorPageContainer,
-.connectionFailure #errorPageContainer,
-.dnsNotFound #errorPageContainer,
-.malformedURI #errorPageContainer,
-.neterror #errorPageContainer,
-.netInterrupt #errorPageContainer,
-.netOffline #errorPageContainer,
-.netReset #errorPageContainer,
-.netTimeout #errorPageContainer {
-    background: url("./icons/sonic.gif") no-repeat left center !important;
-    background-size: 38% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    max-width: calc(100vw / 2) !important;
-    max-height: calc(100vh / 2) !important;
-}
-
-.container #text-container {
-    padding-inline-start: 38% !important;
+    #text-container {
+        padding-inline-start: 38% !important;
+    }
 }
 
 @-moz-document url-prefix("about:restartrequired") {
@@ -171,10 +164,10 @@ url-prefix(view-source:) {
         max-width: calc(100vw / 2) !important;
         max-height: calc(100vh / 2) !important;
     }
+
     #text-container {
         padding-inline-start: 38% !important;
     }
-
 }
 
 
