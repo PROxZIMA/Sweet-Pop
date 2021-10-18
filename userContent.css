@@ -24,8 +24,11 @@
     --gtk-color: #d700d2;
 
 }
+
+/* Default theme set to light theme */
 /*================ LIGHT THEME ================*/
 
+:root,
 :root[style*="--lwt-accent-color: rgb(227, 228, 230);"],
 :root[style*="--lwt-accent-color: rgb(240, 240, 244);"],
 :root[style*="--newtab-background-color: rgba(249, 249, 251, 1);"],
@@ -39,14 +42,27 @@
     --text-color2: var(--dark-color6);
     --text-color3: var(--dark-color7);
 }
+
+/* Theme for browser webpages */
+@media (-moz-toolbar-prefers-color-scheme: dark) {
+    :root {
+        --back-color1: var(--dark-color1);
+        --back-color2: var(--dark-color2);
+        --back-color3: var(--dark-color3);
+        --back-color4: var(--dark-color4);
+
+        --text-color1: var(--light-color5);
+        --text-color2: var(--light-color6);
+        --text-color3: var(--light-color7);
+    }
+}
+
 /*================ DARK THEME ================*/
 
-:root:not([style]),
 :root[style*="--lwt-accent-color: rgb(28, 27, 34);"],
 :root[style*="--lwt-accent-color: rgb(12, 12, 13);"],
 :root[style*="--newtab-background-color: rgba(43, 42, 51, 1);"],
-:root[style*="min-width: 30em;"],
-:root[style*="min-width: 26em;"],
+:root[class*="theme-dark"],
 :root[privatebrowsingmode=temporary] {
     --back-color1: var(--dark-color1);
     --back-color2: var(--dark-color2);
@@ -57,6 +73,8 @@
     --text-color2: var(--light-color6);
     --text-color3: var(--light-color7);
 }
+
+
 
 
 
@@ -292,8 +310,10 @@ url-prefix(view-source:) {
         --field-bg-color: var(--back-color1) !important;
     }
 
-    .canvasWrapper > canvas {
-        filter: invert(1) !important;
+    @media (-moz-toolbar-prefers-color-scheme: dark) {
+        .canvasWrapper > canvas {
+            filter: invert(1) !important;
+        }
     }
 
     .dropdownToolbarButton > select {
