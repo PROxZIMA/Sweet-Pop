@@ -258,16 +258,18 @@
 
     /* These change the odd rows of the lists */
     #placeContent tree,
-    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd),
-    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
-        background-color: var(--back-color2) !important
+    treechildren::-moz-tree-row(odd),
+    treechildren::-moz-tree-row(hover) {
+        background-color: var(--back-color2) !important;
+        color: var(--text-color2) !important;
     }
 
-    #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
-        background-color: var(--back-color1) !important
+    treechildren::-moz-tree-row(selected, focus) {
+        background-color: var(--back-color1) !important;
+        color: var(--text-color1) !important;
     }
 
-    #placeContent treechildren::-moz-tree-cell {
+    treechildren::-moz-tree-cell {
         border-right: 0px dotted rgba(0,0,0,0.4) !important
     }
 
@@ -420,6 +422,11 @@
     #downloadsRichListBox {
         background: var(--back-color2) !important;
         color: var(--text-color2) !important;
+    }
+
+    #detailsPane {
+        background-color: var(--back-color2);
+        margin-top: 5px;
     }
 
 }

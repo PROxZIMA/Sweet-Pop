@@ -386,9 +386,6 @@ IN THE SOFTWARE.
   .commentarea .usertext {
     background: var(--gray-0) !important;
   }
-  .usertext .md a {
-    color: var(--text-normal) !important;
-  }
   .panestack-title .title {
     color: var(--text-normal) !important;
   }
