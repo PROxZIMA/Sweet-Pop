@@ -171,7 +171,7 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 3) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 
-4) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
+4) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
 
 5) If something breaks on your system then please raise a issue
 
