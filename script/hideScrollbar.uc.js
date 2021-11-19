@@ -4,7 +4,7 @@
 // @version        0.0.8
 // @note           Windows 10 style by /u/mrkwatz https://www.reddit.com/r/FirefoxCSS/comments/7fkha6/firefox_77_windows_10_uwp_style_overlay_scrollbars/
 // @note           Brought to Firefox 77 by /u/Wiidesire https://www.reddit.com/r/firefox/comments/7f6kc4/floating_scrollbar_finally_possible_in_firefox_77/
-// @note           userChrome.js https://github.com/nuchi/firefox-quantum-userchromejs
+// @note           fx-autoconfig https://github.com/MrOtherGuy/fx-autoconfig
 // @note           Forked from https://github.com/Endor8/userChrome.js/blob/master/floatingscrollbar/FloatingScrollbar.uc.js
 // ==/UserScript==
 
@@ -71,7 +71,7 @@
         -webkit-backface-visibility: hidden!important;
     }
     .hidevscroll-scrollbar thumb:active {
-        background-color: #d700d2! important;
+        background: linear-gradient(to top, #c50ed2, #8500f7) !important;
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out!important;
         -webkit-transform-style: preserve-3d!important;
@@ -122,7 +122,7 @@
         -webkit-backface-visibility: hidden;
     }
     :not(select):not(hbox) > scrollbar thumb:active {
-        background-color: #d700d2 !important;
+        background: linear-gradient(to top, #c50ed2, #8500f7) !important;
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out;
         -webkit-transform-style: preserve-3d;
