@@ -162,21 +162,20 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 8) **Voilà**
 
 ## Configuration
-1) To disable floating toolbox, comment line 6 (`@import "css/floatingToolbox.css";`) in `userChrome.css`
+1) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
 
-2) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
+2) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script.
 
-3) To disable any of the `script/*.uc.js` either rename `*.uc.js` to `*` or disable it from `Toolbar Menu > Tools > userscripts > script`.
+    - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
+    - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
 
-Floating scrollbars has its own user preference `userChromeJS.floatingScrollbar.enabled`. Restart every time you change the boolean value.
+3) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 
-4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+4) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
 
-5) For adding your own customizations make a `myChanges.css` file under `css` folder and add `@import "css/myChanges.css";` line at the end of `userChrome.css`
+5) If something breaks on your system then please raise a issue
 
-6) If something breaks on your system then please raise a issue
-
-7) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
+6) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
