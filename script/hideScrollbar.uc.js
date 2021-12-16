@@ -70,8 +70,13 @@
         -webkit-transform-style: preserve-3d!important;
         -webkit-backface-visibility: hidden!important;
     }
-    .hidevscroll-scrollbar thumb:active {
+    .hidevscroll-scrollbar[orient = "vertical"] thumb:active {
         background: linear-gradient(to top, #c50ed2, #8500f7) !important;
+    }
+    .hidevscroll-scrollbar[orient = "horizontal"] thumb:active {
+        background: linear-gradient(to left, #c50ed2, #8500f7) !important;
+    }
+    .hidevscroll-scrollbar thumb:active {
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out!important;
         -webkit-transform-style: preserve-3d!important;
@@ -121,8 +126,13 @@
         -webkit-transform-style: preserve-3d;
         -webkit-backface-visibility: hidden;
     }
-    :not(select):not(hbox) > scrollbar thumb:active {
+    :not(select):not(hbox) > scrollbar[orient = "vertical"] thumb:active {
         background: linear-gradient(to top, #c50ed2, #8500f7) !important;
+    }
+    :not(select):not(hbox) > scrollbar[orient = "horizontal"] thumb:active {
+        background: linear-gradient(to left, #c50ed2, #8500f7) !important;
+    }
+    :not(select):not(hbox) > scrollbar thumb:active {
         opacity: 0.9!important;
         transition: opacity 0.06s ease-in-out;
         -webkit-transform-style: preserve-3d;
