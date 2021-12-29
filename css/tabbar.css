@@ -18,11 +18,11 @@
   border-radius: 6px 6px 0 0 !important;
 }
 
-.tabbrowser-tab[pinned] {
-    position: fixed !important;
+#TabsToolbar-customization-target > #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+    margin-inline-start: 0 !important;
+    position: absolute !important;
     display: revert !important;
 }
-
 #tabbrowser-tabs[haspinnedtabs] {
     padding-inline-start: 0 !important;
 }
@@ -96,10 +96,10 @@
     box-shadow: -4px 4px 0 4px var(--back-color1) !important;
 }
 
-/* Moving First and last tab in */
+/* Moving First and last tab in
 .tabbrowser-tab[first-visible-tab] {
   margin-left: var(--tab-radius) !important;
-}
+} */
 
 .tabbrowser-tab[last-visible-tab] {
   margin-right: var(--tab-radius) !important;
