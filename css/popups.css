@@ -23,6 +23,10 @@ menupopup {
     margin: -19px -14px 0 !important;
 }
 
+#toolbar-menubar > #menubar-items > #main-menubar > menu > menupopup {
+    margin-top: -12px !important;
+}
+
 menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
@@ -936,4 +940,3 @@ richlistitem:-moz-any(
 #confirmation-hint-checkmark-animation-container {
     margin-inline-end: 0 !important;
 }
-
