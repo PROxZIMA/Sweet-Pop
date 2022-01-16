@@ -7,24 +7,26 @@
     display: none !important;
 }
 
-/* No highlighting tabs on hover*/
-.tab-content:hover {
-    background: var(--back-color1) !important;
-}
-
 /* Fix for hover on selected tab */
 .tabbrowser-tab[visuallyselected] .tab-content:hover {
-  background: transparent !important;
-  border-radius: 6px 6px 0 0 !important;
+    border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
 }
 
 #TabsToolbar-customization-target > #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
     margin-inline-start: 0 !important;
-    position: absolute !important;
-    display: revert !important;
+    position: relative !important;
+    display: inline-grid !important;
+}
+
+#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox::part(scrollbox) {
+  padding-inline-end: var(--tab-shadow-max-size) !important;
+}
+#scrollbutton-down, #scrollbutton-up {
+    display: none !important;
 }
 #tabbrowser-tabs[haspinnedtabs] {
     padding-inline-start: 0 !important;
+    overflow: hidden !important;
 }
 
 #tabbrowser-arrowscrollbox[scrolledtostart="true"]::part(scrollbutton-up),
@@ -39,32 +41,49 @@
 /* Fix tab background height */
 .tab-background {
     margin-block: 0 !important;
+    border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
 }
+
 .tab-background, .tab-stack {
-    background: transparent !important;
     min-height: 0 !important;
+}
+
+/* Rounded right/left corners on tabs adjacent to selected tabs */
+.tabbrowser-tab[beforeselected-visible] {
+    border-radius: 0 0 var(--tab-radius) 0 !important;
+}
+
+.tabbrowser-tab[visuallyselected] + .tabbrowser-tab {
+    border-radius: 0 0 0 var(--tab-radius) !important;
 }
 
 /* Transparent background on selected tab */
 .tabbrowser-tab[visuallyselected] .tab-background {
     background: transparent !important;
-    position: relative !important;
     visibility: visible !important;
 }
-#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background {
+#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
     box-shadow: none !important;
 }
 
+.tabbrowser-tab:hover .tab-background {
+    background: transparent !important;
+}
+
 /* different background on multiselectrd tabs */
-.tabbrowser-tab[multiselected]:not([selected]) .tab-content {
-    background: var(--back-color2) !important;
+.tabbrowser-tab[multiselected]:not([selected]) .tab-background {
+    background: color-mix(in srgb, currentColor 11%, transparent) !important;
 }
 
 .tabbrowser-tab[visuallyselected] {
-    border: 2px solid var(--blue-color) !important;
+    border: 2px solid transparent !important;
     /* Border top radius*/
     border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
     border-bottom: 2px solid var(--back-color1) !important;
+    box-shadow: 0 -10001px 0 9999px var(--back-color1) !important;
+    background: var(--back-color1) !important;
+    background-clip: padding-box !important;
 }
 
 /* Border bottom radius */
@@ -75,49 +94,53 @@
     position: absolute !important;
     width: var(--tab-radius) !important;
     height: var(--tab-radius) !important;
-    bottom: -2px !important;
+    bottom: -3px !important;
     pointer-events: none !important;
-    border-bottom: 2px solid var(--blue-color) !important;
+    border-bottom: 2px solid transparent !important;
+    clip-path: inset(0) !important;
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background::before {
     border-bottom-right-radius: var(--tab-radius) !important;
     left: 0 !important;
-    transform: translateX(calc(-4px - var(--tab-radius))) !important;
-    border-right: 2px solid var(--blue-color) !important;
+    transform: translateX(calc(-3px - var(--tab-radius))) !important;
+    border-right: 2px solid transparent !important;
     box-shadow: 4px 4px 0 4px var(--back-color1) !important;
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background::after {
     border-bottom-left-radius: var(--tab-radius) !important;
     right: 0 !important;
-    transform: translateX(calc(4px + var(--tab-radius))) !important;
-    border-left: 2px solid var(--blue-color) !important;
+    transform: translateX(calc(3px + var(--tab-radius))) !important;
+    border-left: 2px solid transparent !important;
     box-shadow: -4px 4px 0 4px var(--back-color1) !important;
 }
 
-/* Moving First and last tab in
-.tabbrowser-tab[first-visible-tab] {
-  margin-left: var(--tab-radius) !important;
-} */
+.tabbrowser-tab:not([visuallyselected]) {
+    z-index: 3 !important;
+}
 
-.tabbrowser-tab[last-visible-tab] {
+/* Moving First and last tab in if there isn't any pinned tab*/
+#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab[first-visible-tab] {
+  margin-left: var(--tab-radius) !important;
+}
+
+#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab[last-visible-tab] {
   margin-right: var(--tab-radius) !important;
 }
 
-/* The Blue line in the top bar*/
-#main-window:not([sizemode="maximized"]) #navigator-toolbox:before {
+/* The animation in the toolbox*/
+#navigator-toolbox:before {
     content: "";
     position: absolute !important;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    background-size: 100% 2px !important;
+    background: var(--tabbar-gradient-color);
+    background-size: 100% !important;
     background-repeat: no-repeat !important;
     background-position: left bottom !important;
-/*    clip:rect(27px,2600px,29px,0px);*/
 }
 
 #navigator-toolbox:after {
@@ -127,11 +150,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
+    background: var(--tabbar-gradient-color);
     background-size: 100% 2px !important;
     background-repeat: no-repeat !important;
     background-position: left bottom !important;
-/*    clip:rect(27px,2600px,29px,0px);*/
+    z-index: 1 !important;
 }
 
 #navigator-toolbox {
@@ -181,13 +204,11 @@
 #TabsToolbar #BMB_bookmarksPopup {
     margin-top: -7px !important;
 }
-
-#tabs-newtab-button, #TabsToolbar #new-tab-button {
-    padding: 0 !important;
-}
-
-#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button > .toolbarbutton-icon {
-    width: 16px !important;
-    height: 16px !important;
+#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button {
+    background: var(--back-color1) !important;
+    position: relative !important;
     padding: 0px !important;
+}
+#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button > .toolbarbutton-icon {
+    padding: 6px !important;
 }
