@@ -54,10 +54,11 @@
 /* Move navigation 68% to left and negative margin to move to top line */
 #nav-bar {
     max-height: var(--tab-min-height) !important;
+    min-height: var(--tab-min-height) !important;
     margin-right: var(--toolbar-percent) !important;
     margin-top: var(--navbar-margin-top) !important;
     width: var(--navbar-percent) !important;
-    background: transparent !important;
+    background: var(--back-color1) !important;
     z-index: 1;
 }
 
@@ -68,4 +69,10 @@
     height: 2px;
     top: -1px;
     content: '';
+}
+
+#toolbar-menubar {
+  z-index: 1 !important;
+  position: relative !important;
+  background: var(--back-color1) !important;
 }
