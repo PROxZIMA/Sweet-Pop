@@ -153,6 +153,10 @@
     margin-inline-end: -7px !important;
 }
 
+#PanelUI-menu-button {
+    padding-inline-end: 0px !important;
+}
+
 #urlbar-background {
     background: var(--back-color1) !important;
 }
@@ -270,8 +274,4 @@ search-textbox#search-box {
 #PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
     margin-inline: 1px !important;
-}
-
-toolbar .toolbarbutton-1 {
-    padding-inline: 0 !important;
 }
