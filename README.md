@@ -16,56 +16,62 @@
 
 ## Folder structure
 
- .<br>
-├─  assets<br>
-│ ├─  context.png<br>
-│ ├─  library.png<br>
-│ ├─  navbar.gif<br>
-│ ├─  preview.png<br>
-│ ╰─  scrollbar.gif<br>
-├─  css<br>
-│ ├─  findbar.css<br>
-│ ├─  floatingToolbox.css<br>
-│ ├─  library.css<br>
-│ ├─  overflowMenu.css<br>
-│ ├─  popups.css<br>
-│ ├─  reddit.css<br>
-│ ├─  responsiveNavbar.css<br>
-│ ├─  tabbar.css<br>
-│ ├─  tweaks.css<br>
-│ ╰─  urlbar.css<br>
-├─  icons<br>
-│ ├─  back.svg<br>
-│ ├─  close.svg<br>
-│ ├─  close_hover.svg<br>
-│ ├─  closew.svg<br>
-│ ├─  fox-transparent.gif<br>
-│ ├─  home.svg<br>
-│ ├─  infoico.png<br>
-│ ├─  max_hover.svg<br>
-│ ├─  max_restore.svg<br>
-│ ├─  min.svg<br>
-│ ├─  min_hover.svg<br>
-│ ├─  reload.svg<br>
-│ ├─  restore_hover.svg<br>
-│ ├─  search.svg<br>
-│ ├─  sonic.gif<br>
-│ ├─  tab-loading.png<br>
-│ ╰─  welcome-back.svg<br>
-├─  LICENSE<br>
-├─  programs<br>
-│ ├─  local-settings.js<br>
-│ ├─  mozilla.cfg<br>
-│ ╰─  user.js<br>
-├─  README.md<br>
-├─  script<br>
-│ ├─  hideScrollbar.uc.js<br>
-│ ╰─  navbarToolbarButtonSlider.uc.js<br>
-├─  userChrome.css<br>
-├─  userContent.css<br>
-╰─  utils<br>
-  ├─  boot.jsm<br>
-  ╰─  chrome.manifest<br>
+```css
+ .
+├──  assets
+│  ├──  context.png
+│  ├──  library.png
+│  ├──  navbar.gif
+│  ├──  preview.png
+│  └──  scrollbar.gif
+├──  css
+│  ├──  findbar.css
+│  ├──  floatingToolbox.css
+│  ├──  library.css
+│  ├──  myChanges.css
+│  ├──  overflowMenu.css
+│  ├──  popups.css
+│  ├──  reddit.css
+│  ├──  responsiveNavbar.css
+│  ├──  tabbar.css
+│  ├──  tweaks.css
+│  └──  urlbar.css
+├──  icons
+│  ├──  animation.svg
+│  ├──  back.svg
+│  ├──  close.svg
+│  ├──  close_hover.svg
+│  ├──  closew.svg
+│  ├──  fox-transparent.gif
+│  ├──  home.svg
+│  ├──  infoico.png
+│  ├──  max_hover.svg
+│  ├──  max_restore.svg
+│  ├──  min.svg
+│  ├──  min_hover.svg
+│  ├──  reload.svg
+│  ├──  restore_hover.svg
+│  ├──  search.svg
+│  ├──  sonic.gif
+│  ├──  tab-loading.png
+│  ├──  tracking-disabled.svg
+│  ├──  tracking-enabled.svg
+│  └──  welcome-back.svg
+├──  LICENSE
+├──  programs
+│  ├──  local-settings.js
+│  ├──  mozilla.cfg
+│  └──  user.js
+├──  README.md
+├──  script
+│  ├──  floatingToolbox.uc.js
+│  └──  hideScrollbar.uc.js
+├──  userChrome.css
+├──  userContent.css
+└──  utils
+   ├──  boot.jsm
+   └──  chrome.manifest
+```
 
 ### [`userChrome.css`](./userChrome.css)
 This helps to customize Firefox User Interface.
@@ -79,6 +85,9 @@ All imports are present in `css` folder as well.
 
 ### [`hideScrollbar.uc.js`](./script/hideScrollbar.uc.js)
 It's now possible to autohide scrollbars.
+
+### [`floatingToolbox.uc.js`](./script/floatingToolbox.uc.js)
+Enable disable floating toolbox from menubar/`about:config`.
 
 ### [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js#navbar-toolbar-button-slider)
 As this is a one-liner theme, one must drop some buttons to add sufficient space for urlbar and tabbar. That's why I mentioned in [issue 2](https://github.com/PROxZIMA/Firefox-Theme/issues/2) to move the add-ons to overflow menu. But this messed up with their widths. Take a look [here](https://www.reddit.com/r/FirefoxCSS/comments/n9asta/addons_width_changes_to_a_fixed_value_when_placed/). I did some temporary fix(which was not that good). But [u/MotherStylus](https://www.reddit.com/user/MotherStylus) came up with an awesome `uc.js` script.<br>
@@ -164,18 +173,20 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 ## Configuration
 1) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
 
-2) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script.
+2) You can set any background in the toolbox. Edit `--tabbar-gradient-color` in [`userChrome.css`](./userChrome.css) to a static color or linear-background or any SVG `¯\_༼ •́ ͜ʖ •̀ ༽_/¯`.
+
+3) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
 
     - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
     - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
 
-3) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 
-4) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
+5) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
 
-5) If something breaks on your system then please raise a issue
+6) If something breaks on your system then please raise a issue
 
-6) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
+7) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
