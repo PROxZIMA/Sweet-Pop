@@ -94,7 +94,7 @@ As this is a one-liner theme, one must drop some buttons to add sufficient space
 So basically this adds a button slider to navbar toolbar. [This](https://raw.githubusercontent.com/PROxZIMA/Firefox-Theme/master/assets/navbar.gif) is how it looks. Read the file description to configure it properly.
 
 ### [`user.js`](./programs/user.js)
-Contains required user preferences.
+Contains required user preferences. Change these before copying it to it's location because your default preferences will be overridden by this once you restart your browser.
 
 ## **But how does it work?**
 Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is loaded using [`local-settings.js`](./programs/local-settings.js). This startup-script adds "loader" scripts from `utils` folder that loads arbitrary javascript files from the `script` folder into Firefox<br>
@@ -117,7 +117,7 @@ $ git clone https://github.com/PROxZIMA/Firefox-Theme.git chrome
 $ cd chrome
 ```
 
-NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Firefox-Theme/blob/da7531c7089380c5c6e4faf2f9f365eb1fd3e49d/programs/mozilla.cfg#L14) at line 13 change `newTabURL_` to the local page location
+NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/da7531c7089380c5c6e4faf2f9f365eb1fd3e49d/programs/mozilla.cfg#L12-L14), comment out line `12, 13, 14` and at line 13 change `newTabURL_` to the local page location.
 
 3) Install `utils` folder from [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) in your `chrome` folder (make sure it matches above Folder Structure). Perform following changes in the `utils/chrome.manifest` file.
 
@@ -175,18 +175,20 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 2) You can set any background in the toolbox. Edit `--tabbar-gradient-color` in [`userChrome.css`](./userChrome.css) to a static color or linear-background or any SVG `¯\_༼ •́ ͜ʖ •̀ ༽_/¯`.
 
-3) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
+3) You can change `--tab-radius` and `--tab-border-width` to increase/decrease tab border radius and width respectively to match `normal` and `touch` density.
+
+4) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
 
     - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
     - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
 
-4) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+5) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 
-5) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
+6) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
 
-6) If something breaks on your system then please raise a issue
+7) If something breaks on your system then please raise a issue
 
-7) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
+8) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
