@@ -8,7 +8,7 @@
 }
 
 #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: 26px !important;
+    height: var(--urlbar-min-height) !important;
     padding-block: 0px !important;
     padding-inline: 0px !important;
 }
@@ -24,7 +24,7 @@
     overflow: visible !important;
     background: var(--back-color1) !important;
     border-radius: 0 0 8px 8px !important;
-    margin: 2px 0 0 0 !important;
+    margin: 3px 0 0 0 !important;
     filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
             drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
 }
@@ -154,7 +154,7 @@
 }
 
 #PanelUI-menu-button {
-    padding-inline-end: 0px !important;
+    padding-inline: 0px !important;
 }
 
 #urlbar-background {
@@ -271,7 +271,6 @@ search-textbox#search-box {
     color: inherit !important;
 }
 
-#PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
     margin-inline: 1px !important;
 }
