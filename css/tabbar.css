@@ -77,13 +77,16 @@
 }
 
 .tabbrowser-tab[visuallyselected] {
-    border: 2px solid transparent !important;
+    border: var(--tab-border-width) solid transparent !important;
     /* Border top radius*/
     border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
-    border-bottom: 2px solid var(--back-color1) !important;
-    box-shadow: 0 -10001px 0 9999px var(--back-color1) !important;
+    border-bottom: var(--tab-border-width) solid var(--back-color1) !important;
+    --box-shadow-width: 9999px;
+    box-shadow: 0 calc(0px - var(--box-shadow-width)) 0 calc(var(--box-shadow-width) - var(--tab-border-width) - var(--tab-radius)) var(--back-color1) !important;
     background: var(--back-color1) !important;
     background-clip: padding-box !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /* Border bottom radius */
@@ -94,30 +97,35 @@
     position: absolute !important;
     width: var(--tab-radius) !important;
     height: var(--tab-radius) !important;
-    bottom: -3px !important;
+    background: var(--back-color1);
+    background-clip: content-box;
+    bottom: calc(0px - var(--tab-border-width)) !important;
     pointer-events: none !important;
-    border-bottom: 2px solid transparent !important;
-    clip-path: inset(0) !important;
+    border-bottom: var(--tab-border-width) solid transparent !important;
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background::before {
     border-bottom-right-radius: var(--tab-radius) !important;
     left: 0 !important;
-    transform: translateX(calc(-3px - var(--tab-radius))) !important;
-    border-right: 2px solid transparent !important;
-    box-shadow: 4px 4px 0 4px var(--back-color1) !important;
+    transform: translateX(calc(0px - 2px - var(--tab-border-width) - var(--tab-radius))) !important;
+    border-right: var(--tab-border-width) solid transparent !important;
+    box-shadow:4px 4px 0 4px var(--back-color1),
+      calc(0px - var(--box-shadow-width) - var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+    clip-path: polygon(calc(0px - var(--box-shadow-width)) 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - var(--tab-border-width)), calc(0px - var(--box-shadow-width)) calc(100% - var(--tab-border-width)));
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background::after {
     border-bottom-left-radius: var(--tab-radius) !important;
     right: 0 !important;
-    transform: translateX(calc(3px + var(--tab-radius))) !important;
-    border-left: 2px solid transparent !important;
-    box-shadow: -4px 4px 0 4px var(--back-color1) !important;
+    transform: translateX(calc(2px + var(--tab-border-width) + var(--tab-radius))) !important;
+    border-left: var(--tab-border-width) solid transparent !important;
+    box-shadow: -4px 4px 0 4px var(--back-color1),
+      calc(var(--box-shadow-width) + var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+    clip-path: polygon(var(--box-shadow-width) 0, 0 0, 0 100%, 100% 100%, 100% calc(100% - var(--tab-border-width)), var(--box-shadow-width) calc(100% - var(--tab-border-width)));
 }
 
 .tabbrowser-tab:not([visuallyselected]) {
-    z-index: 3 !important;
+    z-index: 2 !important;
 }
 
 /* Moving First and last tab in if there isn't any pinned tab*/
@@ -141,6 +149,7 @@
     background-size: 100% !important;
     background-repeat: no-repeat !important;
     background-position: left bottom !important;
+    z-index: -1;
 }
 
 #navigator-toolbox:after {
@@ -151,10 +160,9 @@
     right: 0;
     bottom: 0;
     background: var(--tabbar-gradient-color);
-    background-size: 100% 2px !important;
+    background-size: 100% var(--tab-border-width) !important;
     background-repeat: no-repeat !important;
-    background-position: left bottom !important;
-    z-index: 1 !important;
+    background-position: left calc(var(--tab-min-height) - var(--tab-border-width)) !important;
 }
 
 #navigator-toolbox {
@@ -191,6 +199,7 @@
     width: 20px !important;
     height: 20px !important;
     padding: 4px !important;
+    border-radius: 100% !important;
 }
 
 .tab-icon-pending:not([pinned]) {
@@ -208,7 +217,4 @@
     background: var(--back-color1) !important;
     position: relative !important;
     padding: 0px !important;
-}
-#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button > .toolbarbutton-icon {
-    padding: 6px !important;
 }
