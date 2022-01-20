@@ -2,7 +2,7 @@
 
 <p align="center"><img src="./assets/preview.png"></p>
 
-<h3 align="center">Floating Navigation</h3>
+<h3 align="center">Floating Navigation with Animated Background</h3>
 <p align="center"><img src="./assets/navbar.gif"></p>
 
 <h3 align="center">Auto-hide Scrollbars</h3>
@@ -117,7 +117,7 @@ $ git clone https://github.com/PROxZIMA/Firefox-Theme.git chrome
 $ cd chrome
 ```
 
-NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/da7531c7089380c5c6e4faf2f9f365eb1fd3e49d/programs/mozilla.cfg#L12-L14), comment out line `12, 13, 14` and at line 13 change `newTabURL_` to the local page location.
+NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/4ec550b7d7fb6a56d247385763a80a5da7efa2e0/programs/mozilla.cfg#L12-L14), uncomment line `12, 13, 14` and at line 13 change `newTabURL_` to the local page location.
 
 3) Install `utils` folder from [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) in your `chrome` folder (make sure it matches above Folder Structure). Perform following changes in the `utils/chrome.manifest` file.
 
