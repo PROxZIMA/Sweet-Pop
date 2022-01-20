@@ -32,17 +32,18 @@
 
 :root {
     --bookmark-block-padding: 1px !important;
-    --menupopup-height: 29px;
-    --navbar-margin-top: -29px;
+    /*--tab-min-height: 29px !important;*/
+    --menupopup-height: var(--tab-min-height);
+    --navbar-margin-top: calc(0px - var(--tab-min-height));
     --navbar-percent: 32vw;
-    --subview-height: 29px;
-    --tab-min-height: 29px !important;
-    --tab-radius: 6px;
+    --subview-height: var(--tab-min-height);
+    --tab-radius: 8px;
+    --tab-border-width: 2px;
     --toolbar-percent: 68vw;
     --toolbarbutton-inner-padding: 6px !important;
     --toolbarbutton-outer-padding: 3px !important;   /* 1px */
     --urlbar-icon-padding: 3px !important;
-    --urlbar-min-height: 26px !important;
+    --urlbar-min-height: calc(var(--tab-min-height) - 3px) !important;
     --panel-background: rgba(0, 0, 0, 0) !important;
     --panel-border-color: rgba(0, 0, 0, 0) !important;
     --tabbar-gradient-color: url("../icons/animation.svg");
