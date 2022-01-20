@@ -59,16 +59,6 @@
     margin-top: var(--navbar-margin-top) !important;
     width: var(--navbar-percent) !important;
     background: var(--back-color1) !important;
-    z-index: 1;
-}
-
-/* Compatibility for 1px left over nav bar while hovering */
-#nav-bar::before {
-    position: fixed;
-    width: 32vw;
-    height: 2px;
-    top: -1px;
-    content: '';
 }
 
 #toolbar-menubar {
