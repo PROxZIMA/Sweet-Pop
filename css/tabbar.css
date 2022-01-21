@@ -48,15 +48,6 @@
     min-height: 0 !important;
 }
 
-/* Rounded right/left corners on tabs adjacent to selected tabs */
-.tabbrowser-tab[beforeselected-visible] {
-    border-radius: 0 0 var(--tab-radius) 0 !important;
-}
-
-.tabbrowser-tab[visuallyselected] + .tabbrowser-tab {
-    border-radius: 0 0 0 var(--tab-radius) !important;
-}
-
 /* Transparent background on selected tab */
 .tabbrowser-tab[visuallyselected] .tab-background {
     background: transparent !important;
@@ -85,13 +76,18 @@
     box-shadow: 0 calc(0px - var(--box-shadow-width)) 0 calc(var(--box-shadow-width) - var(--tab-border-width) - var(--tab-radius)) var(--back-color1) !important;
     background: var(--back-color1) !important;
     background-clip: padding-box !important;
+    padding-inline: 0px !important;
     position: relative !important;
     z-index: 1 !important;
 }
 
+.tabbrowser-tab[visuallyselected] .tab-stack {
+    padding-inline: 2px !important;
+}
+
 /* Border bottom radius */
-.tabbrowser-tab[visuallyselected] .tab-background::before,
-.tabbrowser-tab[visuallyselected] .tab-background::after {
+.tabbrowser-tab[visuallyselected] .tab-stack::before,
+.tabbrowser-tab[visuallyselected] .tab-stack::after {
     content: '' !important;
     display: block !important;
     position: absolute !important;
@@ -104,27 +100,26 @@
     border-bottom: var(--tab-border-width) solid transparent !important;
 }
 
-.tabbrowser-tab[visuallyselected] .tab-background::before {
+.tabbrowser-tab[visuallyselected] .tab-stack::before {
     border-bottom-right-radius: var(--tab-radius) !important;
     left: 0 !important;
-    transform: translateX(calc(0px - 2px - var(--tab-border-width) - var(--tab-radius))) !important;
+    transform: translateX(calc(0px - var(--tab-border-width) - var(--tab-radius))) !important;
     border-right: var(--tab-border-width) solid transparent !important;
-    box-shadow:4px 4px 0 4px var(--back-color1),
-      calc(0px - var(--box-shadow-width) - var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
-    clip-path: polygon(calc(0px - var(--box-shadow-width)) 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - var(--tab-border-width)), calc(0px - var(--box-shadow-width)) calc(100% - var(--tab-border-width)));
+    box-shadow:4px 4px 0 4px var(--back-color1), calc(0px - var(--box-shadow-width) - var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+    clip-path: polygon(calc(0px - var(--box-shadow-width)) -10px, 100% -10px, 100% 100%, 0 100%, 0 calc(100% - var(--tab-border-width)), calc(0px - var(--box-shadow-width)) calc(100% - var(--tab-border-width)));
 }
 
-.tabbrowser-tab[visuallyselected] .tab-background::after {
+.tabbrowser-tab[visuallyselected] .tab-stack::after {
     border-bottom-left-radius: var(--tab-radius) !important;
     right: 0 !important;
-    transform: translateX(calc(2px + var(--tab-border-width) + var(--tab-radius))) !important;
+    transform: translateX(calc(var(--tab-border-width) + var(--tab-radius))) !important;
     border-left: var(--tab-border-width) solid transparent !important;
-    box-shadow: -4px 4px 0 4px var(--back-color1),
-      calc(var(--box-shadow-width) + var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
-    clip-path: polygon(var(--box-shadow-width) 0, 0 0, 0 100%, 100% 100%, 100% calc(100% - var(--tab-border-width)), var(--box-shadow-width) calc(100% - var(--tab-border-width)));
+    box-shadow: -4px 4px 0 4px var(--back-color1), calc(var(--box-shadow-width) + var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+    clip-path: polygon(var(--box-shadow-width) -10px, 0 -10px, 0 100%, 100% 100%, 100% calc(100% - var(--tab-border-width)), var(--box-shadow-width) calc(100% - var(--tab-border-width)));
 }
 
 .tabbrowser-tab:not([visuallyselected]) {
+    position: relative !important;
     z-index: 2 !important;
 }
 
@@ -213,8 +208,11 @@
 #TabsToolbar #BMB_bookmarksPopup {
     margin-top: -7px !important;
 }
-#tabs-newtab-button > .toolbarbutton-icon, #TabsToolbar #new-tab-button {
+
+#new-tab-button {
     background: var(--back-color1) !important;
     position: relative !important;
-    padding: 0px !important;
+}
+#new-tab-button > .toolbarbutton-icon {
+    padding: var(--toolbarbutton-inner-padding) !important;
 }
