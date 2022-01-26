@@ -11,10 +11,16 @@ findbar {
     background: var(--back-color1) !important;
     border-radius: 0 0 12px 0 !important;
 }
+
+@media (-moz-os-version: windows-win10) {
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) findbar {
+        top: calc(var(--tab-min-height) + 8px) !important;
+    }
+}
+
 findbar[hidden] {
   /* Override display:none to make the transition work. */
   display: flex !important;
-  margin-top: -1em !important;
 }
 .findbar-container {
     padding: 2px !important;
@@ -30,7 +36,7 @@ findbar[hidden] {
 .findbar-textbox {
     background-color: transparent !important;
     background-image: url(../icons/search.svg) !important;
-    transform: scale(0.9) !important;
+    /* transform: scale(0.9) !important; */
     background-repeat: no-repeat !important;
     background-position: 5px center !important;
     fill-opacity: 1 !important;
