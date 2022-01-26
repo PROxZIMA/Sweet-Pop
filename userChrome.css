@@ -14,8 +14,7 @@
 
 @media (-moz-os-version: windows-win10) {
 
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 9px !important; }
-    :root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox { margin-top: -1px }
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
 
     @media screen and (min-resolution: 1.25dppx) {
         :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
