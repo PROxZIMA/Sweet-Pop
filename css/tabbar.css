@@ -209,10 +209,14 @@
     margin-top: -7px !important;
 }
 
-#new-tab-button {
+#new-tab-button, #tabs-newtab-button {
     background: var(--back-color1) !important;
-    position: relative !important;
+    padding: 0px !important;
 }
-#new-tab-button > .toolbarbutton-icon {
+
+#new-tab-button > .toolbarbutton-icon,
+#tabs-newtab-button > .toolbarbutton-icon {
     padding: var(--toolbarbutton-inner-padding) !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
