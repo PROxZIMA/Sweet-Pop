@@ -47,7 +47,7 @@ menupopup menu,
 .autocomplete-richlistitem {
     height: var(--menupopup-height) !important;
     padding: 0 4px !important;
-    margin: 0 6px !important;
+    margin: 0 4px !important;
     border: 0 !important;
     background: 0 !important;
     color: inherit !important;
@@ -105,15 +105,25 @@ scrollbox[orient=vertical] {
     -moz-appearance: none !important;
 }
 
+.menu-iconic-left[_moz-menuactive] .menu-iconic-icon {
+    background-color: transparent !important;
+}
+
 menuitem[type="checkbox"][checked="true"] .menu-iconic-left::before {
-    content: '☑';
+    content: '';
     margin: auto;
     display: inline-block;
+    background-image: url(../icons/radio_checked.svg);
+    width: 16px;
+    height: 16px;
 }
 menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-left::before {
-    content: '☒';
+    content: '';
     margin: auto;
     display: inline-block;
+    background-image: url(../icons/radio_unchecked.svg);
+    width: 16px;
+    height: 16px;
 }
 
 /* hide icon if no image (default on macOS but not Windows) */
@@ -133,15 +143,17 @@ menuitem[type="checkbox"] .menu-iconic-icon {
 
 .menu-text {
     -moz-appearance: none !important;
-    padding: 0 !important;
+    padding-inline-start: 1.45em !important;
+    margin-inline-start: 0px !important;
 }
 
 .menu-right {
 /*    -moz-appearance: none !important;*/
-    width: 0.6em !important;
-    height: 0.6em !important;
+    width: calc(var(--menupopup-height) / 3.5) !important;
+    height: calc(var(--menupopup-height) / 3.5) !important;
     -moz-context-properties: fill !important;
     fill: currentColor !important;
+    margin-right: 0px !important;
 }
 
 .menu-accel-container {
@@ -156,13 +168,21 @@ menubar > menu[open] {
 
 #context-navigation {
     background: 0 !important;
+    justify-content: space-between !important;
     -moz-box-flex: 1;
     -moz-box-pack: center;
+}
+
+#context-navigation > .menuitem-iconic:first-child,
+#context-navigation > .menuitem-iconic:last-child {
+  width: auto !important;
+  -moz-box-pack: center !important;
 }
 
 #context-navigation > .menuitem-iconic {
     background: 0 !important;
     border-radius: 100px !important;
+    flex: 1 !important;
 }
 
 #context-navigation .menu-iconic-icon {
