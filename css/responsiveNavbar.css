@@ -66,3 +66,7 @@
   position: relative !important;
   background: var(--back-color1) !important;
 }
+
+#toolbar-menubar[autohide="true"]:not([inactive="true"]) {
+    height: var(--tab-min-height) !important;
+}
