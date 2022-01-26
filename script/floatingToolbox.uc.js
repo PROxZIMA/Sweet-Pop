@@ -14,8 +14,8 @@
     if (prefs.prefHasUserValue('userChromeJS.floatingToolbox.enabled')) {
         enabled = prefs.getBoolPref('userChromeJS.floatingToolbox.enabled')
     } else {
-        prefs.setBoolPref('userChromeJS.floatingToolbox.enabled', true);
-        enabled = true;
+        prefs.setBoolPref('userChromeJS.floatingToolbox.enabled', false);
+        enabled = false;
     }
 
     var css = `
@@ -27,7 +27,7 @@
         opacity: 0;
     }
     `;
-    
+
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 
