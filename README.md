@@ -102,73 +102,131 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 
 NOTE: Firefox team has removed XBL from Firefox starting with version 72, so userChrome.js would not work :/
 
-## Installation
+# Installation
+
+NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/4ec550b7d7fb6a56d247385763a80a5da7efa2e0/programs/mozilla.cfg#L12-L14), uncomment line `12, 13, 14` and at line `13` change `newTabURL_` to the local page location.
+
+<details><summary>Script Installation</summary>
+
+1) Clone the repository and enter folder:
+
+    ```console
+    $ git clone https://github.com/PROxZIMA/Sweet-Pop.git && cd Sweet-Pop
+    ```
+
+2) Run installation script
+
+    This script will lookup default Firefox profile location and install the theme with default configurations.
+
+    ```console
+    $ ./scripts/install.sh # Standard
+    $ ./scripts/install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
+    ```
+
+    #### Script options
+    - `-f <firefox_folder>` *optional*
+        - Set custom Firefox folder path, for example `~/.mozilla/icecat/`
+        - Default: `~/.mozilla/firefox/`
+
+    - `-p <profile_name>` *optional*
+        - Set custom profile name, for example `4htgy4pu.app`
+        - Default: Profile folder name found in `profiles.ini` at ->
+        ```
+        [Install4F96D1932A9F858E]
+        Default=1yrah0xg.default-release
+        Locked=1
+        ```
+
+    - `-e` *optional*
+        - Install [`fx-autoconfig`](https://github.com/MrOtherGuy/fx-autoconfig)
+        - Runs sudo to copy `mozilla.cfg` and `local-settings.js` to Application Binary folder
+        - Default: False
+
+    - `-h` *optional*
+        - Shows help message with flags info
+</details>
+
+<details><summary>Curl based Installation</summary>
+
+- You can also install this theme with one command:
+
+    ```console
+    $ curl -s -o- https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.sh | bash
+    ```
+
+    It will download the master branch and run the installation script for you.
+    `mozilla.cfg` can be configured after complete installation
+</details>
+
+<details><summary> Manual Installation</summary>
+
 1) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
 
 2) Open this directory in terminal and clone the repository
 
-Note: If you already have a `chrome` folder under `Profile Directory`, rename it to `chrome2` or anything else so that after trying this theme you can easily restore your theme.
+    Note: If you already have a `chrome` folder under `Profile Directory`, rename it to `chrome_bak` or anything else to preserve your old theme.
 
-```console
-$ cd {Your profile directory}
+    ```console
+    $ cd {Your profile directory}
 
-$ git clone https://github.com/PROxZIMA/Firefox-Theme.git chrome
+    $ git clone https://github.com/PROxZIMA/Sweet-Pop.git chrome
 
-$ cd chrome
-```
-
-NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/4ec550b7d7fb6a56d247385763a80a5da7efa2e0/programs/mozilla.cfg#L12-L14), uncomment line `12, 13, 14` and at line 13 change `newTabURL_` to the local page location.
+    $ cd chrome
+    ```
 
 3) Install `utils` folder from [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) in your `chrome` folder (make sure it matches above Folder Structure). Perform following changes in the `utils/chrome.manifest` file.
 
-```diff
-content userchromejs ./
--content userscripts ../JS/
--content userchrome ../resources/
-+content userscripts ../script/
-+content userchrome ../
-+resource content-accessible chrome://userchrome/content/layout/contentaccessible/ contentaccessible=yes
-```
+    ```diff
+    content userchromejs ./
+    -content userscripts ../JS/
+    -content userchrome ../resources/
+    +content userscripts ../script/
+    +content userchrome ../
+    +resource content-accessible chrome://userchrome/content/layout/contentaccessible/ contentaccessible=yes
+    ```
 
 4) Move `user.js`, `mozilla.cfg` and `local-settings.js` to their destination.
 
-<details><summary>Linux / OS X</summary>
-<br>
+    <details><summary>Linux / OS X</summary><br>
 
-On `about:support` > `Application Binary` > `{Installation folder}firefox-bin`<br>
-My `Installation folder` is `/usr/lib/firefox/`
+    - `about:support` > `Application Binary` > `{Installation folder}firefox-bin`<br>
+    Generally `Installation folder` is `/usr/lib/firefox/`
 
-```console
-$ cp ./programs/user.js ../
+    ```console
+    $ ln -s "`pwd`/programs/user.js" ../user.js
 
-$ cp ./programs/mozilla.cfg /usr/lib/firefox/
+    $ cp ./programs/mozilla.cfg /usr/lib/firefox/
 
-$ cp ./programs/local-settings.js /usr/lib/firefox/defaults/pref/
-```
-</details>
+    $ cp ./programs/local-settings.js /usr/lib/firefox/defaults/pref/
+    ```
+    </details>
 
-<details><summary>Windows</summary>
-<br>
+    <details><summary>Windows</summary><br>
 
-On `about:support` > `Application Binary` > `{Installation folder}firefox.exe`<br>
-Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
+    - `about:support` > `Application Binary` > `{Installation folder}firefox.exe`<br>
+    Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
-```powershell
-> copy .\programs\user.js ..\
+    ```powershell
+    > copy .\programs\user.js ..\
 
-> copy .\programs\mozilla.cfg "C:\Program Files\Mozilla Firefox\"
+    > copy .\programs\mozilla.cfg "C:\Program Files\Mozilla Firefox\"
 
-> copy .\programs\local-settings.js "C:\Program Files\Mozilla Firefox\defaults\pref\"
-```
-</details>
+    > copy .\programs\local-settings.js "C:\Program Files\Mozilla Firefox\defaults\pref\"
+    ```
+    </details>
 
 5) Download [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js/blob/master/JS/navbarToolbarButtonSlider.uc.js) and place it in `script` folder along with `hideScrollbar.uc.js`.
+</details>
 
-6) In Firefox, right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`, set Density to `compact` and Themes to `dark` or `light`
+### Follow-up changes
+1) In Firefox
+    - Right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`.
+    - Remove `Flexible Space` from urlbar.
+    - Set Density to `Compact/Normal/Touch` and Themes to `Dark` or `Light`
 
-7) Open `about:support` > `Clear startup cache...` > `Restart` ***twice***
+2) Open `about:support` > `Clear startup cache...` > `Restart` ***twice***
 
-8) **Voilà**
+3) ### **Voilà**
 
 ## Configuration
 1) `programs/user.js` contains user preferences that are automatically loaded at startup. So no need to manually set them during installation
@@ -177,8 +235,7 @@ Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
 3) You can change `--tab-radius` and `--tab-border-width` to increase/decrease tab border radius and width respectively to match `normal` and `touch` density.
 
-4) To disable any of the `script/*.uc.js` either disable it from `Toolbar Menu > Tools > userscripts > script` or rename `*.uc.js` to `*`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
-
+4) You can disable any of the `script/*.uc.js` from `Toolbar Menu > Tools > userscripts > script`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
     - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
     - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
 
