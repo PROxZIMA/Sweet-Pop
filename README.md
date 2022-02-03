@@ -267,6 +267,7 @@ Also this theme uses his [`fx-autoconfig`](https://github.com/MrOtherGuy/fx-auto
 
 - [Prism](https://github.com/PROxZIMA/prism): A minimalist, beautiful startpage forked from [Prismatic Night](https://github.com/3r3bu5x9/Prismatic-Night)
 
+- [Installation script](https://github.com/rafaelmardojai/firefox-gnome-theme) details.
 ___
 <p align="center">Made with ❤️</p>
 <h2 align="center">ARIGATOU</h2>
