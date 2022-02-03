@@ -34,6 +34,8 @@ if [ ! -f "${PROFILES_FILE}" ]; then
 Exiting..."
 	exit 1
 fi
+
+echo
 echo "Profiles file found..."
 
 
