@@ -90,16 +90,12 @@ if [ "$FXACEXTRAS" = true ] ; then
     APPLICATIONFOLDER=$(readlink -f `which firefox` | xargs -I{} dirname {})
 
     echo
-    echo "Copying mozilla.cfg and local-settings.js to ${APPLICATIONFOLDER}"
-    chmod +x "${PWD}/programs/install-cfg.sh"
-    sudo "${PWD}/programs/install-cfg.sh" $APPLICATIONFOLDER || { exit 1; }
-
-    echo
     echo "Enabling userChrome.js manager (fx-autoconfig)..."
     mkdir -p "${PWD}/utils"
     cd "${PWD}/utils"
 
-    curl -sOL "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/profile/chrome/utils/boot.jsm"
+    curl -sOL "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/profile/chrome/utils/boot.jsm" || { echo "Failed to fetch fx-autoconfig"; echo "Exiting..."; exit 1; }
+
     cat << EOF > chrome.manifest
 content userchromejs ./
 content userscripts ../script/
@@ -109,7 +105,13 @@ EOF
 
     echo "Enabling Navbar Toolbar Button Slider..."
     cd ../script
-    curl -sOL "https://raw.githubusercontent.com/aminomancer/uc.css.js/master/JS/navbarToolbarButtonSlider.uc.js"
+    curl -sOL "https://raw.githubusercontent.com/aminomancer/uc.css.js/master/JS/navbarToolbarButtonSlider.uc.js" || { echo "Failed to fetch Navbar Toolbar Button Slider"; echo "Exiting..."; exit 1; }
+    cd ../
+
+    echo
+    echo "Copying mozilla.cfg and local-settings.js to ${APPLICATIONFOLDER}"
+    chmod +x "${PWD}/programs/install-cfg.sh"
+    sudo "${PWD}/programs/install-cfg.sh" $APPLICATIONFOLDER || { echo "Exiting..."; exit 1; }
 fi
 
 echo
