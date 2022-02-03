@@ -158,7 +158,7 @@ NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg
     `mozilla.cfg` can be configured after complete installation
 </details>
 
-<details><summary> Manual Installation</summary>
+<details><summary>Manual Installation</summary>
 
 1) Open `about:support` in new tab and click `Open Directory` near `Profile Directory`.
 
