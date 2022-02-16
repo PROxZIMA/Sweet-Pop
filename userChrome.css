@@ -33,6 +33,7 @@
     --bookmark-block-padding: 1px !important;
     /*--tab-min-height: 29px !important;*/
     --menupopup-height: var(--tab-min-height);
+    --sidebar-menupopup-height: 36px;
     --navbar-margin-top: calc(0px - var(--tab-min-height));
     --navbar-percent: 32vw;
     --subview-height: var(--tab-min-height);
@@ -51,6 +52,15 @@
     linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
     linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
     */
+}
+
+/* Sidebar doesn't have any height variable for different densities */
+:root[uidensity="compact"] {
+    --sidebar-menupopup-height: 29px;
+}
+
+:root[uidensity="touch"] {
+    --sidebar-menupopup-height: 41px;
 }
 
 @import "css/myChanges.css";

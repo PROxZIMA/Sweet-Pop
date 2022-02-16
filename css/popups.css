@@ -56,6 +56,10 @@ menupopup menu,
     transition: background-color 100ms !important;
 }
 
+#placesContext menuitem {
+    height: var(--sidebar-menupopup-height) !important;
+}
+
 menupopup menuitem:hover:not([disabled=true]),
 menupopup menu:hover:not([disabled=true]),
 .autocomplete-richlistitem:hover:not([disabled=true]):not([selected=true]) {
