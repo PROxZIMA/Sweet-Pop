@@ -133,3 +133,13 @@ notification {
 .search-one-offs {
     display: none !important;
 }
+
+.private-browsing-indicator {
+    background-color: var(--back-color1) !important;
+    position: relative !important;
+    z-index: auto !important;
+    width: 38px !important;
+    margin-inline: 0px !important;
+    padding-inline: 7px !important;
+    background-size: auto !important;
+}
