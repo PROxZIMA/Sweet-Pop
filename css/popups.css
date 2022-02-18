@@ -56,7 +56,7 @@ menupopup menu,
     transition: background-color 100ms !important;
 }
 
-#placesContext menuitem {
+.sidebar-panel menuitem {
     height: var(--sidebar-menupopup-height) !important;
 }
 
