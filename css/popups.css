@@ -964,3 +964,21 @@ richlistitem:-moz-any(
 #confirmation-hint-checkmark-animation-container {
     margin-inline-end: 0 !important;
 }
+
+
+search-textbox#search-box {
+    appearance: none !important;
+    background-color: var(--back-color2) !important;
+    border: 1px solid var(--blue-color) !Important;
+    color: var(--text-color1) !important;
+    padding: 6px !important;
+    border-radius: var(--tab-radius) !important;
+}
+
+image.textbox-search-sign {
+    display: none !important;
+}
+
+search-textbox .tabsFilter:focus-within, #search-box:focus-within {
+    border: 2px solid var(--blue-color) !Important;
+}

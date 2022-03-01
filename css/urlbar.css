@@ -242,15 +242,6 @@
     color: var(--text-color1) !important;
 }
 
-search-textbox#search-box {
-    appearance: none !important;
-    background-color: var(--back-color2) !important;
-    color: var(--text-color1) !important;
-    padding: 6px !important;
-    padding-inline-start: 12px !important;
-    border-radius: 4px !important;
-}
-
 .panel-footer > button:hover {
     background: var(--back-color3) !important;
 }
