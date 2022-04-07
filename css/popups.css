@@ -117,7 +117,7 @@ menuitem[type="checkbox"][checked="true"] .menu-iconic-left::before {
     content: '';
     margin: auto;
     display: inline-block;
-    background-image: url(../icons/radio_checked.svg);
+    background-image: url(../icons/checked.svg);
     width: 16px;
     height: 16px;
 }
@@ -125,7 +125,7 @@ menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-left::before {
     content: '';
     margin: auto;
     display: inline-block;
-    background-image: url(../icons/radio_unchecked.svg);
+    background-image: url(../icons/unchecked.svg);
     width: 16px;
     height: 16px;
 }
