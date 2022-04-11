@@ -3,7 +3,7 @@
 }
 
 /* Disables Tab-line and label*/
-.tabbrowser-tab .tab-line, .tab-secondary-label {
+.tabbrowser-tab .tab-line, .tab-secondary-label, .tab-stack > .tab-background > .tab-context-line {
     display: none !important;
 }
 
