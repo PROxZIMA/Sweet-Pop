@@ -223,6 +223,11 @@
     list-style-image: url("../icons/tracking-disabled.svg")!important;
 }
 
+/* Hides Firefox container icon (Can be used via addon icon) */
+#urlbar-input-container #page-action-buttons .urlbar-addon-page-action[actionid="_testpilot-containers"] {
+    display: none !important;
+}
+
 /* Identity icon Modif */
 #identity-icon {
     list-style-image: url("../icons/welcome-back.svg")!important;
