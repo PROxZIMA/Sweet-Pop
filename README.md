@@ -269,5 +269,11 @@ Also this theme uses his [`fx-autoconfig`](https://github.com/MrOtherGuy/fx-auto
 
 - [Installation script](https://github.com/rafaelmardojai/firefox-gnome-theme) details.
 ___
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/PROxZIMA/Sweet-Pop.svg)](https://starchart.cc/PROxZIMA/Sweet-Pop)
+
+___
 <p align="center">Made with ❤️</p>
 <h2 align="center">ARIGATOU</h2>
