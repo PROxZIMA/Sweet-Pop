@@ -218,7 +218,7 @@ NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg
 5) Download [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js/blob/master/JS/navbarToolbarButtonSlider.uc.js) and place it in `script` folder along with `hideScrollbar.uc.js`.
 </details>
 
-### Follow-up changes
+#### Follow-up changes
 1) In Firefox
     - Right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`.
     - Remove `Flexible Space` from urlbar.
