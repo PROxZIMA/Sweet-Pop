@@ -41,7 +41,7 @@ echo "Profiles file found..."
 
 # Define default Profile folder path else use -p option
 if [ -z "$PROFILENAME" ]; then
-    PROFILEFOLDER="${FIREFOXFOLDER}/$(grep 'Default=' $PROFILES_FILE | sed 's/^Default=//')"
+    PROFILEFOLDER="${FIREFOXFOLDER}/$(grep -zoP '\[Install.*?\]\nDefault=\K(.*?)\n' $PROFILES_FILE | tr -d '\0')"
 else
     PROFILEFOLDER="${FIREFOXFOLDER}/${PROFILENAME}"
 fi
