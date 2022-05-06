@@ -148,7 +148,7 @@
 }
 
 #navigator-toolbox:after {
-    content: "";
+    content: "" !important;
     position: absolute !important;
     top: 0;
     left: 0;
@@ -158,6 +158,11 @@
     background-size: 100% var(--tab-border-width) !important;
     background-repeat: no-repeat !important;
     background-position: left calc(var(--tab-min-height) - var(--tab-border-width)) !important;
+    margin: unset !important;
+    opacity: unset !important;
+    height: unset !important;
+    display: unset !important;
+    appearance: unset !important;
 }
 
 #navigator-toolbox {
@@ -219,4 +224,11 @@
     padding: var(--toolbarbutton-inner-padding) !important;
     position: relative !important;
     z-index: 1 !important;
+}
+
+.toolbarbutton-1:not(:hover):-moz-window-inactive,
+.bookmark-item:not(:hover):-moz-window-inactive,
+:root:not([customizing]) .toolbarbutton-1[disabled="true"],
+:root:not([customizing]) .toolbarbutton-1:-moz-window-inactive[disabled="true"] {
+  opacity: 1 !important;
 }
