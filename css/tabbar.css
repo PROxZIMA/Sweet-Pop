@@ -157,7 +157,7 @@
     background: var(--tabbar-gradient-color);
     background-size: 100% var(--tab-border-width) !important;
     background-repeat: no-repeat !important;
-    background-position: left calc(var(--tab-min-height) - var(--tab-border-width)) !important;
+    background-position: left bottom !important;
     margin: unset !important;
     opacity: unset !important;
     height: unset !important;

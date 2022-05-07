@@ -5,6 +5,7 @@
     z-index: 2;
     pointer-events: none;
     background: var(--back-color1) !important;
+    width: 100vw;
 }
 
 
@@ -18,13 +19,6 @@
 #navigator-toolbox > * {
     line-height: normal;
     pointer-events: auto;
-    max-height: var(--tab-min-height) !important;
-}
-
-#navigator-toolbox,
-#navigator-toolbox > * {
-    width: 100vw;
-    -moz-appearance: none !important;
 }
 
 
@@ -49,6 +43,7 @@
 /* Move tabs 32% to right */
 #TabsToolbar {
     min-height: var(--tab-min-height) !important;
+    max-height: var(--tab-min-height) !important;
     margin-left: var(--navbar-percent) !important;
     width: var(--toolbar-percent) !important;
 }
