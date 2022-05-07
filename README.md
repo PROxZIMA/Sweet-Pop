@@ -187,7 +187,7 @@ NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg
 
 4) Move `user.js`, `mozilla.cfg` and `local-settings.js` to their destination.
 
-    <details><summary>Linux / OS X</summary><br>
+    <details><summary>Linux</summary><br>
 
     - `about:support` > `Application Binary` > `{Installation folder}firefox-bin`<br>
     Generally `Installation folder` is `/usr/lib/firefox/`
@@ -198,6 +198,22 @@ NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg
     $ cp ./programs/mozilla.cfg /usr/lib/firefox/
 
     $ cp ./programs/local-settings.js /usr/lib/firefox/defaults/pref/
+    ```
+    </details>
+
+   <details><summary>MacOS</summary><br>
+
+    - `about:support` > `Application Binary` > `{Installation folder}firefox`<br>
+    Generally `Installation folder` is `/Applications/Firefox.app/Contents/MacOS/` (`Firefox Nightly` for Nightly version)
+
+      For `MacOS`, our destination folder is `/Applications/Firefox.app/Contents/Resources/`
+
+    ```console
+    $ ln -s "`pwd`/programs/user.js" ../user.js
+
+    $ cp ./programs/mozilla.cfg /Applications/Firefox.app/Contents/Resources/
+
+    $ cp ./programs/local-settings.js /Applications/Firefox.app/Contents/Resources/defaults/pref/
     ```
     </details>
 
