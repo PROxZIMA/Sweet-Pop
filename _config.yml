@@ -19,6 +19,10 @@ show_header: true
 theme: jekyll-theme-cayman
 markdown: CommonMarkGhPages
 
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+
 sass:
     style: compressed
 
