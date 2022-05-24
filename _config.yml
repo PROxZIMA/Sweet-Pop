@@ -16,7 +16,7 @@ github:
 
 show_downloads: true
 show_header: true
-remote_theme: "dracula/gh-pages"
+theme: jekyll-theme-cayman
 
 sass:
     style: compressed
