@@ -1,4 +1,8 @@
-<h1 align="center">Sweet_Pop!</h1>
+<div align="center">
+
+  # [Sweet_Pop!](https://github.com/PROxZIMA/Sweet-Pop)
+  **A minimalist animated oneliner theme for Firefox perfectly matching Sweet Dark**
+</div>
 
 <p align="center"><img src="./assets/preview.png"></p>
 
@@ -100,11 +104,15 @@ Contains required user preferences. Change these before copying it to it's locat
 Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is loaded using [`local-settings.js`](./programs/local-settings.js). This startup-script adds "loader" scripts from `utils` folder that loads arbitrary javascript files from the `script` folder into Firefox<br>
 `mozilla.cfg` also helps in setting local webpage as your homepage. Details in [Installation](#Installation).
 
-NOTE: Firefox team has removed XBL from Firefox starting with version 72, so userChrome.js would not work :/
+> **Note**
+> 
+> Firefox team has removed XBL from Firefox starting with version 72, so userChrome.js would not work :/
 
 # Installation
 
-NOTE: If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/4ec550b7d7fb6a56d247385763a80a5da7efa2e0/programs/mozilla.cfg#L12-L14), uncomment line `12, 13, 14` and at line `13` change `newTabURL_` to the local page location.
+> **Note**
+> 
+> If you are planning to set a local page as home page then in [`mozilla.cfg`](https://github.com/PROxZIMA/Sweet-Pop/blob/4ec550b7d7fb6a56d247385763a80a5da7efa2e0/programs/mozilla.cfg#L12-L14), uncomment line `12, 13, 14` and at line `13` change `newTabURL_` to the local page location.
 
 <details><summary>Script Installation</summary>
 
@@ -290,6 +298,7 @@ ___
 
 [![Stargazers over time](https://starchart.cc/PROxZIMA/Sweet-Pop.svg)](https://starchart.cc/PROxZIMA/Sweet-Pop)
 
+[Back to top](#sweet_pop)
 ___
 <p align="center">Made with ❤️</p>
 <h2 align="center">ARIGATOU</h2>
