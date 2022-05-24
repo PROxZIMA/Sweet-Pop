@@ -16,7 +16,7 @@ github:
 
 show_downloads: true
 show_header: true
-theme: jekyll-theme-cayman
+remote_theme: "dracula/gh-pages"
 markdown: CommonMarkGhPages
 
 commonmark:
