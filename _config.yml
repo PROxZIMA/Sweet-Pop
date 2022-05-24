@@ -17,6 +17,7 @@ github:
 show_downloads: true
 show_header: true
 theme: jekyll-theme-cayman
+markdown: CommonMarkGhPages
 
 sass:
     style: compressed
