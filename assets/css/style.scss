@@ -3,39 +3,40 @@
 @import "jekyll-theme-dracula";
 
 summary {
-  list-style: none;
+    list-style: none;
 }
 
 summary::-webkit-details-marker {
-  display: none;
+    display: none;
 }
 
-details > summary::before {
-  content:"▷ ";
+details>summary::before {
+    content: "▷ ";
 }
-details[open] > summary::before {
-  content:"▽ ";
+
+details[open]>summary::before {
+    content: "▽ ";
 }
 
 .highlight .err {
-  color: #ff79c6 !important;
-  background-color: transparent !important;
+    color: #ff79c6 !important;
+    background-color: transparent !important;
 }
 
 section img {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;
-  -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;
-  border-radius: 0.25rem !important;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22) !important;
+    -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22) !important;
+    border-radius: 0.25rem !important;
 }
 
 pre {
-  border-radius: 0.35rem !important;
+    border-radius: 0.35rem !important;
 }
 
 code {
-  border-radius: 0.15rem !important;
+    border-radius: 0.15rem !important;
 }
 
 #header nav li a {
-  border-radius: 0.25rem !important;
+    border-radius: 0.25rem !important;
 }
