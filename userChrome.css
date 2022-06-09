@@ -14,54 +14,77 @@
 
 @media (-moz-os-version: windows-win10) {
 
-    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
+  :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box {
+    margin-top: 8px !important;
+  }
 
-    @media screen and (min-resolution: 1.25dppx) {
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
+  @media screen and (min-resolution: 1.25dppx) {
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box {
+      margin-top: 8px !important;
     }
-    @media screen and (min-resolution: 1.5dppx) {
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 8px !important; }
+  }
+
+  @media screen and (min-resolution: 1.5dppx) {
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box {
+      margin-top: 8px !important;
     }
-    @media screen and (min-resolution: 2dppx) {
-        :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box { margin-top: 7px !important; }
+  }
+
+  @media screen and (min-resolution: 2dppx) {
+    :root[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen]) > body > box {
+      margin-top: 7px !important;
     }
+  }
 }
 
-:root[sizemode="fullscreen"] { margin-top: 0px !important; }
+:root[sizemode="fullscreen"] {
+  margin-top: 0px !important;
+}
 
 :root {
-    --bookmark-block-padding: 1px !important;
-    /*--tab-min-height: 29px !important;*/
-    --menupopup-height: var(--tab-min-height);
-    --sidebar-menupopup-height: 36px;
-    --navbar-margin-top: calc(0px - var(--tab-min-height));
-    --navbar-percent: 32vw;
-    --subview-height: var(--tab-min-height);
-    --tab-radius: 8px;
-    --tab-border-width: 2px;
-    --toolbar-percent: 68vw;
-    --toolbarbutton-inner-padding: 6px !important;
-    --toolbarbutton-outer-padding: 3px !important;   /* 1px */
-    --urlbar-icon-padding: 3px !important;
-    --urlbar-min-height: calc(var(--tab-min-height) - 3px) !important;
-    --panel-background: rgba(0, 0, 0, 0) !important;
-    --panel-border-color: rgba(0, 0, 0, 0) !important;
-    --tabbar-gradient-color: url("../icons/animation.svg");
-    /*
-    More gradients to try out
-    linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
-    linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)
-    linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
-    */
+  --bookmark-block-padding: 1px !important;
+  /*--tab-min-height: 29px !important;*/
+  --menupopup-height: var(--tab-min-height);
+  --sidebar-menupopup-height: 36px;
+  --navbar-margin-top: calc(0px - var(--tab-min-height));
+  --navbar-percent: 32vw;
+  --subview-height: var(--tab-min-height);
+  --tab-radius: 8px;
+  --tab-border-width: 2px;
+  --toolbar-percent: 68vw;
+  --toolbarbutton-inner-padding: 6px !important;
+  --toolbarbutton-outer-padding: 3px !important;
+  /* 1px */
+  --urlbar-icon-padding: 3px !important;
+  --urlbar-min-height: calc(var(--tab-min-height) - 3px) !important;
+  --panel-background: rgba(0, 0, 0, 0) !important;
+  --panel-border-color: rgba(0, 0, 0, 0) !important;
+  --tabbar-gradient-color: linear-gradient(90deg, rgb(0, 3, 1), rgb(0, 140, 255), rgb(0, 120, 215), rgb(0, 120, 215), rgb(0, 120, 215), rgb(0, 140, 215), rgb(0, 3, 1));
+
+  /*
+  More gradients to try out
+  Usage:
+  --tabbar-gradient-color: linear-gradient();
+  --tabbar-gradient-color: url();
+
+  - url("../icons/animation.svg")
+
+  - linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);linear-gradient(90deg, #f79533 0%, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82, #f79533 50%, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82, #f79533 100%);
+  !Note
+  !Above linear gradient can be use with css/tabbar.css@177-198 to resemble the SVG animation
+
+  - linear-gradient(90deg, rgb(0,3,1),rgb(0, 140, 255),rgb(0,120,215),rgb(0,120,215),rgb(0,120,215),rgb(0,140,215), rgb(0,3,1));
+  - linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
+  */
 }
 
 /* Sidebar doesn't have any height variable for different densities */
 :root[uidensity="compact"] {
-    --sidebar-menupopup-height: 29px;
+  --sidebar-menupopup-height: 29px;
 }
 
 :root[uidensity="touch"] {
-    --sidebar-menupopup-height: 41px;
+  --sidebar-menupopup-height: 41px;
 }
 
 @import "css/myChanges.css";
