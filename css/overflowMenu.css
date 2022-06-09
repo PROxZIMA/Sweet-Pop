@@ -1,115 +1,120 @@
 .panel-arrow {
-    fill: var(--back-color1) !important;
+  fill: var(--back-color1) !important;
 }
 
 .panel-subview-body {
-    color: var(--text-color3) !important;
-    background: var(--back-color1) !important;
-    border-color: var(--text-color3) !important;
+  color: var(--text-color3) !important;
+  background: var(--back-color1) !important;
+  border-color: var(--text-color3) !important;
 }
 
 .appMenu-zoomReset-button {
-    color: var(--text-color1) !important;
-    fill: var(--text-color1) !important;
-    border-color: var(--text-color1) !important;
-    border-radius: 3px !important;
-    background-color: var(--back-color1) !important;
+  color: var(--text-color1) !important;
+  fill: var(--text-color1) !important;
+  border-color: var(--text-color1) !important;
+  border-radius: 3px !important;
+  background-color: var(--back-color1) !important;
 }
 
 .subviewbutton.panel-subview-footer {
-    background-color: var(--back-color1) !important;
-    border-top: 0px solid !important;
+  background-color: var(--back-color1) !important;
+  border-top: 0px solid !important;
 }
 
 .panel-header {
-    border-bottom: 1px solid var(--back-color3) !important;
-    background: var(--back-color1) !important;
+  border-bottom: 1px solid var(--back-color3) !important;
+  background: var(--back-color1) !important;
 }
 
 #statuspanel-label {
-    -moz-appearance: none !important;
-    background: transparent !important;
-    color: var(--text-color3) !important;
-    border: 0px solid var(--back-color3) !important;
+  -moz-appearance: none !important;
+  background: transparent !important;
+  color: var(--text-color3) !important;
+  border: 0px solid var(--back-color3) !important;
 }
 
-panel #editBMPanel, .panel-arrow, .panel-arrowcontent {
-    background-color: var(--back-color1) !important;
+panel #editBMPanel,
+.panel-arrow,
+.panel-arrowcontent {
+  background-color: var(--back-color1) !important;
 }
 
 .panel-subview-footer,
 [class^="PanelUI-"] {
-    color: var(--text-color2) !important;
-    background: var(--back-color1) !important;
+  color: var(--text-color2) !important;
+  background: var(--back-color1) !important;
 }
 
 .subviewbutton.panel-subview-footer {
-    background-color: var(--back-color1) !important;
-    border-top: 1px solid var(--back-color3) !important;
+  background-color: var(--back-color1) !important;
+  border-top: 1px solid var(--back-color3) !important;
 }
 
-.appMenu-tp-separator, toolbarseparator {
-    display: visible !important;
-    border-color: var(--back-color3) !important;
+.appMenu-tp-separator,
+toolbarseparator {
+  display: visible !important;
+  border-color: var(--back-color3) !important;
 }
 
 .subviewbutton[shortcut]::after {
-    color: var(--blue-color) !important;
+  color: var(--blue-color) !important;
 }
 
 .subviewbutton-nav::after {
-    fill: var(--text-color3) !important;
+  fill: var(--text-color3) !important;
 }
 
 #appMenu-zoomReduce-button {
-    background: transparent !important;
-    color: var(--text-color3) !important;
-    border: 0px solid var(--text-color3) !important;
-    border-radius: 0px !important;
+  background: transparent !important;
+  color: var(--text-color3) !important;
+  border: 0px solid var(--text-color3) !important;
+  border-radius: 0px !important;
 }
 
 #appMenu-zoomReset-button label {
-    background: transparent !important;
-    color: var(--text-color3) !important;
-    border-radius: 0px !important;
+  background: transparent !important;
+  color: var(--text-color3) !important;
+  border-radius: 0px !important;
 }
 
 #appMenu-zoomReset-button {
-    background: transparent !important;
-    color: var(--blue-color) !important;
-    border: 1px solid var(--text-color3) !important;
-    border-radius: 0px !important;
+  background: transparent !important;
+  color: var(--blue-color) !important;
+  border: 1px solid var(--text-color3) !important;
+  border-radius: 0px !important;
 
 }
 
-#appMenu-fullscreen-button, #appMenu-zoomEnlarge-button  {
-    background: transparent !important;
-    color: var(--text-color3) !important;
-    border: 0px solid var(--blue-color) !important;
-    border-radius: 0px !important;
+#appMenu-fullscreen-button,
+#appMenu-zoomEnlarge-button {
+  background: transparent !important;
+  color: var(--text-color3) !important;
+  border: 0px solid var(--blue-color) !important;
+  border-radius: 0px !important;
 }
 
-.customization-lwtheme-menu-theme, .customization-uidensity-menuitem {
-    margin: 0 -6px !important;
+.customization-lwtheme-menu-theme,
+.customization-uidensity-menuitem {
+  margin: 0 -6px !important;
 }
 
 /* Overflow Menu extension width */
 #widget-overflow #PanelUI-webext-ublock0_raymondhill_net-browser-action-view {
-    min-width: 252px !important;
-    max-width: 252px !important;
+  min-width: 252px !important;
+  max-width: 252px !important;
 }
 
 #widget-overflow #PanelUI-webext-addon_darkreader_org-browser-action-view {
-    min-width: 276px !important;
-    max-width: 276px !important;
+  min-width: 276px !important;
+  max-width: 276px !important;
 }
 
 #widget-overflow #PanelUI-webext-browsec_browsec_com-browser-action-view {
-    min-width: 402px !important;
-    max-width: 402px !important;
+  min-width: 402px !important;
+  max-width: 402px !important;
 }
 
 #widget-overflow #PanelUI-webext-user-agent-switcher_ninetailed_ninja-browser-action-view {
-    min-width: 279px !important;
-    max-width: 279px !important;
+  min-width: 279px !important;
+  max-width: 279px !important;
 }

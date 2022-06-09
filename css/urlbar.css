@@ -2,113 +2,114 @@
 #urlbar[breakout][breakout-extend],
 #urlbar[breakout][breakout-extend][open],
 #urlbar[breakout][breakout-extend][focused] {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 
 #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: var(--urlbar-min-height) !important;
-    padding-block: 0px !important;
-    padding-inline: 0px !important;
+  height: var(--urlbar-min-height) !important;
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
 }
 
 /* More tools... button */
 #nav-bar-overflow-button {
-    transform: scale(0.9, 0.9) !important;
+  transform: scale(0.9, 0.9) !important;
 }
 
 .urlbarView {
-    position: relative !important;
-    width: 55vw !important;
-    overflow: visible !important;
-    background: var(--back-color1) !important;
-    border-radius: 0 0 8px 8px !important;
-    margin: 3px 0 0 0 !important;
-    filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
-            drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
+  position: relative !important;
+  width: 55vw !important;
+  overflow: visible !important;
+  background: var(--back-color1) !important;
+  border-radius: 0 0 8px 8px !important;
+  margin: 3px 0 0 0 !important;
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .25)) drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
 }
 
 /* Fix for glitch when hovering suggestions */
 .urlbarView::before {
-    content: '';
-    position: absolute;
-    top: 1%;
-    left: -95px;
-    width: 100px;
-    height: 101%;
+  content: '';
+  position: absolute;
+  top: 1%;
+  left: -95px;
+  width: 100px;
+  height: 101%;
 }
 
 .urlbarView-results {
-    padding: 4px !important;
+  padding: 4px !important;
 }
 
 .urlbarView-row {
-    padding-block: 2px !important;
+  padding-block: 2px !important;
 }
 
 /* Disable Firefox Suggest */
 .urlbarView-row[label]::before {
-    display: none !important;
+  display: none !important;
 }
 
 .urlbarView-row[label] {
-    margin-block-start: 0px !important;
+  margin-block-start: 0px !important;
 }
 
 .urlbarView-row-inner {
-    border-radius: 6px !important;
-    padding-inline: 4px !important;
-    transition: all 100ms ease !important;
+  border-radius: 6px !important;
+  padding-inline: 4px !important;
+  transition: all 100ms ease !important;
 }
 
-.urlbarView-row:is([type=switchtab], [type=remotetab])>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-action {
-    padding: 3px 6px !important;
-    margin-block: -3px !important;
+.urlbarView-row:is([type=switchtab], [type=remotetab]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
+  padding: 3px 6px !important;
+  margin-block: -3px !important;
 }
 
 .urlbarView-body-inner {
-    border: none !important;
+  border: none !important;
 }
 
 #urlbar-background,
 .urlbar-history-dropmarker,
 #urlbar-go-button {
-    display: none !important;
+  display: none !important;
 }
 
 #urlbar.megabar {
-    max-height: 28px !important;
+  max-height: 28px !important;
 }
 
-#urlbar-input-container, .megabar {
-    background: var(--back-color1) !important;
+#urlbar-input-container,
+.megabar {
+  background: var(--back-color1) !important;
 }
 
 /* Fix padding around URL bar */
-#urlbar-container, #search-container {
-    padding: 0 !important;
-    min-width: 20px !important;
-    margin-inline: 0px !important;
+#urlbar-container,
+#search-container {
+  padding: 0 !important;
+  min-width: 20px !important;
+  margin-inline: 0px !important;
 }
 
 #searchbar {
-    background: var(--back-color1) !important;
-    color: var(--text-color1) !important;
+  background: var(--back-color1) !important;
+  color: var(--text-color1) !important;
 }
 
 #urlbar-background,
 #urlbar {
-    border: none !important;
+  border: none !important;
 }
 
 /* Removes 'Search with google or enter address' from url bar */
 #urlbar-input::placeholder {
-    color: transparent !important;
+  color: transparent !important;
 }
 
 .urlbar-icon {
-    margin-inline: 1px !important;
+  margin-inline: 1px !important;
 }
 
 /* Move hamburger menu to the left */
@@ -119,60 +120,75 @@
 } */
 
 /* Make Back, Forward, Stop, Go disappear when not in use */
-#back-button[disabled="true"], #forward-button[disabled="true"], #stop-button[disabled="true"],
-#go-button-stack, .search-go-button-stack {
-    display: none;
+#back-button[disabled="true"],
+#forward-button[disabled="true"],
+#stop-button[disabled="true"],
+#go-button-stack,
+.search-go-button-stack {
+  display: none;
 }
-#back-button, #forward-button, #reload-button, #stop-button, #home-button {
-    transform: scale(0.9) !important;
-    margin-top: -2px !important;
-}
-#back-button {
-    list-style-image: url("../icons/back.svg") !important;
-}
-#forward-button {
-    list-style-image: url("../icons/back.svg") !important;
-    transform: scaleX(-1) !important;
-}
-#reload-button {
-    list-style-image: url("../icons/reload.svg") !important;
-}
-#stop-button {
-    list-style-image: url("../icons/close.svg") !important;
-}
+
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button,
 #home-button {
-    list-style-image: url("../icons/home.svg") !important;
+  transform: scale(0.9) !important;
+  margin-top: -2px !important;
+}
+
+#back-button {
+  list-style-image: url("../icons/back.svg") !important;
+}
+
+#forward-button {
+  list-style-image: url("../icons/back.svg") !important;
+  transform: scaleX(-1) !important;
+}
+
+#reload-button {
+  list-style-image: url("../icons/reload.svg") !important;
+}
+
+#stop-button {
+  list-style-image: url("../icons/close.svg") !important;
+}
+
+#home-button {
+  list-style-image: url("../icons/home.svg") !important;
 }
 
 /* Make hover background of above transparent */
-.toolbarbutton-icon, toolbar toolbarbutton > .toolbarbutton-badge-stack, toolbarbutton #PanelUI-menu-button:hover {
-    background: transparent !important;
+.toolbarbutton-icon,
+toolbar toolbarbutton > .toolbarbutton-badge-stack,
+toolbarbutton #PanelUI-menu-button:hover {
+  background: transparent !important;
 }
 
 .toolbarbutton-badge {
-    margin-inline-end: -7px !important;
+  margin-inline-end: -7px !important;
 }
 
 #PanelUI-menu-button {
-    padding-inline: 0px !important;
+  padding-inline: 0px !important;
 }
 
 #urlbar-background {
-    background: var(--back-color1) !important;
+  background: var(--back-color1) !important;
 }
 
 /* Hide various elements */
 /* Menu */
 #appMenu-fxa-container,
-#appMenu-fxa-container+toolbarseparator,
+#appMenu-fxa-container + toolbarseparator,
 #appMenuRestoreLastSession,
 #appMenu-zoom-controls,
-#appMenu-zoom-controls+toolbarseparator,
+#appMenu-zoom-controls + toolbarseparator,
 #appMenu-edit-controls,
-#appMenu-edit-controls+toolbarseparator,
+#appMenu-edit-controls + toolbarseparator,
 #appMenu-library-button,
 #appMenu-customize-button,
-#appMenu-customize-button+toolbarseparator,
+#appMenu-customize-button + toolbarseparator,
 #appMenu-open-file-button,
 #appMenu-save-file-button,
 #appMenu-find-button,
@@ -184,7 +200,7 @@
 .autocomplete-history-dropmarker,
 #identity-icon-label,
 #star-button-box {
-    display: none !important;
+  display: none !important;
 }
 
 /* Identity Icons BG Dark */
@@ -199,7 +215,7 @@
 #permission-popup-mainView-panel-header,
 #permission-popup-permissions-content,
 #tracking-protection-icon-container {
-    background-color: var(--back-color1) !important;
+  background-color: var(--back-color1) !important;
 }
 
 .identity-box-button,
@@ -210,63 +226,74 @@
 #tracking-protection-icon-container:hover:not([open=true]),
 #tracking-protection-icon-container:hover:active,
 #tracking-protection-icon-container[open=true] {
-    fill-opacity: .8 !important;
-    background: transparent !important;
+  fill-opacity: .8 !important;
+  background: transparent !important;
 }
 
 /* Tracking protection icon Modif */
 #urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
-    list-style-image: url("../icons/tracking-enabled.svg")!important;
+  list-style-image: url("../icons/tracking-enabled.svg") !important;
 }
 
 #urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box[hasException] > #tracking-protection-icon {
-    list-style-image: url("../icons/tracking-disabled.svg")!important;
+  list-style-image: url("../icons/tracking-disabled.svg") !important;
 }
 
 /* Hides Firefox container icon (Can be used via addon icon) */
 #urlbar-input-container #page-action-buttons .urlbar-addon-page-action[actionid="_testpilot-containers"] {
-    display: none !important;
+  display: none !important;
 }
 
 /* Identity icon Modif */
 #identity-icon {
-    list-style-image: url("../icons/welcome-back.svg")!important;
+  list-style-image: url("../icons/welcome-back.svg") !important;
 }
 
 #identity-icon-labels {
-    display: none !important;
+  display: none !important;
 }
 
 /* Make Sidebar Dark */
-#protections-popup-mainView, #protections-popup-footer, #sidebar, #sidebar-header, #bookmarksPanel, #bookmarks-view, #history-panel, #historyTree, #sidebar-switcher-target, #viewButton, .panel-footer > button {
-    background-color: var(--back-color1) !important;
-    color: var(--text-color1) !important;
+#protections-popup-mainView,
+#protections-popup-footer,
+#sidebar,
+#sidebar-header,
+#bookmarksPanel,
+#bookmarks-view,
+#history-panel,
+#historyTree,
+#sidebar-switcher-target,
+#viewButton,
+.panel-footer > button {
+  background-color: var(--back-color1) !important;
+  color: var(--text-color1) !important;
 }
 
 .sidebar-placesTree {
-    color: var(--text-color1) !important;
+  color: var(--text-color1) !important;
 }
 
 .panel-footer > button:hover {
-    background: var(--back-color3) !important;
+  background: var(--back-color3) !important;
 }
 
 #PersonalToolbar {
-    background-color: var(--back-color1) !important;
-    color: var(--text-color1) !important;
-    padding-inline: 2px !important;
-    min-height: 0px !important;
+  background-color: var(--back-color1) !important;
+  color: var(--text-color1) !important;
+  padding-inline: 2px !important;
+  min-height: 0px !important;
 }
 
 #PersonalToolbar[collapsed="true"] {
-    padding: 0px !important;
+  padding: 0px !important;
 }
 
-#PersonalToolbar .toolbarbutton-1:hover, toolbarbutton.bookmark-item:hover {
-    background-color: var(--back-color3) !important;
-    color: inherit !important;
+#PersonalToolbar .toolbarbutton-1:hover,
+toolbarbutton.bookmark-item:hover {
+  background-color: var(--back-color3) !important;
+  color: inherit !important;
 }
 
 toolbarbutton.bookmark-item:not(.subviewbutton) {
-    margin-inline: 1px !important;
+  margin-inline: 1px !important;
 }

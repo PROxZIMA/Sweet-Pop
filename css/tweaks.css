@@ -1,145 +1,174 @@
 /* Disables mic icon at top when mic is turned on */
 #webrtcIndicator {
-    display: none !important;
+  display: none !important;
 }
 
 /* Remove Extra Spacing at Start*/
 .titlebar-spacer[type="pre-tabs"] {
-    display: none !important;
+  display: none !important;
 }
 
 .titlebar-spacer[type="post-tabs"] {
-    width: 20px !important;
-    background: var(--back-color1) !important;
-    position: relative !important;
+  width: 20px !important;
+  background: var(--back-color1) !important;
+  position: relative !important;
 }
 
 /* Removes scroll button in exess tabs */
-.scrollbutton-up, .scrollbutton-down {
-    display: none !important;
+.scrollbutton-up,
+.scrollbutton-down {
+  display: none !important;
 }
 
 /* Removes all-tab-button in exess tabs */
 #alltabs-button {
-    display: none !important;
+  display: none !important;
 }
 
 /* Change cursor for links that open in new tab/window */
-:link[target="_blank"], :visited[target="_blank"],
-:link[target="_new"], :visited[target="_new"] {
-    cursor: crosshair;
+:link[target="_blank"],
+:visited[target="_blank"],
+:link[target="_new"],
+:visited[target="_new"] {
+  cursor: crosshair;
 }
 
 /* Add a keyword when adding a bookmark */
 #keywordRow {
-    display: -moz-grid-line !important;
+  display: -moz-grid-line !important;
 }
 
 /*flash of white when loading new pages. */
-#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, browser[type=content-primary], browser[type=content] > html {
-    background: var(--back-color1) !important;
-    color: var(--back-color1) !important;
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: var(--back-color1) !important;
+  color: var(--back-color1) !important;
 }
 
 /* Hide Scrollbar from Sidebar */
 .hidevscroll-scrollbar {
-    display: none !important;
+  display: none !important;
 }
 
 /* Remove setting from url dropdown */
 .search-panel-one-offs {
-    display: none !important;
+  display: none !important;
 }
 
 /* Removes Save Page and Send Pange from context menu */
-#context-savepage, #context-sep-sendpagetodevice {
-    display:none !important;
+#context-savepage,
+#context-sep-sendpagetodevice {
+  display: none !important;
 }
 
 /* Titlebar button / Window control modifs */
-.titlebar-button, #window-controls > toolbarbutton  {
-    padding: 0px 5px 0px 5px !important;
-    background: none !important;
+.titlebar-button,
+#window-controls > toolbarbutton {
+  padding: 0px 5px 0px 5px !important;
+  background: none !important;
 }
 
-.titlebar-button > .toolbarbutton-icon, #window-controls > toolbarbutton > .toolbarbutton-icon {
-    height: 14px !important;
-    width: 14px !important;
+.titlebar-button > .toolbarbutton-icon,
+#window-controls > toolbarbutton > .toolbarbutton-icon {
+  height: 14px !important;
+  width: 14px !important;
 }
 
 .titlebar-button > .toolbarbutton-icon:-moz-lwtheme {
-    padding: 0px !important;
+  padding: 0px !important;
 }
+
 #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container {
-    visibility: visible !important;
+  visibility: visible !important;
 }
+
 #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container > * {
-    visibility: hidden !important;
+  visibility: hidden !important;
 }
+
 .titlebar-buttonbox-container {
-    background: var(--back-color1) !important;
-    position: relative !important;
+  background: var(--back-color1) !important;
+  position: relative !important;
 }
 
 /* Minimize Button */
-.titlebar-min, #minimize-button {
-    list-style-image: url("../icons/min.svg") !important;
-    -moz-default-appearance: none !important;
+.titlebar-min,
+#minimize-button {
+  list-style-image: url("../icons/min.svg") !important;
+  -moz-default-appearance: none !important;
 }
-.titlebar-min:hover, #minimize-button:hover {
-    list-style-image: url("../icons/min_hover.svg") !important;
-    -moz-default-appearance: none !important;
+
+.titlebar-min:hover,
+#minimize-button:hover {
+  list-style-image: url("../icons/min_hover.svg") !important;
+  -moz-default-appearance: none !important;
 }
+
 /* Maximize Button */
-.titlebar-max, .titlebar-restore, #max-button, #restore-button {
-    list-style-image: url("../icons/max_restore.svg") !important;
-    -moz-default-appearance: none !important;
+.titlebar-max,
+.titlebar-restore,
+#max-button,
+#restore-button {
+  list-style-image: url("../icons/max_restore.svg") !important;
+  -moz-default-appearance: none !important;
 }
-.titlebar-max:hover, #max-button:hover {
-    list-style-image: url("../icons/max_hover.svg") !important;
-    -moz-default-appearance: none !important;
+
+.titlebar-max:hover,
+#max-button:hover {
+  list-style-image: url("../icons/max_hover.svg") !important;
+  -moz-default-appearance: none !important;
 }
-.titlebar-restore:hover, #restore-button:hover {
-    list-style-image: url("../icons/restore_hover.svg") !important;
-    -moz-default-appearance: none !important;
+
+.titlebar-restore:hover,
+#restore-button:hover {
+  list-style-image: url("../icons/restore_hover.svg") !important;
+  -moz-default-appearance: none !important;
 }
+
 /* Close Button */
-.titlebar-close, #close-button {
-    list-style-image: url("../icons/closew.svg") !important;
-    -moz-default-appearance: none !important;
+.titlebar-close,
+#close-button {
+  list-style-image: url("../icons/closew.svg") !important;
+  -moz-default-appearance: none !important;
 }
-.titlebar-close:hover, #close-button:hover {
-    list-style-image: url("../icons/close_hover.svg") !important;
-    -moz-default-appearance: none !important;
+
+.titlebar-close:hover,
+#close-button:hover {
+  list-style-image: url("../icons/close_hover.svg") !important;
+  -moz-default-appearance: none !important;
 }
 
 /* Disable What's New and Exit from Hamburger */
-#appMenu-whatsnew-button, #appMenu-quit-button {
-    display: none !important;
+#appMenu-whatsnew-button,
+#appMenu-quit-button {
+  display: none !important;
 }
 
 /* Change pop-up display background */
 notification {
-    background: var(--back-color1) !important;
-    color: var(--text-color1) !important;
+  background: var(--back-color1) !important;
+  color: var(--text-color1) !important;
 }
 
 /* PiP icon scaled */
 .pip-wrapper {
-    transform: scale(0.5) !important;
+  transform: scale(0.5) !important;
 }
 
 /* Disable 'Try searching with...' */
 .search-one-offs {
-    display: none !important;
+  display: none !important;
 }
 
 .private-browsing-indicator {
-    background-color: var(--back-color1) !important;
-    position: relative !important;
-    z-index: auto !important;
-    width: 38px !important;
-    margin-inline: 0px !important;
-    padding-inline: 7px !important;
-    background-size: auto !important;
+  background-color: var(--back-color1) !important;
+  position: relative !important;
+  z-index: auto !important;
+  width: 38px !important;
+  margin-inline: 0px !important;
+  padding-inline: 7px !important;
+  background-size: auto !important;
 }
