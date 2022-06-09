@@ -1,27 +1,28 @@
-/*@import "css/reddit.css";*/
+/* @import "css/reddit.css"; */
+/* @import "css/discordCatppuccin.css"; */
 
 :root {
-    --dark-color1: #11131c;
-    --dark-color2: #1d202f;
-    --dark-color3: #1f2334;
-    --dark-color4: #272c41;
+  --dark-color1: #11131c;
+  --dark-color2: #1d202f;
+  --dark-color3: #1f2334;
+  --dark-color4: #272c41;
 
-    --dark-color5: #24222D;
-    --dark-color6: #33313c;
-    --dark-color7: #42404b;
+  --dark-color5: #24222D;
+  --dark-color6: #33313c;
+  --dark-color7: #42404b;
 
-    --light-color1: #f0f0f0;
-    --light-color2: #c7c7c7;
-    --light-color3: #9d9d9d;
-    --light-color4: #8c8c8c;
+  --light-color1: #f0f0f0;
+  --light-color2: #c7c7c7;
+  --light-color3: #9d9d9d;
+  --light-color4: #8c8c8c;
 
-    --light-color5: #e4e4e4;
-    --light-color6: #cacaca;
-    --light-color7: #c2c2c2;
+  --light-color5: #e4e4e4;
+  --light-color6: #cacaca;
+  --light-color7: #c2c2c2;
 
-    --blue-color: #0078d7;
+  --blue-color: #0078d7;
 
-    --gtk-color: #d700d2;
+  --gtk-color: #d700d2;
 
 }
 
@@ -37,6 +38,19 @@
 :root[style*="--in-content-box-background: rgb(35, 34, 43)"],
 :root[class*="theme-dark"],
 :root[privatebrowsingmode=temporary] {
+  --back-color1: var(--dark-color1);
+  --back-color2: var(--dark-color2);
+  --back-color3: var(--dark-color3);
+  --back-color4: var(--dark-color4);
+
+  --text-color1: var(--light-color5);
+  --text-color2: var(--light-color6);
+  --text-color3: var(--light-color7);
+}
+
+/* Theme for browser webpages */
+@media (-moz-toolbar-prefers-color-scheme: dark) {
+  :root {
     --back-color1: var(--dark-color1);
     --back-color2: var(--dark-color2);
     --back-color3: var(--dark-color3);
@@ -45,20 +59,7 @@
     --text-color1: var(--light-color5);
     --text-color2: var(--light-color6);
     --text-color3: var(--light-color7);
-}
-
-/* Theme for browser webpages */
-@media (-moz-toolbar-prefers-color-scheme: dark) {
-    :root {
-        --back-color1: var(--dark-color1);
-        --back-color2: var(--dark-color2);
-        --back-color3: var(--dark-color3);
-        --back-color4: var(--dark-color4);
-
-        --text-color1: var(--light-color5);
-        --text-color2: var(--light-color6);
-        --text-color3: var(--light-color7);
-    }
+  }
 }
 
 /*================ LIGHT THEME ================*/
@@ -67,16 +68,15 @@
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"],
 :root[style*="--newtab-background-color: rgba(249, 249, 251, 1)"],
 :root[style*="--newtab-background-color: rgb(249, 249, 251)"],
-:root[style*="--in-content-box-background: #fff"],
-:root[style*="--lwt-accent-color: white"] {
-    --back-color1: var(--light-color1);
-    --back-color2: var(--light-color2);
-    --back-color3: var(--light-color3);
-    --back-color4: var(--light-color4);
+:root[style*="--in-content-box-background: #fff"] {
+  --back-color1: var(--light-color1);
+  --back-color2: var(--light-color2);
+  --back-color3: var(--light-color3);
+  --back-color4: var(--light-color4);
 
-    --text-color1: var(--dark-color5);
-    --text-color2: var(--dark-color6);
-    --text-color3: var(--dark-color7);
+  --text-color1: var(--dark-color5);
+  --text-color2: var(--dark-color6);
+  --text-color3: var(--dark-color7);
 }
 
 
@@ -92,23 +92,24 @@ url-prefix(https://addons.mozilla.org),
 url-prefix(https://raw.githubusercontent.com),
 url-prefix(https://www.keybr.com),
 url-prefix(view-source:) {
-    :root {
-        --in-content-page-background: var(--back-color1) !important;
-        --in-content-page-color: var(--text-color1) !important;
-        --button-hover-color: var(--back-color1) !important;
-    }
-    html, body {
-        background-color: var(--in-content-page-background) !important;
-        color: var(--in-content-page-color) !important;
-    }
+  :root {
+    --in-content-page-background: var(--back-color1) !important;
+    --in-content-page-color: var(--text-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+  }
+
+  html, body {
+    background-color: var(--in-content-page-background) !important;
+    color: var(--in-content-page-color) !important;
+  }
 }
 
 @-moz-document url-prefix(about:) {
-    :root {
-        --in-content-page-background: var(--back-color1) !important;
-        --in-content-page-color: var(--text-color1) !important;
-        --button-hover-color: var(--back-color1) !important;
-    }
+  :root {
+    --in-content-page-background: var(--back-color1) !important;
+    --in-content-page-color: var(--text-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+  }
 }
 
 
@@ -117,44 +118,56 @@ url-prefix(view-source:) {
 /* ============= ADDON PAGE ============= */
 
 @-moz-document url-prefix("about:addons") {
-    #header-inner {
-        margin: 2px 0px -40px 4px !important;
-    }
-    #heading {
-        margin: 1px 0px 1px -4px !important;
-    }
-    #main {
-        margin-top: 5px;
-    }
-    .addon-name {
-        font-weight: 400 !important;
-    }
-    .addon.card {
-        margin-bottom: 5px !important; min-width: 1000px !important;
-    }
-    addon-card:not([expanded]) > .addon.card:hover {
-        box-shadow: var(--back-color3) !important;
-    }
-    .card {
-        background: var(--back-color2) !important;
-        display: block !important;
-    }
-    .card-contents{
-        flex-direction: row !important;
-        display: block !important;
-    }
-    .list-section-heading {
-        margin-bottom: 9px !important;
-    }
-    .more-options-button {
-        top: 8px;
-    }
-    .prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
-        display:none;
-    }
-    .sidebar-footer-button {
-        margin-bottom: 36px;
-    }
+  #header-inner {
+    margin: 2px 0px -40px 4px !important;
+  }
+
+  #heading {
+    margin: 1px 0px 1px -4px !important;
+  }
+
+  #main {
+    margin-top: 5px;
+  }
+
+  .addon-name {
+    font-weight: 400 !important;
+  }
+
+  .addon.card {
+    margin-bottom: 5px !important;
+    /* min-width: 1000px !important;*/
+  }
+
+  addon-card:not([expanded]) > .addon.card:hover {
+    box-shadow: var(--back-color3) !important;
+  }
+
+  .card {
+    background: var(--back-color2) !important;
+    display: block !important;
+  }
+
+  .card-contents {
+    flex-direction: row !important;
+    display: block !important;
+  }
+
+  .list-section-heading {
+    margin-bottom: 9px !important;
+  }
+
+  .more-options-button {
+    top: 8px;
+  }
+
+  .prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
+    display:none;
+  }
+
+  .sidebar-footer-button {
+    margin-bottom: 36px;
+  }
 }
 
 
@@ -163,33 +176,33 @@ url-prefix(view-source:) {
 
 /* ============= Error Pages ============= */
 @-moz-document url-prefix("about:neterror") {
-    #errorPageContainer {
-        background: url("./icons/sonic.gif") no-repeat left center !important;
-        background-size: 38% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        max-width: calc(100vw / 2) !important;
-        max-height: calc(100vh / 2) !important;
-    }
+  #errorPageContainer {
+    background: url("./icons/sonic.gif") no-repeat left center !important;
+    background-size: 38% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: calc(100vw / 2) !important;
+    max-height: calc(100vh / 2) !important;
+  }
 
-    #text-container {
-        padding-inline-start: 38% !important;
-    }
+  #text-container {
+    padding-inline-start: 38% !important;
+  }
 }
 
 @-moz-document url-prefix("about:restartrequired") {
-    #errorPageContainer {
-        background: url("./icons/fox-transparent.gif") no-repeat left center !important;
-        background-size: 38% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        max-width: calc(100vw / 2) !important;
-        max-height: calc(100vh / 2) !important;
-    }
+  #errorPageContainer {
+    background: url("./icons/fox-transparent.gif") no-repeat left center !important;
+    background-size: 38% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: calc(100vw / 2) !important;
+    max-height: calc(100vh / 2) !important;
+  }
 
-    #text-container {
-        padding-inline-start: 38% !important;
-    }
+  #text-container {
+    padding-inline-start: 38% !important;
+  }
 }
 
 
@@ -200,42 +213,43 @@ url-prefix(view-source:) {
 /*================== READER VIEW ==================*/
 
 @-moz-document url-prefix("about:reader") {
-    html {
-        background: var(--back-color1);
-    }
-    toolbar > reader-toolbar {
-        border-radius: 3px !important;
-    }
+  html {
+    background: var(--back-color1);
+  }
 
-    /*Dark*/
-    body.loaded.dark {
-        --toolbar-bgcolor: var(--back-color2) !important;
-        --toolbar-border: var(--back-color1) !important;
-        --toolbar-hover: var(--back-color3) !important;
-        --popup-bgcolor: var(--back-color2) !important;
-        --popup-border: var(--back-color3) !important;
-        --font-color: var(--text-color3) !important;
-        --icon-fill: var(--text-color3) !important;
-        background: var(--back-color1) !important;
-        --blue-40:var(--text-color1) !important;
-        --blue-40-a30:rgba(144,89,255,0.3) !important;
-        --active-color:var(--text-color1) !important;
-    }
+  toolbar > reader-toolbar {
+    border-radius: 3px !important;
+  }
 
-    /*Light*/
-    body.loaded.light {
-        --toolbar-bgcolor: var(--light-color2) !important;
-        --toolbar-border: var(--light-color1) !important;
-        --toolbar-hover: var(--light-color3) !important;
-        --popup-bgcolor: var(--light-color2) !important;
-        --popup-border: var(--light-color3) !important;
-        --font-color: var(--dark-color7) !important;
-        --icon-fill: var(--dark-color7) !important;
-        background: var(--light-color1) !important;
-        --blue-40:var(--dark-color5) !important;
-        --blue-40-a30:rgba(51,46,86,0.3) !important;
-        --active-color:var(--dark-color5) !important;
-    }
+  /*Dark*/
+  body.loaded.dark {
+    --toolbar-bgcolor: var(--back-color2) !important;
+    --toolbar-border: var(--back-color1) !important;
+    --toolbar-hover: var(--back-color3) !important;
+    --popup-bgcolor: var(--back-color2) !important;
+    --popup-border: var(--back-color3) !important;
+    --font-color: var(--text-color3) !important;
+    --icon-fill: var(--text-color3) !important;
+    background: var(--back-color1) !important;
+    --blue-40:var(--text-color1) !important;
+    --blue-40-a30:rgba(144, 89, 255, 0.3) !important;
+    --active-color:var(--text-color1) !important;
+  }
+
+  /*Light*/
+  body.loaded.light {
+    --toolbar-bgcolor: var(--light-color2) !important;
+    --toolbar-border: var(--light-color1) !important;
+    --toolbar-hover: var(--light-color3) !important;
+    --popup-bgcolor: var(--light-color2) !important;
+    --popup-border: var(--light-color3) !important;
+    --font-color: var(--dark-color7) !important;
+    --icon-fill: var(--dark-color7) !important;
+    background: var(--light-color1) !important;
+    --blue-40:var(--dark-color5) !important;
+    --blue-40-a30:rgba(51, 46, 86, 0.3) !important;
+    --active-color:var(--dark-color5) !important;
+  }
 
 }
 
@@ -247,9 +261,9 @@ url-prefix(view-source:) {
 /* =============== Scrollbar =============== */
 
 :root {
-    --addon-icon-size: 26px !important; --card-padding: 14px !important;
-    scrollbar-color: rgb(29,33,38) rgba(0,0,0,0);
-    scrollbar-width: thin;
+  --addon-icon-size: 26px !important; --card-padding: 14px !important;
+  scrollbar-color: rgb(29, 33, 38) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
 }
 
 
@@ -260,18 +274,20 @@ url-prefix(view-source:) {
 /* =============== Customize Developer Tools =============== */
 
 @-moz-document url("chrome://devtools/content/styleeditor/index.xhtml") {
-    .splitview-nav .unsaved {
-        background: linear-gradient( to right, #f0a 4px, #f0a4 4px, transparent ) !important;
-    }
-    .splitview-nav .unsaved.splitview-active {
-        background: linear-gradient( to right, #f0a 4px, #f0a4 4px) !important;
-    }
-    /* Auto-Highlight common user style filenames */
-    .splitview-nav label[value="userChrome.css"],
-    .splitview-nav label[value="userContent.css"],
-    .splitview-nav label[value$=".uc.css"] {
-        color: #f0a !important;
-    }
+  .splitview-nav .unsaved {
+    background: linear-gradient(to right, #f0a 4px, #f0a4 4px, transparent) !important;
+  }
+
+  .splitview-nav .unsaved.splitview-active {
+    background: linear-gradient(to right, #f0a 4px, #f0a4 4px) !important;
+  }
+
+  /* Auto-Highlight common user style filenames */
+  .splitview-nav label[value="userChrome.css"],
+  .splitview-nav label[value="userContent.css"],
+  .splitview-nav label[value$=".uc.css"] {
+    color: #f0a !important;
+  }
 }
 
 
@@ -280,10 +296,10 @@ url-prefix(view-source:) {
 
 
 /* =============== Hide text in built-in print screen =============== */
-@-moz-document url-prefix("moz-extension://08b76965-6643-443a-9219-b05054b0b4c7/blank.html"){
-    .preview-instructions, .face-container, .cancel-shot {
-        display: none !important;
-    }
+@-moz-document url-prefix("moz-extension://08b76965-6643-443a-9219-b05054b0b4c7/blank.html") {
+  .preview-instructions, .face-container, .cancel-shot {
+    display: none !important;
+  }
 }
 
 
@@ -293,9 +309,9 @@ url-prefix(view-source:) {
 
 /* =============== Login page changes =============== */
 @-moz-document url-prefix("about:logins") {
-    .login-list-item {
-        background-color: var(--back-color1) !important;
-    }
+  .login-list-item {
+    background-color: var(--back-color1) !important;
+  }
 }
 
 
@@ -306,27 +322,27 @@ url-prefix(view-source:) {
 
 
 @-moz-document regexp(".*\\.(p|P)(d|D)(f|F).*") {
-    :root {
-        --toolbar-bg-color: var(--back-color1) !important;
-        --body-bg-color: var(--back-color1) !important;
-        --sidebar-bg-color: var(--back-color1) !important;
-        --button-hover-color: var(--back-color1) !important;
-        --field-bg-color: var(--back-color1) !important;
-    }
+  :root {
+    --toolbar-bg-color: var(--back-color1) !important;
+    --body-bg-color: var(--back-color1) !important;
+    --sidebar-bg-color: var(--back-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+    --field-bg-color: var(--back-color1) !important;
+  }
 
-    @media (-moz-toolbar-prefers-color-scheme: dark) {
-        .canvasWrapper > canvas {
-            filter: invert(1) !important;
-        }
+  @media (-moz-toolbar-prefers-color-scheme: dark) {
+    .canvasWrapper > canvas {
+      filter: invert(1) !important;
     }
+  }
 
-    .dropdownToolbarButton > select {
-        background-color: var(--back-color2) !important;
-    }
+  .dropdownToolbarButton > select {
+    background-color: var(--back-color2) !important;
+  }
 
-    .dropdownToolbarButton > select:hover {
-        background-color: var(--back-color1) !important;
-    }
+  .dropdownToolbarButton > select:hover {
+    background-color: var(--back-color1) !important;
+  }
 }
 
 
@@ -337,27 +353,32 @@ url-prefix(view-source:) {
 /* =============== Site Specific Customisations =============== */
 
 @-moz-document url("https://www.qwiklabs.com/public_profiles/8ce32532-ca12-4a89-aed0-99c9316cae73") {
-    .container img {
-        height: 180px !important;
-        width: 180px !important;
-    }
-    .container .title {
-        width: 250px;
-        text-align: center;
-    }
+  .container img {
+    height: 180px !important;
+    width: 180px !important;
+  }
+
+  .container .title {
+    width: 250px;
+    text-align: center;
+  }
 }
 
 @-moz-document url-prefix("https://jsfiddle.net/") {
-    #sidebar {
-        width: 125px;
-    }
-    #content {
-        margin-left: -84px !important;
-    }
-    #sidebar * {
-        overflow: hidden;
-    }
-    #s-bottom {
-        display: none !important;
-    }
+  #sidebar {
+    width: 125px;
+  }
+
+  #content {
+    margin-left: -84px !important;
+  }
+
+  #sidebar * {
+    overflow: hidden;
+  }
+
+  #s-bottom {
+    display: none !important;
+  }
 }
+
