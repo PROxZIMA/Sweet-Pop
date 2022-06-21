@@ -49,7 +49,7 @@
 }
 
 /* Theme for browser webpages */
-@media (-moz-toolbar-prefers-color-scheme: dark) {
+@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
   :root {
     --back-color1: var(--dark-color1);
     --back-color2: var(--dark-color2);
@@ -79,6 +79,19 @@
   --text-color3: var(--dark-color7);
 }
 
+/* Theme for browser webpages */
+@media (-moz-toolbar-prefers-color-scheme: light), (prefers-color-scheme: light) {
+  :root {
+    --back-color1: var(--light-color1);
+    --back-color2: var(--light-color2);
+    --back-color3: var(--light-color3);
+    --back-color4: var(--light-color4);
+
+    --text-color1: var(--dark-color5);
+    --text-color2: var(--dark-color6);
+    --text-color3: var(--dark-color7);
+  }
+}
 
 
 
@@ -330,9 +343,9 @@ url-prefix(view-source:) {
     --field-bg-color: var(--back-color1) !important;
   }
 
-  @media (-moz-toolbar-prefers-color-scheme: dark) {
-    .canvasWrapper > canvas {
-      filter: invert(1) !important;
+  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    #viewer {
+      filter: invert(1);
     }
   }
 
