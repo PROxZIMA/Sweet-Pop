@@ -127,8 +127,8 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
     This script will lookup default Firefox profile location and install the theme with default configurations.
 
     ```console
-    $ ./scripts/install.sh # Standard
-    $ ./scripts/install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
+    $ ./programs/install.sh # Standard
+    $ ./programs/install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
     ```
 
     #### Script options
