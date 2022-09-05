@@ -162,10 +162,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--tabbar-gradient-color);
+  background: var(--tabbar-gradient-color), var(--tabbar-gradient-color) !important;
   background-size: 100% var(--tab-border-width) !important;
   background-repeat: no-repeat !important;
-  background-position: left bottom !important;
+  background-position: left bottom, left calc(var(--tab-min-height) - var(--tab-border-width)) !important;
   margin: unset !important;
   opacity: unset !important;
   height: unset !important;
