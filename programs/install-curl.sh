@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 VERSION=$(curl -s "https://github.com/PROxZIMA/Sweet-Pop/releases/latest/download" 2>&1 | sed "s/^.*download\/\([^\"]*\).*/\1/")
 FILENAME=Sweet-Pop-$VERSION.zip

@@ -1,10 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-THEMEDIRECTORY=$(cd `dirname $0` && cd .. && pwd)
-FIREFOXFOLDER=~/.mozilla/firefox/
-PROFILENAME=""
-FXACEXTRAS=false
-CHROMEFOLDER="chrome"
+THEMEDIRECTORY=$(cd `dirname $0` && cd .. && pwd);
+
+case "$(uname -s)" in
+    Darwin*)    FIREFOXFOLDER=~/Library/Application\ Support/Firefox/;;
+    *)          FIREFOXFOLDER=~/.mozilla/firefox/;;
+esac
+
+PROFILENAME="";
+FXACEXTRAS=false;
+CHROMEFOLDER="chrome";
 
 
 # Get installation options
