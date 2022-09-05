@@ -284,6 +284,23 @@ toolbarbutton #PanelUI-menu-button:hover {
   min-height: 0px !important;
 }
 
+#PersonalToolbar:after {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--tab-border-width) !important;
+  background: var(--back-color1) !important;
+  background-repeat: no-repeat !important;
+  background-position: left bottom !important;
+  z-index: 2 !important;
+  margin: unset !important;
+  opacity: unset !important;
+  appearance: unset !important;
+}
+
 #PersonalToolbar[collapsed="true"] {
   padding: 0px !important;
 }
