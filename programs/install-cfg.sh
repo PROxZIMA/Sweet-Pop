@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cp ./programs/mozilla.cfg "${1}/"
 
