@@ -990,3 +990,9 @@ search-textbox .tabsFilter:focus-within,
 #search-box:focus-within {
   border: 2px solid var(--blue-color) !Important;
 }
+
+
+/* Browser popups */
+dialog#commonDialog #dialogGrid .titleIcon {
+  background-color: transparent !important;
+}
