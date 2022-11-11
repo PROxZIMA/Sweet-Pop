@@ -31,6 +31,7 @@
 ├──  css
 │  ├──  findbar.css
 │  ├──  floatingToolbox.css
+│  ├──  icons.css
 │  ├──  library.css
 │  ├──  myChanges.css
 │  ├──  overflowMenu.css
@@ -259,17 +260,19 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 
 3) You can change `--tab-radius` and `--tab-border-width` to increase/decrease tab border radius and width respectively to match `normal` and `touch` density.
 
-4) You can disable any of the `script/*.uc.js` from `Toolbar Menu > Tools > userscripts > script`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
+4) Hide menu icons by commenting [Line 9](https://github.com/PROxZIMA/Sweet-Pop/blob/master/userChrome.css#L9) in [`userChrome.css`](./userChrome.css).
+
+5) You can disable any of the `script/*.uc.js` from `Toolbar Menu > Tools > userscripts > script`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
     - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
     - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
 
-5) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+6) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
 
-6) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
+7) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
 
-7) If something breaks on your system then please raise a issue
+8) If something breaks on your system then please raise a issue
 
-8) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
+9) [@ArataKamikaze](https://github.com/ArataKamikaze) mentioned in [#5](https://github.com/PROxZIMA/Sweet-Pop/issues/5) that [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color) breaks/overwrite existing theme so disable the extension if you face similar issue.
 
 ## Credits
 - I started with this amazing material theme : [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)

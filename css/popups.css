@@ -9,7 +9,7 @@ menupopup,
 panel[type="autocomplete-richlistbox"] {
   --panel-padding: 0px !important;
   -moz-window-shadow: none !important;
-  background: 0 !important;
+  /* background: 0 !important; */
   border: 0 !important;
   color: var(--text-color1) !important;
   box-sizing: content-box !important;
@@ -28,11 +28,17 @@ menupopup {
   margin-top: -12px !important;
 }
 
-menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+menuitem[type="checkbox"] > .menu-iconic-left,
+menuitem[type="radio"] > .menu-iconic-left {
   display: -moz-box !important;
-  padding: 3px !important;
+  padding-inline-end: 1em !important;
+  margin-inline-end: 0px !important;
+}
+
+menuitem:not([type="checkbox"], [type="radio"]) > .menu-iconic-left {
+  display: -moz-box !important;
+  padding-inline-end: 0px !important;
+  margin-inline-end: 0px !important;
 }
 
 menupopup menuseparator {
@@ -50,15 +56,81 @@ menupopup menu,
   padding: 0 4px !important;
   margin: 0 4px !important;
   border: 0 !important;
-  background: 0 !important;
+  /* background: 0 !important; */
   color: inherit !important;
   fill-opacity: initial !important;
   border-radius: 6px !important;
   transition: background-color 100ms !important;
 }
 
+#bookmarkpropertiesdialog menuitem,
 .sidebar-panel menuitem {
   height: var(--sidebar-menupopup-height) !important;
+}
+
+
+menupopup:not(.in-menulist) > menu:not(.menu-iconic),
+menupopup:not(.in-menulist, [aria-label]) > menuitem:not(.menuitem-iconic) {
+  padding-inline-start: 1em !important;
+  background-position: left 1em center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  -moz-context-properties: fill, fill-opacity;
+  fill: currentColor;
+}
+
+/* , [type="checkbox"] */
+menu:not([type="checkbox"], [type="radio"]) > .menu-iconic-left,
+menuitem:not([type="checkbox"], [type="radio"]) > .menu-iconic-left {
+  margin-inline: calc(1em - 4px) !important;
+}
+
+.subviewbutton:not([checked="true"], [targetURI]) > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 8px !important;
+  -moz-context-properties: fill, fill-opacity;
+  fill: currentColor;
+}
+
+#appMenu-zoom-controls2 > label,
+#fxa-manage-account-button > vbox > label {
+  margin-inline-start: 24px !important;
+}
+
+.PanelUI-remotetabs-notabsforclient-label {
+  margin-inline-start: 40px !important;
+}
+
+.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text {
+  padding-inline-start: 8px !important;
+}
+
+#appMenu-fxa-label2::before,
+#fxa-manage-account-button::after {
+  content: "";
+  display: -moz-box;
+  border-radius: 50%;
+  background: var(--avatar-image-url) no-repeat center/contain;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+#appMenu-fxa-label2::before {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 8px;
+}
+
+#fxa-manage-account-button::after {
+  width: 32px;
+  height: 32px;
+}
+
+.syncNowBtn {
+  visibility: visible !important;
+  -moz-box-ordinal-group: 0 !important;
+  margin-inline-end: 8px;
 }
 
 menupopup menuitem:hover:not([disabled=true]),
@@ -114,22 +186,41 @@ scrollbox[orient=vertical] {
   background-color: transparent !important;
 }
 
-menuitem[type="checkbox"][checked="true"] .menu-iconic-left::before {
+menuitem[type="radio"]:not([checked="true"]) > .menu-iconic-text,
+menuitem[type="checkbox"]:not([checked="true"]) > .menu-iconic-text {
+  opacity: .5 !important;
+}
+
+
+menuitem[type="radio"][checked="true"] > .menu-iconic-left::before,
+menuitem[type="radio"]:not([checked="true"]) > .menu-iconic-left::before,
+menuitem[type="checkbox"][checked="true"] > .menu-iconic-left::before,
+menuitem[type="checkbox"]:not([checked="true"]) > .menu-iconic-left::before {
   content: '';
   margin: auto;
   display: inline-block;
-  background-image: url(../icons/checked.svg);
   width: 16px;
   height: 16px;
 }
 
-menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-left::before {
-  content: '';
-  margin: auto;
-  display: inline-block;
+menuitem[type="radio"][checked="true"] > .menu-iconic-left::before {
+  background-image: url(../icons/radio-checked.svg);
+}
+
+menuitem[type="radio"]:not([checked="true"]) > .menu-iconic-left::before {
+  background-image: url(../icons/radio-unchecked.svg);
+}
+
+menuitem[type="checkbox"][checked="true"] > .menu-iconic-left::before {
+  background-image: url(../icons/checked.svg);
+}
+
+menuitem[type="checkbox"]:not([checked="true"]) > .menu-iconic-left::before {
   background-image: url(../icons/unchecked.svg);
-  width: 16px;
-  height: 16px;
+}
+
+.bookmark-item {
+  list-style-image: url(../icons/bookmark-default.svg) !important;
 }
 
 /* hide icon if no image (default on macOS but not Windows) */
@@ -137,6 +228,7 @@ menuitem[type="checkbox"]:not([checked="true"]) .menu-iconic-left::before {
   display: none;
 }
 
+menuitem[type="radio"] .menu-iconic-icon,
 menuitem[type="checkbox"] .menu-iconic-icon {
   max-width: 0px !important;
 }
@@ -147,9 +239,10 @@ menuitem[type="checkbox"] .menu-iconic-icon {
 }
 
 
-.menu-text {
+menu .menu-text,
+menuitem .menu-text {
   -moz-appearance: none !important;
-  padding-inline-start: 1.45em !important;
+  padding-inline-start: 0em !important;
   margin-inline-start: 0px !important;
 }
 
@@ -319,7 +412,7 @@ panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1,
 .panel-banner-item {
   min-height: var(--subview-height) !important;
-  padding: 0 8px !important;
+  padding: 0 4px !important;
 }
 
 panelview {
