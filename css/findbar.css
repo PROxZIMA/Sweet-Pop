@@ -43,7 +43,6 @@ hbox[anonid="findbar-textbox-wrapper"]:hover {
 }
 
 hbox[anonid="findbar-textbox-wrapper"]:focus-within {
-  background-color: var(--back-color3) !important;
   border: 1px solid var(--gtk-color) !important;
 }
 
