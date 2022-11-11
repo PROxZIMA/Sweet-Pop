@@ -345,7 +345,7 @@ url-prefix(view-source:) {
 
   @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
     #viewer {
-      filter: invert(1);
+      filter: invert(0);
     }
   }
 
@@ -377,6 +377,13 @@ url-prefix(view-source:) {
   }
 }
 
+@-moz-document url-prefix("https://www.cloudskillsboost.google") {
+  :root {
+    --base-surface-color: #11131C !important;
+    --base-text-on-surface-color: #d3cfc9 !important;
+  }
+}
+
 @-moz-document url-prefix("https://jsfiddle.net/") {
   #sidebar {
     width: 125px;
@@ -395,3 +402,12 @@ url-prefix(view-source:) {
   }
 }
 
+@-moz-document url-prefix("https://www.notion.so") {
+  .notion-selectable.notion-text-block {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .notion-selectable.notion-text-block .notranslate {
+    padding: 0px 2px !important;
+  }
+}
