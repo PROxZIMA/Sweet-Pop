@@ -1,0 +1,4 @@
+content userchromejs ./
+content userscripts ../script/
+content userchrome ../
+resource content-accessible chrome://userchrome/content/layout/contentaccessible/ contentaccessible=yes

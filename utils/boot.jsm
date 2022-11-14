@@ -1,0 +1,1 @@
+../external/fx-autoconfig/profile/chrome/utils/boot.jsm

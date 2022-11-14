@@ -1,0 +1,6 @@
+[submodule "external/uc.css.js"]
+	path = external/uc.css.js
+	url = https://github.com/aminomancer/uc.css.js
+[submodule "external/fx-autoconfig"]
+	path = external/fx-autoconfig
+	url = https://github.com/MrOtherGuy/fx-autoconfig
