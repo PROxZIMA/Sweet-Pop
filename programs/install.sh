@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-THEMEDIRECTORY=$(cd `dirname $0` && cd .. && pwd);
+THEMEDIRECTORY=$(cd `dirname "$0"` && cd .. && pwd);
 
 case "$(uname -s)" in
     Darwin*)    FIREFOXFOLDER=~/Library/Application\ Support/Firefox/;;
@@ -14,10 +14,10 @@ CHROMEFOLDER="chrome";
 
 # Get installation options
 while getopts 'f:p:eh' flag; do
-	case "${flag}" in
-		f) FIREFOXFOLDER="${OPTARG}" ;;
-		p) PROFILENAME="${OPTARG}" ;;
-		e) FXACEXTRAS=true ;;
+    case "${flag}" in
+        f) FIREFOXFOLDER="${OPTARG}" ;;
+        p) PROFILENAME="${OPTARG}" ;;
+        e) FXACEXTRAS=true ;;
         h)
             echo "Sweet_Pop! Install script usage: ./install.sh [ options ... ]"
             echo "where options include:"
@@ -28,16 +28,16 @@ while getopts 'f:p:eh' flag; do
             echo "  -h                  (Show help message)"
             exit 0
             ;;
-	esac
+    esac
 done
 
 
 # Check if Firefox profiles.ini is installed or not
 PROFILES_FILE="${FIREFOXFOLDER}/profiles.ini"
 if [ ! -f "${PROFILES_FILE}" ]; then
-	>&2 echo "Failed to locate profiles.ini at ${FIREFOXFOLDER}
+    >&2 echo "Failed to locate profiles.ini at ${FIREFOXFOLDER}
 Exiting..."
-	exit 1
+    exit 1
 fi
 
 echo
@@ -56,7 +56,7 @@ fi
 if [ ! -d "$PROFILEFOLDER" ]; then
     >&2 echo "Failed to locate Profile folder at ${PROFILEFOLDER}
 Exiting..."
-	exit 1
+    exit 1
 fi
 
 cd $PROFILEFOLDER
