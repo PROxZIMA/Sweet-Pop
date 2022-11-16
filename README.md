@@ -127,15 +127,30 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 
     This script will lookup default Firefox profile location and install the theme with default configurations.
 
+    <details><summary>Linux/MacOS</summary><br>
+
     ```console
     $ ./programs/install.sh # Standard
     $ ./programs/install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
     ```
+    </details>
+
+   <details><summary>Windows</summary><br>
+
+    ```powershell
+    > programs\install.bat REM Standard
+    > programs\install.bat -e -b "C:\Program Files (x86)\Mozilla Firefox" REM Disable fx-autoconfig and Custom binary folder
+    ```
+    </details>
 
     #### Script options
+    - `-b <binary_folder>` *optional*
+        - Set custom Firefox binary folder path, for example `/usr/lib32/firefox`
+        - Default: Auto detects in linux. `C:\Program Files\Mozilla Firefox` in windows
+
     - `-f <firefox_folder>` *optional*
         - Set custom Firefox folder path, for example `~/.mozilla/icecat/`
-        - Default: `~/.mozilla/firefox/`
+        - Default: `~/.mozilla/firefox/` in linux. `%APPDATA%\Mozilla\Firefox` in windows
 
     - `-p <profile_name>` *optional*
         - Set custom profile name, for example `4htgy4pu.app`
@@ -149,7 +164,7 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
     - `-e` *optional*
         - Install [`fx-autoconfig`](https://github.com/MrOtherGuy/fx-autoconfig)
         - Runs sudo to copy `mozilla.cfg` and `local-settings.js` to Application Binary folder
-        - Default: False
+        - Default: True
 
     - `-h` *optional*
         - Shows help message with flags info
@@ -159,11 +174,24 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 
 - You can also install this theme with one command:
 
-    ```console
-    $ curl -s -o- https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.sh | bash
-    ```
+    <details><summary>Linux/MacOS</summary><br>
 
-    It will download the master branch and run the installation script for you.
+    ```console
+    $ curl -s -o- https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.sh | bash # Standard
+    $ curl -s -o- https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.sh | bash -s -- -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
+    ```
+    </details>
+
+   <details><summary>Windows</summary><br>
+
+    ```powershell
+    > curl -sL "https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.bat" > %TEMP%\install-curl.bat && %TEMP%\install-curl.bat REM Standard
+    > curl -sL "https://raw.githubusercontent.com/PROxZIMA/Sweet-Pop/master/programs/install-curl.bat" > %TEMP%\install-curl.bat && %TEMP%\install-curl.bat -b "C:\Program Files (x86)\Mozilla Firefox" REM Custom binary folder
+
+    ```
+    </details>
+
+    This will download the master branch and run the installation script.
     `mozilla.cfg` can be configured after complete installation
 </details>
 
@@ -183,15 +211,10 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
     $ cd chrome
     ```
 
-3) Install `utils` folder from [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig) in your `chrome` folder (make sure it matches above Folder Structure). Perform following changes in the `utils/chrome.manifest` file.
+3) Install `boot.jsm` file from [fx-autoconfig](https://github.com/MrOtherGuy/fx-autoconfig/tree/master/profile/chrome/utils) in the `chrome/utils` folder (make sure it matches above Folder Structure).
 
-    ```diff
-    content userchromejs ./
-    -content userscripts ../JS/
-    -content userchrome ../resources/
-    +content userscripts ../script/
-    +content userchrome ../
-    +resource content-accessible chrome://userchrome/content/layout/contentaccessible/ contentaccessible=yes
+    ```console
+    $ curl -sL "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/profile/chrome/utils/boot.jsm" > "utils/boot.jsm"
     ```
 
 4) Move `user.js`, `mozilla.cfg` and `local-settings.js` to their destination.
@@ -232,7 +255,7 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
     Generally `Installation folder` is `C:\Program Files\Mozilla Firefox\`
 
     ```powershell
-    > copy .\programs\user.js ..\
+    > mklink ..\user.js "%cd%\programs\user.js"
 
     > copy .\programs\mozilla.cfg "C:\Program Files\Mozilla Firefox\"
 
@@ -241,13 +264,18 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
     </details>
 
 5) Download [`navbarToolbarButtonSlider.uc.js`](https://github.com/aminomancer/uc.css.js/blob/master/JS/navbarToolbarButtonSlider.uc.js) and place it in `script` folder along with `hideScrollbar.uc.js`.
+
+    ```console
+    $ curl -sL "https://raw.githubusercontent.com/aminomancer/uc.css.js/master/JS/navbarToolbarButtonSlider.uc.js" > "script/navbarToolbarButtonSlider.uc.js"
+    ```
+
 </details>
 
 #### Follow-up changes
 1) In Firefox
     - Right click hamburger button > `customize toolbar` disable `Title Bar`, `Drag Space`.
     - Remove `Flexible Space` from urlbar.
-    - Set Density to `Compact/Normal/Touch` and Themes to `Dark` or `Light`
+    - Set Density to `Compact/Normal/Touch` and Themes to `Dark` or `Light` (`Compact` is buggy in Windows).
 
 2) Open `about:support` > `Clear startup cache...` > `Restart` ***twice***
 
