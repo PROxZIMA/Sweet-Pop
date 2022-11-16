@@ -1,8 +1,5 @@
 @echo off
 
-echo args i %*
-goto:eof
-
 call :RequestAdminElevation "%~dpfs0" %* || goto:eof
 
 goto :init
