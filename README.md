@@ -267,11 +267,9 @@ Custom startup-script (aka [`mozilla.cfg`](./programs/mozilla.cfg) here) is load
 
 4) Hide menu icons by commenting [Line 9](https://github.com/PROxZIMA/Sweet-Pop/blob/master/userChrome.css#L9) in [`userChrome.css`](./userChrome.css).
 
-5) You can disable any of the `script/*.uc.js` from `Toolbar Menu > Tools > userscripts > script`. Restart ***twice***, every time you enable/disable the script. Following are the `about:config` option to configure scrollbars, toolbox.
-    - `Floating scrollbars` -> `userChromeJS.floatingScrollbar.enabled`.
-    - `Floating toolbox` -> `userChromeJS.floatingToolbox.enabled`.
+5) You can disable any of the `script/*.uc.js` from `Toolbar Menu > Tools > userscripts > script`. Restart ***twice***, every time you enable/disable the script.
 
-6) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste
+6) You can also edit `hideScrollbar.uc.js` to customize the scrollbars according to your taste.
 
 7) For adding your own customizations make changes in `myChanges.css` file under `css` folder.
 
