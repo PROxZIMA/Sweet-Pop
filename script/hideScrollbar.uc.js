@@ -9,14 +9,14 @@
 // ==/UserScript==
 
 (function () {
-    var prefs = Services.prefs,
-        enabled;
-    if (prefs.prefHasUserValue('userChromeJS.floatingScrollbar.enabled')) {
-        enabled = prefs.getBoolPref('userChromeJS.floatingScrollbar.enabled')
-    } else {
-        prefs.setBoolPref('userChromeJS.floatingScrollbar.enabled', true);
-        enabled = true;
-    }
+    // var prefs = Services.prefs,
+    //     enabled;
+    // if (prefs.prefHasUserValue('userChromeJS.floatingScrollbar.enabled')) {
+    //     enabled = prefs.getBoolPref('userChromeJS.floatingScrollbar.enabled')
+    // } else {
+    //     prefs.setBoolPref('userChromeJS.floatingScrollbar.enabled', true);
+    //     enabled = true;
+    // }
 
     var css = `
     link[href$="global.css"] ~ scrollbox {
@@ -146,7 +146,7 @@
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 
-    if (enabled) {
+    // if (enabled) {
         sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
-    }
+    // }
 })();

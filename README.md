@@ -23,47 +23,24 @@
 ```css
  .
 ├──  assets
-│  ├──  context.png
-│  ├──  library.png
-│  ├──  navbar.gif
-│  ├──  preview.png
-│  └──  scrollbar.gif
+│  └──  preview images
 ├──  css
-│  ├──  findbar.css
-│  ├──  floatingToolbox.css
-│  ├──  icons.css
-│  ├──  library.css
 │  ├──  myChanges.css
-│  ├──  overflowMenu.css
-│  ├──  popups.css
+│  ├──  icons.css
 │  ├──  reddit.css
+│  ├──  discordCatppuccin.css
 │  ├──  responsiveNavbar.css
-│  ├──  tabbar.css
-│  ├──  tweaks.css
-│  └──  urlbar.css
+│  └──  other .css files
 ├──  icons
 │  ├──  animation.svg
-│  ├──  back.svg
-│  ├──  close.svg
-│  ├──  close_hover.svg
-│  ├──  closew.svg
-│  ├──  fox-transparent.gif
-│  ├──  home.svg
-│  ├──  infoico.png
-│  ├──  max_hover.svg
-│  ├──  max_restore.svg
-│  ├──  min.svg
-│  ├──  min_hover.svg
-│  ├──  reload.svg
-│  ├──  restore_hover.svg
-│  ├──  search.svg
-│  ├──  sonic.gif
-│  ├──  tab-loading.png
-│  ├──  tracking-disabled.svg
-│  ├──  tracking-enabled.svg
-│  └──  welcome-back.svg
+│  └──  many icons in .svg format
 ├──  LICENSE
 ├──  programs
+│  ├──  install-cfg.sh
+│  ├──  install-curl.sh
+│  ├──  install.sh
+│  ├──  install-curl.bat
+│  ├──  install.bat
 │  ├──  local-settings.js
 │  ├──  mozilla.cfg
 │  └──  user.js
