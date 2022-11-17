@@ -46,7 +46,7 @@
   min-height: var(--tab-min-height) !important;
   max-height: var(--tab-min-height) !important;
   margin-left: var(--navbar-percent) !important;
-  width: var(--toolbar-percent) !important;
+  min-width: var(--toolbar-percent) !important;
 }
 
 /* Move navigation 68% to left and negative margin to move to top line */
