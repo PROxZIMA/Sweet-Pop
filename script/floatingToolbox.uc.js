@@ -9,14 +9,14 @@
 // ==/UserScript==
 
 (function () {
-    var prefs = Services.prefs,
-        enabled;
-    if (prefs.prefHasUserValue('userChromeJS.floatingToolbox.enabled')) {
-        enabled = prefs.getBoolPref('userChromeJS.floatingToolbox.enabled')
-    } else {
-        prefs.setBoolPref('userChromeJS.floatingToolbox.enabled', false);
-        enabled = false;
-    }
+    // var prefs = Services.prefs,
+    //     enabled;
+    // if (prefs.prefHasUserValue('userChromeJS.floatingToolbox.enabled')) {
+    //     enabled = prefs.getBoolPref('userChromeJS.floatingToolbox.enabled')
+    // } else {
+    //     prefs.setBoolPref('userChromeJS.floatingToolbox.enabled', false);
+    //     enabled = false;
+    // }
 
     var css = `
     #main-window:not([customizing="true"]) #navigator-toolbox {
@@ -31,7 +31,7 @@
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 
-    if (enabled) {
+    // if (enabled) {
         sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
-    }
+    // }
 })();
