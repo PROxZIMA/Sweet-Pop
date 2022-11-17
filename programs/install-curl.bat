@@ -2,7 +2,7 @@
 
 cd %TEMP%
 
-set "VERSION=3.2.0"
+set "VERSION=4.0.0"
 set "FILENAME=Sweet-Pop-%VERSION%.tar.gz"
 set "FOLDERPATH=Sweet-Pop-master"
 

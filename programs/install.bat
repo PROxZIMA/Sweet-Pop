@@ -31,7 +31,7 @@ goto :init
 
 :init
     set "__NAME=%~nx0"
-    set "__VERSION=3.2.0"
+    set "__VERSION=4.0.0"
 
     for %%a in ("%~dp0.") do set "THEMEDIRECTORY=%%~dpa"
 
