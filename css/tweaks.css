@@ -172,3 +172,10 @@ notification {
   padding-inline: 7px !important;
   background-size: auto !important;
 }
+
+#private-browsing-indicator-with-label {
+  position: relative !important;
+  background: var(--back-color1) !important;
+  margin-inline: 0px !important;
+  padding-inline: 7px !important;
+}
