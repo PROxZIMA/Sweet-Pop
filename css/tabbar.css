@@ -252,7 +252,8 @@
 }
 
 #new-tab-button,
-#tabs-newtab-button {
+#tabs-newtab-button,
+#firefox-view-button {
   background: var(--back-color1) !important;
   padding: 0px !important;
 }
