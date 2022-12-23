@@ -101,7 +101,6 @@
 
 @-moz-document url-prefix(chrome://),
 url(https://www.mozilla.org/credits/),
-url-prefix(https://addons.mozilla.org),
 url-prefix(https://raw.githubusercontent.com),
 url-prefix(https://www.keybr.com),
 url-prefix(view-source:) {
