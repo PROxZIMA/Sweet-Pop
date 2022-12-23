@@ -1,5 +1,5 @@
 #navigator-toolbox {
-  position: fixed !important;
+  position: relative;
   line-height: 0;
   /*    max-height: var(--tab-min-height) !important;*/
   z-index: 2;

@@ -375,7 +375,7 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox {
 panel[type="arrow"] {
   -moz-window-shadow: none !important;
   margin: 0 -14px -18px !important;
-  padding: 0 14px 18px !important;
+  padding: 1px 14px 18px !important;
 }
 
 panel[type="arrow"][side="top"],
@@ -415,6 +415,11 @@ panelview .toolbarbutton-1,
   padding: 0 4px !important;
 }
 
+.subviewbutton.unified-extensions-item-action {
+  min-height: var(--subview-height) !important;
+  padding: 0 !important;
+}
+
 panelview {
   background: var(--back-color1) !important;
 }
@@ -434,6 +439,10 @@ menuitem.subviewbutton:not([disabled], :active)[_moz-menuactive],
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open], :active):is(:hover, :focus) {
   background: var(--back-color2) !important;
   color: var(--text-color1) !important;
+}
+
+toolbarbutton.subviewbutton.unified-extensions-item-action:not([disabled], [open], :active):is(:hover, :focus) {
+  background: transparent !important;
 }
 
 findbar toolbarbutton.tabbable:-moz-focusring,

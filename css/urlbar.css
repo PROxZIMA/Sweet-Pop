@@ -108,8 +108,13 @@
   color: transparent !important;
 }
 
+.urlbar-page-action:not([disabled]):hover {
+  background: transparent !important;
+}
+
 .urlbar-icon {
   margin-inline: 1px !important;
+  margin: auto !important;
 }
 
 /* Move hamburger menu to the left */
@@ -313,4 +318,8 @@ toolbarbutton.bookmark-item:hover {
 
 toolbarbutton.bookmark-item:not(.subviewbutton) {
   margin-inline: 1px !important;
+}
+
+#TabsToolbar .toolbarbutton-1 {
+  margin: 0 !important;
 }
