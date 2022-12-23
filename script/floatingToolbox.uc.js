@@ -21,6 +21,7 @@
     var css = `
     #main-window:not([customizing="true"]) #navigator-toolbox {
         display: grid;
+        position: fixed !important;
         transition: transform 85ms linear, opacity 85ms linear !important;
         transform-origin: top;
         transform: rotateX(75deg);
