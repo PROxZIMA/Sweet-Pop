@@ -60,7 +60,7 @@
   --urlbar-min-height: calc(var(--tab-min-height) - 3px) !important;
   --panel-background: rgba(0, 0, 0, 0) !important;
   --panel-border-color: rgba(0, 0, 0, 0) !important;
-  --tabbar-gradient-color: url("../icons/animation.svg");
+  --tabbar-gradient-color: url("../icons/animation.png");
 
   /*
   More gradients to try out
