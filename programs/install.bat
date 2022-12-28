@@ -131,9 +131,11 @@ goto :init
 
     echo.
     echo Enabling userChrome.js manager (fx-autoconfig)...
+    del "utils\boot.jsm"
     curl -sL "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/profile/chrome/utils/boot.jsm" > "utils\boot.jsm" || (echo Failed to fetch fx-autoconfig && echo Exiting... && goto :end)
 
     echo Enabling Navbar Toolbar Button Slider...
+    del "script\navbarToolbarButtonSlider.uc.js"
     curl -sL "https://raw.githubusercontent.com/aminomancer/uc.css.js/master/JS/navbarToolbarButtonSlider.uc.js" > "script\navbarToolbarButtonSlider.uc.js" || (echo Failed to fetch Navbar Toolbar Button Slider && echo Exiting... && goto :end)
 
     echo.
