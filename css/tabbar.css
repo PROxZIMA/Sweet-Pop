@@ -157,7 +157,7 @@
   right: 0;
   bottom: 0;
   background: var(--tabbar-gradient-color);
-  background-size: 100% !important;
+  background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   background-position: left bottom !important;
   z-index: -1;
