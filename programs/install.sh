@@ -14,7 +14,7 @@ CHROMEFOLDER="chrome";
 
 
 # Get installation options
-while getopts 'f:p:eh' flag; do
+while getopts 'b:f:p:eh' flag; do
     case "${flag}" in
         b) APPLICATIONFOLDER="${OPTARG}" ;;
         f) FIREFOXFOLDER="${OPTARG}" ;;
@@ -96,11 +96,13 @@ ln -fs "`pwd`/programs/user.js" ../user.js
 # If FXACEXTRAS extras enabled, install necessary files
 if [ "$FXACEXTRAS" = true ] ; then
     echo
-    echo "Enabling userChrome.js manager (fx-autoconfig)..."
 
+    echo "Enabling userChrome.js manager (fx-autoconfig)..."
+    rm "utils/boot.jsm"
     curl -sL "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/profile/chrome/utils/boot.jsm" > "utils/boot.jsm" || { echo "Failed to fetch fx-autoconfig"; echo "Exiting..."; exit 1; }
 
     echo "Enabling Navbar Toolbar Button Slider..."
+    rm "script/navbarToolbarButtonSlider.uc.js"
     curl -sL "https://raw.githubusercontent.com/aminomancer/uc.css.js/master/JS/navbarToolbarButtonSlider.uc.js" > "script/navbarToolbarButtonSlider.uc.js" || { echo "Failed to fetch Navbar Toolbar Button Slider"; echo "Exiting..."; exit 1; }
 
     echo
