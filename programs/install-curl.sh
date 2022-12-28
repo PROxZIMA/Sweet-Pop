@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=$(curl -s "https://github.com/PROxZIMA/Sweet-Pop/releases/latest/download" 2>&1 | sed "s/^.*download\/\([^\"]*\).*/\1/")
-FILENAME=Sweet-Pop-$VERSION.zip
+FILENAME=Sweet-Pop-master.zip
 FOLDERPATH=$PWD/Sweet-Pop-master
 
 if [ -d "$FOLDERPATH" ]; then rm -Rf $FOLDERPATH; fi
@@ -14,6 +13,6 @@ rm $FILENAME
 
 chmod +x "${FOLDERPATH}/programs/install.sh"
 
-"${FOLDERPATH}/programs/install.sh" -e
+"${FOLDERPATH}/programs/install.sh" "$@"
 
-if [ -d "$FOLDERPATH" ]; then rm -Rf $FOLDERPATH; fi
+# if [ -d "$FOLDERPATH" ]; then rm -Rf $FOLDERPATH; fi
