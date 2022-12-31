@@ -124,7 +124,11 @@ url-prefix(view-source:) {
   }
 }
 
-
+@-moz-document url-prefix("about:blank") {
+  body {
+    background-color: var(--back-color1) !important;
+  }
+}
 
 
 /* ============= ADDON PAGE ============= */
