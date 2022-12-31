@@ -139,12 +139,12 @@
   z-index: 2 !important;
 }
 
-/* Moving First and last tab in if there isn't any pinned tab*/
-#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab[first-visible-tab] {
+/* Moving First and last tab in if they are selected */
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab][visuallyselected] {
   margin-left: var(--tab-radius) !important;
 }
 
-#tabbrowser-tabs:not([positionpinnedtabs]) .tabbrowser-tab[last-visible-tab] {
+#tabbrowser-tabs .tabbrowser-tab[last-visible-tab][visuallyselected] {
   margin-right: var(--tab-radius) !important;
 }
 
