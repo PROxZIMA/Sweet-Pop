@@ -9,7 +9,7 @@
 }
 
 .titlebar-spacer[type="post-tabs"] {
-  width: 20px !important;
+  width: 1.25rem !important;
   background: var(--back-color1) !important;
   position: relative !important;
 }
