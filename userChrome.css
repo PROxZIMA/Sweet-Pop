@@ -43,18 +43,18 @@
 }
 
 :root {
-  --bookmark-block-padding: 1px !important;
-  /*--tab-min-height: 29px !important;*/
+  --bookmark-block-padding: 0.0625rem !important;
+  /*--tab-min-height: 1.8125rem !important;*/
   --menupopup-height: var(--tab-min-height);
-  --sidebar-menupopup-height: 36px;
-  --navbar-margin-top: calc(0px - var(--tab-min-height));
+  --sidebar-menupopup-height: 2.25rem;
+  --navbar-margin-top: calc(0rem - var(--tab-min-height));
   --navbar-percent: 32vw;
   --subview-height: var(--tab-min-height);
-  --tab-radius: 8px;
-  --tab-border-width: 2px;
+  --tab-radius: 0.5rem;
+  --tab-border-width: 0.125rem;
   --toolbar-percent: 68vw;
-  --toolbarbutton-inner-padding: 6px !important;
-  --toolbarbutton-outer-padding: 3px !important;
+  --toolbarbutton-inner-padding: 0.375rem !important;
+  --toolbarbutton-outer-padding: 0.1875rem !important;
   /* 1px */
   --urlbar-icon-padding: 3px !important;
   --urlbar-min-height: calc(var(--tab-min-height) - 3px) !important;

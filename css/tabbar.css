@@ -87,11 +87,11 @@
   /* Border top radius*/
   border-radius: var(--tab-radius) var(--tab-radius) 0 0 !important;
   border-bottom: var(--tab-border-width) solid var(--back-color1) !important;
-  --box-shadow-width: 9999px;
-  box-shadow: 0 calc(0px - var(--box-shadow-width)) 0 calc(var(--box-shadow-width) - var(--tab-border-width) - var(--tab-radius)) var(--back-color1) !important;
+  --box-shadow-width: 624.9375rem;
+  box-shadow: 0 calc(0rem - var(--box-shadow-width)) 0 calc(var(--box-shadow-width) - var(--tab-border-width) - var(--tab-radius)) var(--back-color1) !important;
   background: var(--back-color1) !important;
   background-clip: padding-box !important;
-  padding-inline: 0px !important;
+  padding-inline: 0rem !important;
   position: relative !important;
   z-index: 1 !important;
   overflow: visible !important;
@@ -111,7 +111,7 @@
   height: var(--tab-radius) !important;
   background: var(--back-color1);
   background-clip: content-box;
-  bottom: calc(0px - var(--tab-border-width)) !important;
+  bottom: calc(0rem - var(--tab-border-width)) !important;
   pointer-events: none !important;
   border-bottom: var(--tab-border-width) solid transparent !important;
 }
@@ -119,10 +119,10 @@
 .tabbrowser-tab[visuallyselected] .tab-stack::before {
   border-bottom-right-radius: var(--tab-radius) !important;
   left: 0 !important;
-  transform: translateX(calc(0px - var(--tab-border-width) - var(--tab-radius))) !important;
+  transform: translateX(calc(0rem - var(--tab-border-width) - var(--tab-radius))) !important;
   border-right: var(--tab-border-width) solid transparent !important;
-  box-shadow: 4px 4px 0 4px var(--back-color1), calc(0px - var(--box-shadow-width) - var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
-  clip-path: polygon(calc(0px - var(--box-shadow-width)) -10px, 100% -10px, 100% 100%, 0 100%, 0 calc(100% - var(--tab-border-width)), calc(0px - var(--box-shadow-width)) calc(100% - var(--tab-border-width)));
+  box-shadow: 0.25rem 0.25rem 0 0.25rem var(--back-color1), calc(0rem - var(--box-shadow-width) - var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+  clip-path: polygon(calc(0rem - var(--box-shadow-width)) calc(-0.625rem), 100% -0.625rem, 100% 100%, 0 100%, 0 calc(100% - var(--tab-border-width)), calc(0rem - var(--box-shadow-width)) calc(100% - var(--tab-border-width)));
 }
 
 .tabbrowser-tab[visuallyselected] .tab-stack::after {
@@ -130,8 +130,8 @@
   right: 0 !important;
   transform: translateX(calc(var(--tab-border-width) + var(--tab-radius))) !important;
   border-left: var(--tab-border-width) solid transparent !important;
-  box-shadow: -4px 4px 0 4px var(--back-color1), calc(var(--box-shadow-width) + var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
-  clip-path: polygon(var(--box-shadow-width) -10px, 0 -10px, 0 100%, 100% 100%, 100% calc(100% - var(--tab-border-width)), var(--box-shadow-width) calc(100% - var(--tab-border-width)));
+  box-shadow: -0.25rem 0.25rem 0 0.25rem var(--back-color1), calc(var(--box-shadow-width) + var(--tab-border-width)) 0 0 var(--box-shadow-width) var(--back-color1) !important;
+  clip-path: polygon(var(--box-shadow-width) -0.625rem, 0 -0.625rem, 0 100%, 100% 100%, 100% calc(100% - var(--tab-border-width)), var(--box-shadow-width) calc(100% - var(--tab-border-width)));
 }
 
 .tabbrowser-tab:not([visuallyselected]) {
@@ -146,6 +146,17 @@
 
 #tabbrowser-tabs .tabbrowser-tab[last-visible-tab][visuallyselected] {
   margin-right: var(--tab-radius) !important;
+}
+
+/* It seems first-visible-tab attribute isn't available, so use :first-of-type */
+#tabbrowser-tabs .tabbrowser-tab:first-of-type[visuallyselected] {
+  margin-left: var(--tab-radius) !important;
+}
+#tabbrowser-tabs .tabbrowser-tab:last-of-type[visuallyselected] {
+  margin-right: var(--tab-radius) !important;
+}
+#tabbrowser-tabs .tabbrowser-tab:first-of-type[visuallyselected] .tab-stack::before {
+  clip-path: none;
 }
 
 /* The animation in the toolbox*/
@@ -208,7 +219,7 @@
 */
 
 #navigator-toolbox {
-  border-bottom: 0px !important;
+  border-bottom: 0rem !important;
 }
 
 /* Glowing tab favicon */
@@ -263,7 +274,7 @@
 #tabs-newtab-button,
 #firefox-view-button {
   background: var(--back-color1) !important;
-  padding: 0px !important;
+  padding: 0rem !important;
 }
 
 #new-tab-button > .toolbarbutton-icon,
